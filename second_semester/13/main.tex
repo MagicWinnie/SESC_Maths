@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\pagenumbering{arabic}
+
+\begin{document}
+    % \tableofcontents
+    % \thispagestyle{empty}
+    % \setcounter{tocdepth}{5}
+    % \newpage
+
+    % \addtocontents{toc}{\protect\contentsline{section}{\protect\numberline{}Элементы теории чисел}{}{}}
+    \title{Элементы теории чисел. Теория сравнений.}
+    \author{Ученик 10-4 класса Оконешников Д.Д. по лекции к.ф.-м.н. Протопоповой Т.В.}
+    \date{от 20 января 2021 г.}
+    \maketitle
+
+    \section{Лекция №13}
+    \subsection{Каноническое разложение числа. НОД. НОК}
+    
+    \begin{tabular}{ll}
+        Весь алгоритм: & \textbf{Пример.} НОД(5083,3553)-?\\
+        \textbf{1)} \( a = q_1b + r_1 \) & \( \Rightarrow r_1 = a - q_1b = A_1a + B_1b \)\\
+        \textbf{2)} \( b = q_2r_1 + r_2 \) & \( \Rightarrow r_2 = b - q_2r_1 = b - q_2(A_1a + B_1b) = -q_2A_1a + (1 - B_1q_2)b = A_2a + B_2b \)\\
+        \textbf{3)} \( r_1 = q_3r_2 + r_3 \) & \( \Rightarrow r_3 = r_1 - q_3r_2 = A_1a + B_1b - q_3(A_2a + B_2b) =  \)\\
+        ...& \( = (A_1 - q_3A_2)a + (B_1 - q_3B_2)b = A_3a + B_3b \)\\
+        \textbf{k)} \( r_{k-2} = q_kr_{k-1} + r_k \) & \( r_k = A_ka + B_kb \textrm{ или НОД}(a,b)=Aa + Bb \), где \( A,\ B \) --- целые\\
+        \textbf{k+1)} \( r_{k-1} = q_{k+1}r_{k} + 0 \) & \\
+        \( \textrm{НОД}(a,b) = r_k \) & \\
+    \end{tabular}
+
+    \textbf{Утверждение.} Если \( d = \textrm{ НОД}(a,b) \), то существуют целые \( A \) и \( B: d = Aa + Bb \).
+
+    \textbf{Замечание.} Если \( \textrm{НОД}(a,b) = 1 \) (т.е. \( a \) и \( b \) взаимно просты), то существуют целые \( A \) и \( B: 1 = Aa + Bb \).
+
+    \subsection{Доказательство свойств делимости 8 и 9}
+    \textbf{Свойство 8.} Если \( ab \vdots m \) и \( \textrm{НОД}(a, m) = 1 \), то \( b \vdots m \)
+
+    \( \uparrow \) Имеем \( \textrm{НОД}(a,m) = 1 \Rightarrow \exists A,\ M: Aa + Mm = 1. \)\\
+    Домножим последнее равенство на \( b: \underset{\vdots m}{Aab} + \underset{\vdots m}{Mmb} = b \Rightarrow b \vdots m \downarrow \)
+
+    \textbf{Свойство 9.} Если \( a \vdots m,\ a \vdots k \) и \( \textrm{НОД}(m,k) = 1 \), то \(a \vdots mk \)
+
+    \( \uparrow \)
+
+    1) \( a \vdots m \Rightarrow a = mq_1 \)\\
+    2) \( a \vdots k \Rightarrow mq_1 \vdots k \)\\
+    3) из 2) и \( \textrm{НОД}(m,k) = 1 \Rightarrow \) по свойству 8 \( q_1 \vdots k \Rightarrow q_1 = kq_2 \)\\
+    4) \( a = mq_1 = mkq_2 \), т.е. \( a \vdots mk \downarrow \)
+
+    \subsection{Решение уравнений ax + by = c}
+    \textbf{Определение.} Диофантово уравнение первой степени - уравнение вида \( ax + by = c \), где \( a,b,c,x,y \) --- целые числа.
+
+    Пусть \( \textrm{НОД}(a,b) = d \).
+
+    1) Если \( c \vdots d \), то делим на \( d \) правую и левую части уравнения и получаем \( a_1x + b_1y = c_1 \), где \( \textrm{НОД}(a_1, b_1) = 1 \).\\
+    2) Если \( c \) не делится на \( d \), то уравнение решений не имеет.\\
+
+    Таким образом, будем рассматривать уравнения (*) \( ax + by = c,\ \textrm{НОД}(a,b) = 1 \).
+    
+    Так как \( \textrm{НОД}(a, b) = 1 \), то по следствию из алгоритма Евклида \( \exists \) целые \( A,\ B: Aa + Bb = 1 \). Домножим равенство на \( c: Aca + Bcb = c \).
+
+    
+\end{document}
