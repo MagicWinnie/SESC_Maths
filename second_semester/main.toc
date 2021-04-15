@@ -1,0 +1,7 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {}Элементы теории чисел. Теория сравнений.}{}{}
+\contentsline {section}{\numberline {1}Лекция №12}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Свойства делимости (нацело). ОТА}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Основная теорема арифметики}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Теорема Евклида}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Теорема Эйлера}{4}{subsubsection.1.1.3}%
