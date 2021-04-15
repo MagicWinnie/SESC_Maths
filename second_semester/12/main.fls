@@ -1,7 +1,7 @@
-PWD c:\Users\magic\Documents\Projects\Maths\second_semester
+PWD c:\Users\magic\Documents\Projects\Maths\second_semester\12
 INPUT C:\Users\magic\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.tex
-OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.log
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.tex
+OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
@@ -523,10 +523,10 @@ INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.aux
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.aux
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.aux
-OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.aux
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.aux
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.aux
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.aux
+OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -569,30 +569,18 @@ INPUT C:\Program Files\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.pdf
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm2488.tfm
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx2488.tfm
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1440.tfm
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1440.tfm
-INPUT C:\Users\magic\AppData\Local\MiKTeX\pdftex\config\pdftex.map
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.toc
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.toc
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.toc
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1000.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.toc
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.pdf
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+OUTPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1728.tfm
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1200.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
@@ -607,34 +595,36 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1440.tfm
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1440.tfm
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1000.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0700.tfm
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0500.tfm
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1200.tfm
+INPUT C:\Users\magic\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati1000.tfm
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.aux
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
-INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.aux
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
+INPUT c:\Users\magic\Documents\Projects\Maths\second_semester\12\main.out
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1000.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1000.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1728.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1728.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1440.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1440.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
 INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2488.pk
-INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2488.pk
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1728.pk
+INPUT C:\Users\magic\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1728.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx5.pfb
