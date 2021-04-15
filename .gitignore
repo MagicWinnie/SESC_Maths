@@ -5,4 +5,5 @@
 *.out
 *.ptc
 *.synctex.gz
+*.synctex(busy)
 *.toc
