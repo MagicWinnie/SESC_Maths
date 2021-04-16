@@ -9,10 +9,12 @@
 \usepackage{parskip}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{titling}
 \usepackage{graphicx}
-\graphicspath{ {./images/} }
 \usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
     linktoc=all,     %set to all if you want both sections and subsections linked
@@ -22,7 +24,12 @@
 \pagenumbering{arabic}
 
 \begin{document}
-\addtocontents{toc}{\protect\contentsline{section}{\protect\numberline{}Предел числовой последовательности}{}{}}
+\title{Числовые последовательности и их пределы}
+\author{Ученик 10-4 класса Паньков М.А. по лекции к.ф.-м.н. Протопоповой Т.В.}
+\date{от 16 марта 2021 г.}
+\maketitle
+
+\addtocontents{toc}{\protect\contentsline{section}{\protect\numberline{}Числовые последовательности и их пределы}{}{}}
 \section{Лекция №21}
 
 \textbf{Определение.} Будем говорить, что \( x_n \) сходится к \( a(\lim_{n \to \infty} x_n = a) \), если \( \forall \varepsilon > 0 \ \exists \  N = N(\varepsilon): \forall n > N,\ \abs{x_n - a} < \varepsilon \)
@@ -31,7 +38,7 @@
 a --- предел \( x_n \), \(a - \varepsilon < x_n < a + \varepsilon\)\\
 \(O_a = (a - \varepsilon,\ a + \varepsilon)\) --- \(\varepsilon\)-окрестность т. a
 
-\includegraphics[scale=0.7]{images/21_0}\\
+\includegraphics[scale=0.5]{21_0}\\
 \textbf{Примеры:}
 \begin{enumerate}
     \item Док-ть \(\lim_{n \to \infty} \frac{1}{n} = 0\)
@@ -61,10 +68,10 @@ a --- предел \( x_n \), \(a - \varepsilon < x_n < a + \varepsilon\)\\
     Сходимость может быть разной
 
     \(x_n = \frac{1}{n}\)
-    \qquad \includegraphics[scale=0.3]{images/22_0}
+    \qquad \includegraphics[scale=0.3]{22_0}
 
     \(x_n = -\frac{1}{n}\)
-    \qquad \includegraphics[scale=0.3]{images/22_1}
+    \qquad \includegraphics[scale=0.3]{22_1}
 
     \(x_n = \frac{(-1)^n}{n}\)
     

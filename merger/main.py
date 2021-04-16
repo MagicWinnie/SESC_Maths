@@ -67,6 +67,8 @@ for sem in semesters:
     f.write('\n')
     f.writelines(packages)
     f.write('\n')
+    f.write('\\graphicspath{ {./images/} }\n')
+    f.write('\\setlength{\\droptitle}{-3cm}\n')
     f.write('\\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue, }\n')
     f.write('\n')
     f.write('\\pagenumbering{arabic}\n')
