@@ -32,8 +32,13 @@ for sem in semesters:
     assert "title" in lections, f"[ERROR] You have no 'title' folder in '{sem}'"
 
     del lections[lections.index('title')]
-    lections.sort(key=int)
-    lections = ['title'] + lections
+    if 'appendix' in lections:
+        del lections[lections.index('appendix')]
+        lections.sort(key=int)
+        lections = ['title'] + lections + ['appendix']
+    else:
+        lections.sort(key=int)
+        lections = ['title'] + lections
 
     lections_inside = {}
 
@@ -87,7 +92,7 @@ for sem in semesters:
                 shutil.copy(os.path.join('/'.join(home_path[:-1]), sem, l, 'images', fs), os.path.join('/'.join(home_path), 'images/', fs))
         # writing pages
         f.writelines(get_main_latex(lections_inside[key]))
-        f.write('\t\\newpage\n')
+        # f.write('\t\\newpage\n')
 
     # post
     f.write('\\end{document}\n')
