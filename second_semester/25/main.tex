@@ -1,0 +1,162 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb} 
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\setlength{\droptitle}{-3cm}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\pagenumbering{arabic}
+
+\begin{document}
+\title{Числовые последовательности и их пределы}
+\author{Ученики 10-4 класса Оконешников Д.Д. и Паньков М.А. по лекции к.ф.-м.н. Протопоповой Т.В.}
+\date{от 28 апреля 2021 г.}
+\maketitle
+
+\section{Лекция №25}
+
+\(\lim_{n \rightarrow \infty}{(1 + \frac{1}{n})^n}\)
+\\ \(1^{\infty}\)
+\\ \( x_n \xrightarrow[n \rightarrow \infty ]{}\ ? \)
+
+\subsection{Число e}
+1) \( \{ x_n \} \) --- ограничена \\
+2) \( \{ x_n \} \) --- монотонна \\
+Из 1) и 2) \( \Rightarrow \) сходятся
+
+\textbf{I монотонна и возрастает}
+
+\((a+b)^n = \sum_{k=0}^n\ C^k_n \ a^{n-k}b^k=1*a^n+\sum_{k=1}^n\ C^k_n \ a^{n-k}b^k = a^n+\sum_{k=1}^n \frac{n!}{k!(n-k)!} a^{n-k}b^k = \)
+
+\( = a^n + \sum_{k=1}^n \frac{n(n-1)(n-2)...(n-(k-1))}{k!} a^{n-k} b^k\)
+
+\( x_n = 1 + \sum_{k=0}^n \frac{n(n-1)(n-2)...(n-(k-1))}{k!} \frac{1}{n^k} = 1 + \frac{1}{1!} \frac{n}{n} + \frac{1}{2!} \frac{n(n-1)}{n^2} + \frac{1}{3!} \frac{n(n-1)(n-2)}{n^3} + ... + \)
+
+\( + \frac{1}{k!} \frac{n(n-1)...(n-(k-1))}{n^k} + ... + \frac{1}{n!} \frac{n(n-1)...(n-(n-1))}{n^n} = 1 + 1 + \frac{1}{2!} \frac{n-1}{n} + \frac{1}{3!} \frac{(n-1)(n-2)}{n^2} + ... + \frac{1}{k!} \frac{(n-1)(n-2)...(n-(k-1))}{n^{k-1}} + ... +\)
+
+\(x_n = 1+1+\frac{1}{2!}(1-\frac{1}{n})+\frac{1}{3!}(1-\frac{1}{n})(1-\frac{2}{n})+...+\frac{1}{k!}(1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{k-1}{n}) + ... + \frac{1}{n!} (1 - \frac{1}{n})(1 - \frac{2}{n})(1 - \frac{n-1}{n})\)
+
+\((a+b)^{n+1} = \sum_{k=0}^{n+1}\ C_{n+1}^k a^{n+1-k} b^k = a^{n+1} + \sum_{k=1}^{n+1} \frac{(n+1)n(n+1-2)...(n+1-(k-1))}{k!} a^{n+1-k} b^k\)
+
+\(x_{n+1} = 1 + 1 + \frac{1}{2!}(1-\frac{1}{n+1}) + \frac{1}{3!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})+...+\frac{1}{k!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{k-1}{n+1})+...+\frac{1}{n!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{n-1}{n+1}) + \underbrace{\frac{1}{(n+1)!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{n}{n+1})}_{> 0} \Rightarrow TODO \)
+
+\(\frac{1}{n} > \frac{1}{n+1}\)
+
+\(-\frac{1}{n} < -\frac{1}{n+1}\)
+
+\(0 < (1-\frac{1}{n}) < (1-\frac{1}{n+1})\ n > 1\) 
+\\аналог: \\\(0 < 1-\frac{2}{n} < 1-\frac{2}{n+1}\) \Rightarrow \((1-\frac{1}{n})(1-\frac{2}{n}) < (1 - \frac{1}{n+1})(1 - \frac{2}{n+1})\)
+\\\(\forall n \ x_n < x_{n+1} \Rightarrow\) возрастает
+
+\textbf{II ограничена}
+
+\( 2 < x_n < 2 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + ... + \frac{1}{k!} + ... + \frac{1}{n!} \)
+
+\( < \)
+
+\( \frac{1}{1*2} = \frac{1}{2} \)
+
+\( \frac{1}{2*3} < \frac{1}{2*2} = \frac{1}{2^2} \)
+
+\( \frac{1}{3*4} < \frac{1}{2*2*2} = \frac{1}{2^3} \)
+
+\(< 2 + \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} ... \frac{1}{2^{k+1}}+...+\frac{1}{2^{n-1}} = 2 + \frac{\frac{1}{2} - \frac{1}{2^n}}{1 - \frac{1}{2}} = 2 + \frac{\not\frac{1}{2}(1-\frac{1}{2^{n-1}})}{\not\frac{1}{2}} = 3 - \frac{1}{2^{n-1}} < 3\)
+
+\( x_n \nearrow \)\\
+\(\underbracket{2 < x_n < 3}_{\Downarrow} \)\\
+по теореме Вейерштрасса:\\
+\( \exists\ \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n = e \)
+\\\(e \approx 2.718281828459045...\)
+
+\(\lim_{n \rightarrow \infty}{(1 - \frac{1}{n})^n} = \lim_{n \rightarrow \infty}{(\frac{n-1}{n})^n} = \lim_{n \rightarrow \infty}{(\frac{1}{\frac{n-1+1}{n-1}})^n} = \lim_{n \rightarrow \infty}{(\frac{1}{(1 + \frac{1}{n-1})^{n-1}_{\rightarrow e}(1 + \frac{1}{n-1})_{\rightarrow 1}})^n} = e^{-1}\)
+
+\subsection{Принцип вложенных промежутков}
+
+\textbf{Теорема.} Пусть задана система замкнутых промежутков:\\
+\(\sigma_n = [a_n; b_n]\ \forall n \in \mathbb{N}:\sigma_1 \supset \sigma_2 \supset ... \supset \sigma_n \supset \sigma_{n+1}\quad \forall\ n \in \mathbb{N}\)\\
+\(\alpha_n = b_n - a_n \xrightarrow[n \rightarrow \infty]{} 0\)\\
+Тогда \(\exists !\ c\ :\ c \subset \sigma_n\ \forall n \in \mathbb{N}\).
+
+\(\uparrow\)
+\begin{enumerate}
+    \item \(a_1 \leq a_2 \leq a_3 \leq ... \leq a_n \leq ... \leq b_n \leq b_{n-1} \leq ... \leq b_1\)\\
+\(\{ a_n \} \not\searrow\) и ограничена сверху любым \(b_n \forall n\ \Rightarrow\ b_n\) сх-ся по т. Вейерштрасса
+\\\(\exists \lim_{n \rightarrow \infty}{a_n} = c_1 \quad c_1 \leq b_n \ \forall n\)
+\\\(\{b_n\} \not\nearrow\) и ограничена любым \(a_n\ \forall n\) снизу
+    \item \( c_1 = \lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} (a_n - b_n + n_n) = 0 + c_2 = c_2 \)\\
+\( c_1 = c_2 = c \)\\
+    \item уже в п.1 показали, что \(a_n \leq c \leq b_n\ \forall\ n\), т.е. \( c \in [a_n; b_n]\ \forall\ n \)
+    %\(\uparrow\)
+    \item Покажем, такое \( c\ \exists! \) от противного: пусть есть еще \( \overset{\sim}{c} \) --- общая точка всех промежутков \( \overset{\sim}{c} \neq c \), например, \( \overset{\sim}{c} < c \)
+
+Тогда: \(\lim_{n \rightarrow \infty}{a_n} = c\ \Rightarrow\ \forall \varepsilon > 0 \ \exists N\ :\ \forall n > N, c - \varepsilon < a_n < c + \varepsilon\)
+
+\(a_n > c - \varepsilon = \{\varepsilon = \frac{c-\overset{\sim}{c}}{2}\} = c - \frac{c - \overset{\sim}{c}}{2} = \frac{c + \overset{\sim}{c}}{2} > \frac{2c^{~}}{2} = \overset{\sim}{c}\)
+\\\(\exists N\ :\ \forall n > N\ a_{n1} > \overset{\sim}{c}\) т.е. для \(n > N\ \overset{\sim}{c} \not\in [a_n; b_n]\) --- противоречие \(\downarrow\)
+\end{enumerate}
+
+\textbf{Замечание.}
+
+1) \( [a_n; b_n]! \)\\
+\( 1 - \frac{1}{n}; 1 \rightarrow (1, 1) = \emptyset \)
+2) Верна для \(\mathbb{R}\), неверна для \(\mathbb{Q}\)
+
+\subsection{Подпоследовательности}
+\textbf{Определение.} Числовая последовательность \( \{b_k\} = \{a_{nk}\} \), где \( n_1 < n_2 < n_3 < ... < n_k < ... n_1,n_2,n_3 \in \mathbb{N} \)\\
+последовательность натуральных чисел называется подпоследовательностью последовательности \( \{ a_n \} \).
+
+\textbf{Пример.} \( a_n = \frac{1}{n} \quad 1;\frac{1}{2};\frac{1}{3};\frac{1}{4};\frac{1}{5};...;\frac{1}{100};... \)
+
+\( b_k = \frac{1}{2k} \quad \frac{1}{2};\frac{1}{4};\frac{1}{6};...\frac{1}{100};...\)
+
+\( b_k' = \frac{1}{2k+1} \quad \frac{1}{3};\frac{1}{5};\frac{1}{7};...\)
+
+\( b_k'' = \frac{1}{k+3} \quad \frac{1}{4};\frac{1}{5};...\)
+
+\( b_k''' = \frac{1}{3k} \quad ...\)
+
+\(a_n = (-1)^n\)
+
+\(b_k' = 1\)
+
+\(b_k'' = -1\)
+
+\textbf{Определение.} Если \(\exists\ \lim\) подпоследовательности \(b_k = a_{nk}\ \lim_{k \rightarrow \infty}{b_k} = b\), то b --- частичный предел последовательности \(\{a_n\}\).
+
+\textbf{Пример.} \( a_n = (-1)^n \)\\
+Частичные пределы: \( b_k' = 1,\ b_k'' = -1 \)
+\\\(a_n = \sin{\frac{\pi n}{2}}\) % IMAGE HERE (CIRCLE)
+
+\textbf{Теорема.} Если \(\{a_n\}\) --- сходится к а, то и все частичные пределы \(\{a_n\}\) тоже равны a.
+
+\(\uparrow\ \lim_{n \rightarrow \infty}{a_n} = a\) % IMAGE 2 HERE
+
+начиная с \(n > N\ a - \varepsilon < a_n < a + \varepsilon \ \forall \varepsilon\), но тогда \(\forall n_k > N \ a - \varepsilon < a_{nk} < a + \varepsilon \Rightarrow\) т.е. \(\lim_{k \rightarrow \infty}{a_{nk}} = a \ \downarrow\)
+
+\textbf{Следствие.}
+
+\( x_n = (-1)^n \)
+
+Если \( \exists\ x_{nk} \textrm{ и } x_{nk}':\ \lim_{k \rightarrow \infty} x_{nk} \neq \lim_{k \rightarrow \infty} x_{nk}' \Rightarrow \not\exists\ \lim x_n \)
+
+\textbf{Пример.} \\
+\(a_n = \sin{\frac{\pi n}{2}}\)\\
+\(a_{nk} = a_{2k} = \sin{\pi k} = 0\)\\
+\(\sin{\frac{\pi n}{2} = 1 \Rightarrow n =}\)
+\end{document}
