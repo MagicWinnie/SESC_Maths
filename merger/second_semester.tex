@@ -6,10 +6,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{color}
 \usepackage{commath}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{mathtools}
 \usepackage{parskip}
 \usepackage{titling}
 
@@ -478,4 +480,298 @@ a --- предел \( x_n \), \(a - \varepsilon < x_n < a + \varepsilon\)\\
     \(x_n = \frac{(-1)^n}{n}\)
     
 \end{enumerate}
+    %RETHINK ALL "ARRAYS"
+    \title{Числовые последовательности и их пределы}
+    \author{Ученики 10-4 класса Оконешников Д.Д. и Паньков М.А. по лекции к.ф.-м.н. Протопоповой Т.В.}
+    \date{от 21 апреля 2021 г.}
+    \maketitle
+
+    \section{Лекция №24}
+    \subsection{Свойства бесконечно больших}
+
+    \begin{enumerate}
+        \item Если предел последовательности \( \lim_{n \rightarrow \infty }a_n = + \infty \)\( (+\infty + c) \), а \( \{b_n\} \) ограничена снизу, т.е. \( b_n \geq b\ \forall n \), тогда \(\lim_{n \rightarrow \infty}{(a_n + b_n)} = +\infty\)
+       
+        \item Если \( \lim_{n \rightarrow \infty }a_n = + \infty \)\( (+\infty + c) \), а \( \{b_n\} \) ограничена \( M: b_n \geq M > 0,\ \forall n \)
+    \(\lim_{n \rightarrow \infty}{(a_n * b_n)} = +\infty\)
+
+        \item Если \( \lim_{n \rightarrow \infty }a_n = +\infty \), а \( b_n \) ограничена, т.е. \( 0 < b_n < M (n \rightarrow \infty)\ \forall n \), то \[ (\frac{+\infty}{c > 0}) \lim_{n \rightarrow \infty}{\frac{a_n}{b_n}} = +\infty\]
+    
+        \item Если \(\lim_{n \rightarrow \infty}{a_n} = \infty\), а \(b_n\) ограничена; \(\abs{b_n} \leq M\  \forall n\), \[ (\frac{M}{\infty}) \lim_{n \rightarrow \infty }\frac{b_n}{a_n} = 0 \].
+    \end{enumerate}
+
+    \subsubsection{Неопределённости}
+
+    \textbf{1)} \(\infty - \infty\)
+    \\ \(2n - n = n \rightarrow +\infty\)
+    \\ \(\lim_{n \rightarrow \infty}{\sqrt{n+1} - \sqrt{n}} = \lim_{n \rightarrow \infty}{\frac{n+1-n}{\sqrt{n+1}+\sqrt{n}}}\) = 0
+
+    \textbf{2)} \( \frac{\infty}{\infty} \)
+
+    \( n^2,\ n,\ 2n \)
+    
+    \( \frac{n^2}{n}  \) % TODO !!!!!!!!
+
+    \textbf{3)} \(\infty * 0\)
+    
+    \subsection{Теорема Вейерштрасса}
+
+    \textbf{Определение.}
+    Числовая последовательность целых чисел называется стабилизирующейся к \(\xi\), если \( \exists\ n_0\ \forall n > n_0\  a_n = \xi: a_n \rightarrow \xi \)
+    
+    \textbf{Лемма 1.}
+    Если \(\{a_n\}\) --- последовательность целых неотрицательных чисел, неубывающая и ограниченная сверху, т.е. \( a_n \leq N\ \forall n\), то \( \exists\ \xi: a_n \rightarrow \xi \) и \( \xi \leq M \).
+
+    % IMAGE TODO!!!!
+    % FOLLOWING TEXT RIGHT TO IMAGE
+    хотя число членов последовательности \(\infty\), но между \(a_1\) (самый маленький член последовательности т.к. \( a_n \not\searrow \)) и \(M\) есть только конечное число целых чисел, \(\Rightarrow\) только конечно число значений \(a_n\)\\
+    Обозначним наибольшее значение принимаемое \( a_n \), ч/з \( \xi \), т.е. \( \exists n_0: a_{n_0} = \xi \leq M \), тогда \( \forall n > n_0\ a_n = \xi \), т.к. \( a_n \downarrow \)
+    
+    \(\{a_n\}\) --- б.д.д. > 0
+    
+    \(a_1 = \alpha_{10},\alpha_{11}\alpha_{12}\alpha_{13}...\)\\
+    \(a_2 = \alpha_{20},\alpha_{21}\alpha_{22}\alpha_{23}...\)\\
+    \(a_3 = \alpha_{30},\alpha_{31}\alpha_{32}\alpha_{33}...\)\\
+    ...\\
+    \(a_n = \alpha_{n_0},\alpha_{n_1}\alpha_{n_2}\alpha_{n_3}...\)\\
+    \(\downarrow a = \gamma_0,\gamma_1\gamma_2\gamma_3...\)
+
+    \(\alpha_{n_0}\) --- целые неотр.\\
+    \(\alpha_{n_j}\  j = 1, ...\) --- это \(\in \{0,\ 1,\ 2, \ ..., \ 9\}\)
+
+    \textbf{Определение.} Будем говорить, что последовательность б.д.д. \( (>0) \{a_n\} \rightrightarrows \)\\
+    \( a = \gamma_0,\gamma_1\gamma_2\gamma_3...\ (a_n \rightarrow a) \), если \(\forall k \ \alpha_{n_k} \rightrightarrows \gamma_k\)
+
+    \textbf{Лемма 2.} Если \( \{a_n\} \) --- последовательность неотрицательных б.д.д. (*) является неубывающей и ограниченной (т.е. \( \exists M \) (б.д.д., не оканчивающася последовательностью 9-ок)): \( \forall\ n\ a_n \leq M) \), то \( \exists\ a \):
+    
+    1) \(a_n \rightrightarrows\ a\)  
+
+    2) \(a_n \leq a \leq M\)
+
+    \( \uparrow \) В табл. (*) cмотрим на первый столбец
+
+    \( \alpha_{10} \)\\
+    \( \alpha_{20} \)\\
+    \( \alpha_{30} \)\\
+    ...\\
+    \( \alpha_{n0} \)
+
+    Это последовательность неубывающих целых неотр. чисел и ограниченных сверху \(M\) по \textbf{Л1}\\
+    \(\exists \) номер \(N_0\) \: \(\forall\ n > N_0\)\\
+    \(\ \alpha_{n_0} \rightrightarrows\ \gamma_0\)
+    
+    \( \alpha_{10} \)\\
+    \( \alpha_{20} \)\\
+    \( \alpha_{30} \)\\
+    ...\\
+    \( \alpha_{N_00} = \gamma_0 \)\\
+    \(\gamma_0\)\\
+    \(\gamma_0\)
+
+    Пусть \(n > N_1\), тогда смотрим на \(\{\alpha_{n1}\}\)
+
+    \(\alpha_{n1}\) --- последовательность целых, неотр. чисел. Она ограничена 9-кой; неубывающая(т.к. \(a_n \not\searrow\) и 0-й столбец уже застабилиз.) \(\Rightarrow \ \exists\ N_1 \ \alpha_{n_1} \rightrightarrows\ \gamma_1 \ \forall n > N_1 \geq N_0\)
+
+    Пусть \( n > N_1 \geq N_0 \) и смотрим \( \{ \alpha_{n2} \} \)
+    
+    \(\{\alpha_{n2}\}\) --- последовательность целых, неотр. чисел. Она ограничена 9-кой, неубывающей(т.к. \(a_n \not\searrow\) и 1-ый столбец уже застабилиз.) \(\Rightarrow \ \exists N_2 \ \: \ \forall n > N_2 \geq N_1 \geq N_0 \ \alpha_{n2} \rightrightarrows\ \gamma_2\) и т.д.
+
+    в итоге \( \forall\ n > N_k \geq N_{k-1} \geq ... \geq N_0\quad \{ \alpha_{nk} \} \rightrightarrows\ \gamma_k \), то \( a_n \rightrightarrows\ a = \gamma_0,\gamma_1\gamma_2\gamma_3...\gamma_k... \)
+    
+    Из построения \(a_n \leq a \)
+    \\ Осталось показать, что a \(\leq\) M
+
+    Будем доказывать от противного: т.е. пусть \(a > M\), т.е. \(a_{(k)} = \gamma_0,\ \gamma_1,\ \gamma_2,\ ...,\ \gamma_k > M\)
+    \\ \(a_k\) --- прибл. по недост. для a, но тогда \(a_n \ \: \ n > N_k\)
+    \\ \(a_n = \alpha_{n0},\ \alpha_{n1},\ \alpha_{n2},\ ...,\ \alpha_{nk},\ \alpha_{nk+1},\ ... = \gamma_0,\ \gamma_1,\ ...,\ \gamma_k\alpha_{nk+1} > a_{(k)} > M\), противоречие с тем, что \(a_n \leq M \ \forall n \ \downarrow\)
+
+    \subsubsection{Теорема Вейерштрасса}
+
+    Если \(\{ x_n \} \) --- числовая последовательность неубывает и ограничена сверху, то она сходится.
+
+    \(\uparrow\)
+    \begin{enumerate}
+        \item Пусть \( x_1 > 0 \Rightarrow \forall\ n\ x_n > 0 \) т.к. \( (x_n \not\searrow ) \).
+
+        \item Любое \( x_n \in \mathbb{R} \) представлена в виде б.д.д.
+
+        \item По \textbf{Л2}, такая (1) \( x_n \rightrightarrows a \)
+
+        \item Покажем, что \(x_n \longrightarrow_{n \rightarrow \infty} a\)
+    \\ Надо \(\forall \varepsilon > 0 \ \exists N \ \: \ \forall n > N\), \(\abs{x_n - a} < \varepsilon\)
+
+    пусть \( n > N_k \), где \( N_k \) - номер, когда \(k\)-ый столбец в (*) застабилиз., тогда 
+    \[ \abs{x_n - a} = \abs{\gamma_0,\gamma_1....\gamma_k\alpha_{nk+1}\alpha_{nk+2}... - \gamma_0,\gamma_1\gamma_2...\gamma_k\gamma{k+1}\gamma_{k+2}...} \]
+    \[ = 0,\underbrace{0...0}_k\beta_{k+1}\beta_{k+2}... < 0,\underbrace{0...0}_{k-1}1 = \frac{1}{10^k} < \frac{1}{9k} < \varepsilon \]
+    \[k > \frac{1}{9\varepsilon}\quad \varepsilon \rightarrow k \rightarrow N_k = N \downarrow \]
+    \end{enumerate}
+
+    \textbf{Замечание 1.} 
+    Если \(x_1 < 0\), тогда рассм. \(y_1 = x_1 + c\ : \ y_1 > 0\), тогда по доказ. \( y_n = x_n + c \not\searrow \), ограничена сверху и \( y_1 > 0 \Rightarrow \) по доказ \(y_n \xrightarrow[n \rightarrow \infty]{}\ \Rightarrow ............. \)
+    
+    \textbf{Замечание 2.}
+    Аналогично можно доказать, что, если \(\{x_n\} \not\nearrow\) и ограничена снизу, то она сх-ся.
+    
+    В общем случае:
+    \\ Если последовательность монотонна и ограничена, то она сх-ся \(\downarrow\)
+    
+    \textbf{Пример.}
+
+    \(a_{n+1} = \frac{a_n + 1}{2}\); \(a_1 = 2\), доказать, что \(\{a_n\}\) сх-ся и найти \(lim\).
+
+    \(a_1 = 2;\ a_2 = \frac{1}{2}(2+1) = \frac{3}{2};\ a_3 = \frac{5}{4};\ a_4 = \frac{9}{8}\)
+    \\ Предположение: \(\searrow\) и \(1 < a_n \leq 2\)
+
+    \(a = \frac{a+1}{2} \\ 2a = a + 1 \\ a = 1\)
+
+    I. Покажем, что \(1 < a_n \leq 2\)
+    \ \ \ \ 1) База \(n = 1 \quad 1 < a_1 = 2 \leq 2\) верно
+
+    \ \ \ \ 2) Пусть при \(n = k \quad 1 < a_k \leq 2\) выполнено
+
+    \ \ \ \ 3) Надо при \(n = k + 1 \quad 1 < a_{k+1} \leq 2\)
+    \\ \(1 = \frac{1}{2}(1+1) < \textrm{ (по ПИ) } a_{k+1} = \frac{a_k + 1}{2} = \frac{1}{2}(a_k + 1) \leq \frac{1}{2}(2 + 1) = \frac{3}{2} \leq 2\)
+    \\ \(\Downarrow\) по ПМИ \(\forall n \ 1 < a_n \leq 2\)
+
+    II. \( a_{n+1} - a_n \) = \( \frac{(a_n+1)}{2} - a_n = \frac{1-a_n}{2} (a_n > 1\) из опр \(<0) < 0 \Rightarrow a_{n+1} < a_n \forall\ n \in N \) т.е. \( a_n \) - убыв.
+
+    III. Из I и II по Т. Вейерштрасса \( \exists\ lim_{n \rightarrow \infty}a_n \). Пусть \(lim_{n \rightarrow \infty } = a \Rightarrow a = \frac{a + 1}{2} \Rightarrow a = 1 \)
+
+
+\title{Числовые последовательности и их пределы}
+\author{Ученики 10-4 класса Оконешников Д.Д. и Паньков М.А. по лекции к.ф.-м.н. Протопоповой Т.В.}
+\date{от 28 апреля 2021 г.}
+\maketitle
+
+\section{Лекция №25}
+
+\(\lim_{n \rightarrow \infty}{(1 + \frac{1}{n})^n}\)
+\\ \(1^{\infty}\)
+\\ \( x_n \xrightarrow[n \rightarrow \infty ]{}\ ? \)
+
+\subsection{Число e}
+1) \( \{ x_n \} \) --- ограничена \\
+2) \( \{ x_n \} \) --- монотонна \\
+Из 1) и 2) \( \Rightarrow \) сходятся
+
+\textbf{I монотонна и возрастает}
+
+\((a+b)^n = \sum_{k=0}^n\ C^k_n \ a^{n-k}b^k=1*a^n+\sum_{k=1}^n\ C^k_n \ a^{n-k}b^k = a^n+\sum_{k=1}^n \frac{n!}{k!(n-k)!} a^{n-k}b^k = \)
+
+\( = a^n + \sum_{k=1}^n \frac{n(n-1)(n-2)...(n-(k-1))}{k!} a^{n-k} b^k\)
+
+\( x_n = 1 + \sum_{k=0}^n \frac{n(n-1)(n-2)...(n-(k-1))}{k!} \frac{1}{n^k} = 1 + \frac{1}{1!} \frac{n}{n} + \frac{1}{2!} \frac{n(n-1)}{n^2} + \frac{1}{3!} \frac{n(n-1)(n-2)}{n^3} + ... + \)
+
+\( + \frac{1}{k!} \frac{n(n-1)...(n-(k-1))}{n^k} + ... + \frac{1}{n!} \frac{n(n-1)...(n-(n-1))}{n^n} = 1 + 1 + \frac{1}{2!} \frac{n-1}{n} + \frac{1}{3!} \frac{(n-1)(n-2)}{n^2} + ... + \frac{1}{k!} \frac{(n-1)(n-2)...(n-(k-1))}{n^{k-1}} + ... +\)
+
+\(x_n = 1+1+\frac{1}{2!}(1-\frac{1}{n})+\frac{1}{3!}(1-\frac{1}{n})(1-\frac{2}{n})+...+\frac{1}{k!}(1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{k-1}{n}) + ... + \frac{1}{n!} (1 - \frac{1}{n})(1 - \frac{2}{n})(1 - \frac{n-1}{n})\)
+
+\((a+b)^{n+1} = \sum_{k=0}^{n+1}\ C_{n+1}^k a^{n+1-k} b^k = a^{n+1} + \sum_{k=1}^{n+1} \frac{(n+1)n(n+1-2)...(n+1-(k-1))}{k!} a^{n+1-k} b^k\)
+
+\(x_{n+1} = 1 + 1 + \frac{1}{2!}(1-\frac{1}{n+1}) + \frac{1}{3!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})+...+\frac{1}{k!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{k-1}{n+1})+...+\frac{1}{n!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{n-1}{n+1}) + \underbrace{\frac{1}{(n+1)!}(1-\frac{1}{n+1})(1-\frac{2}{n+1})...(1-\frac{n}{n+1})}_{> 0} \Rightarrow TODO \)
+
+\(\frac{1}{n} > \frac{1}{n+1}\)
+
+\(-\frac{1}{n} < -\frac{1}{n+1}\)
+
+\(0 < (1-\frac{1}{n}) < (1-\frac{1}{n+1})\ n > 1\) 
+\\аналог: \\\(0 < 1-\frac{2}{n} < 1-\frac{2}{n+1} \Rightarrow (1-\frac{1}{n})(1-\frac{2}{n}) < (1 - \frac{1}{n+1})(1 - \frac{2}{n+1})\)
+\\\(\forall n \ x_n < x_{n+1} \Rightarrow\) возрастает
+
+\textbf{II ограничена}
+
+\( 2 < x_n < 2 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + ... + \frac{1}{k!} + ... + \frac{1}{n!} \)
+
+\( < \)
+
+\( \frac{1}{1*2} = \frac{1}{2} \)
+
+\( \frac{1}{2*3} < \frac{1}{2*2} = \frac{1}{2^2} \)
+
+\( \frac{1}{3*4} < \frac{1}{2*2*2} = \frac{1}{2^3} \)
+
+\(< 2 + \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} ... \frac{1}{2^{k+1}}+...+\frac{1}{2^{n-1}} = 2 + \frac{\frac{1}{2} - \frac{1}{2^n}}{1 - \frac{1}{2}} = 2 + \frac{\not\frac{1}{2}(1-\frac{1}{2^{n-1}})}{\not\frac{1}{2}} = 3 - \frac{1}{2^{n-1}} < 3\)
+
+\( x_n \nearrow \)\\
+\(\underbracket{2 < x_n < 3}_{\Downarrow} \)\\
+по теореме Вейерштрасса:\\
+\( \exists\ \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n = e \)
+\\\(e \approx 2.718281828459045...\)
+
+\(\lim_{n \rightarrow \infty}{(1 - \frac{1}{n})^n} = \lim_{n \rightarrow \infty}{(\frac{n-1}{n})^n} = \lim_{n \rightarrow \infty}{(\frac{1}{\frac{n-1+1}{n-1}})^n} = \lim_{n \rightarrow \infty}{(\frac{1}{(1 + \frac{1}{n-1})^{n-1}_{\rightarrow e}(1 + \frac{1}{n-1})_{\rightarrow 1}})^n} = e^{-1}\)
+
+\subsection{Принцип вложенных промежутков}
+
+\textbf{Теорема.} Пусть задана система замкнутых промежутков:\\
+\(\sigma_n = [a_n; b_n]\ \forall n \in \mathbb{N}:\sigma_1 \supset \sigma_2 \supset ... \supset \sigma_n \supset \sigma_{n+1}\quad \forall\ n \in \mathbb{N}\)\\
+\(\alpha_n = b_n - a_n \xrightarrow[n \rightarrow \infty]{} 0\)\\
+Тогда \(\exists !\ c\ :\ c \subset \sigma_n\ \forall n \in \mathbb{N}\).
+
+\(\uparrow\)
+\begin{enumerate}
+    \item \(a_1 \leq a_2 \leq a_3 \leq ... \leq a_n \leq ... \leq b_n \leq b_{n-1} \leq ... \leq b_1\)\\
+\(\{ a_n \} \not\searrow\) и ограничена сверху любым \(b_n \forall n\ \Rightarrow\ b_n\) сх-ся по т. Вейерштрасса
+\\\(\exists \lim_{n \rightarrow \infty}{a_n} = c_1 \quad c_1 \leq b_n \ \forall n\)
+\\\(\{b_n\} \not\nearrow\) и ограничена любым \(a_n\ \forall n\) снизу
+    \item \( c_1 = \lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} (a_n - b_n + n_n) = 0 + c_2 = c_2 \)\\
+\( c_1 = c_2 = c \)\\
+    \item уже в п.1 показали, что \(a_n \leq c \leq b_n\ \forall\ n\), т.е. \( c \in [a_n; b_n]\ \forall\ n \)
+    %\(\uparrow\)
+    \item Покажем, такое \( c\ \exists! \) от противного: пусть есть еще \( \overset{\sim}{c} \) --- общая точка всех промежутков \( \overset{\sim}{c} \neq c \), например, \( \overset{\sim}{c} < c \)
+
+Тогда: \(\lim_{n \rightarrow \infty}{a_n} = c\ \Rightarrow\ \forall \varepsilon > 0 \ \exists N\ :\ \forall n > N, c - \varepsilon < a_n < c + \varepsilon\)
+
+\(a_n > c - \varepsilon = \{\varepsilon = \frac{c-\overset{\sim}{c}}{2}\} = c - \frac{c - \overset{\sim}{c}}{2} = \frac{c + \overset{\sim}{c}}{2} > \frac{2c^{~}}{2} = \overset{\sim}{c}\)
+\\\(\exists N\ :\ \forall n > N\ a_{n1} > \overset{\sim}{c}\) т.е. для \(n > N\ \overset{\sim}{c} \not\in [a_n; b_n]\) --- противоречие \(\downarrow\)
+\end{enumerate}
+
+\textbf{Замечание.}
+
+1) \( [a_n; b_n]! \)\\
+\( 1 - \frac{1}{n}; 1 \rightarrow (1, 1) = \emptyset \)
+2) Верна для \(\mathbb{R}\), неверна для \(\mathbb{Q}\)
+
+\subsection{Подпоследовательности}
+\textbf{Определение.} Числовая последовательность \( \{b_k\} = \{a_{nk}\} \), где \( n_1 < n_2 < n_3 < ... < n_k < ... n_1,n_2,n_3 \in \mathbb{N} \)\\
+последовательность натуральных чисел называется подпоследовательностью последовательности \( \{ a_n \} \).
+
+\textbf{Пример.} \( a_n = \frac{1}{n} \quad 1;\frac{1}{2};\frac{1}{3};\frac{1}{4};\frac{1}{5};...;\frac{1}{100};... \)
+
+\( b_k = \frac{1}{2k} \quad \frac{1}{2};\frac{1}{4};\frac{1}{6};...\frac{1}{100};...\)
+
+\( b_k' = \frac{1}{2k+1} \quad \frac{1}{3};\frac{1}{5};\frac{1}{7};...\)
+
+\( b_k'' = \frac{1}{k+3} \quad \frac{1}{4};\frac{1}{5};...\)
+
+\( b_k''' = \frac{1}{3k} \quad ...\)
+
+\(a_n = (-1)^n\)
+
+\(b_k' = 1\)
+
+\(b_k'' = -1\)
+
+\textbf{Определение.} Если \(\exists\ \lim\) подпоследовательности \(b_k = a_{nk}\ \lim_{k \rightarrow \infty}{b_k} = b\), то b --- частичный предел последовательности \(\{a_n\}\).
+
+\textbf{Пример.} \( a_n = (-1)^n \)\\
+Частичные пределы: \( b_k' = 1,\ b_k'' = -1 \)
+\\\(a_n = \sin{\frac{\pi n}{2}}\) % IMAGE HERE (CIRCLE)
+
+\textbf{Теорема.} Если \(\{a_n\}\) --- сходится к а, то и все частичные пределы \(\{a_n\}\) тоже равны a.
+
+\(\uparrow\ \lim_{n \rightarrow \infty}{a_n} = a\) % IMAGE 2 HERE
+
+начиная с \(n > N\ a - \varepsilon < a_n < a + \varepsilon \ \forall \varepsilon\), но тогда \(\forall n_k > N \ a - \varepsilon < a_{nk} < a + \varepsilon \Rightarrow\) т.е. \(\lim_{k \rightarrow \infty}{a_{nk}} = a \ \downarrow\)
+
+\textbf{Следствие.}
+
+\( x_n = (-1)^n \)
+
+Если \( \exists\ x_{nk} \textrm{ и } x_{nk}':\ \lim_{k \rightarrow \infty} x_{nk} \neq \lim_{k \rightarrow \infty} x_{nk}' \Rightarrow \not\exists\ \lim x_n \)
+
+\textbf{Пример.} \\
+\(a_n = \sin{\frac{\pi n}{2}}\)\\
+\(a_{nk} = a_{2k} = \sin{\pi k} = 0\)\\
+\(\sin{\frac{\pi n}{2}} = 1 \Rightarrow \frac{\not\pi n}{\not2} = \frac{\not\pi}{\not2} + 4\not\pi k \)\\
+\( a_{4k + 1} = \sin{\frac{\pi(4k+1)}{2}} = \sin{2\pi k + \frac{\pi}{2}} = 1 \)
 \end{document}
