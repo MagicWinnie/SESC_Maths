@@ -133,21 +133,22 @@
     Если \(\{ x_n \} \) --- числовая последовательность неубывает и ограничена сверху, то она сходится.
 
     \(\uparrow\)
+    \begin{enumerate}
+        \item Пусть \( x_1 > 0 \Rightarrow \forall\ n\ x_n > 0 \) т.к. \( (x_n \not\searrow ) \).
 
-    1) Пусть \( x_1 > 0 \Rightarrow \forall\ n\ x_n > 0 \) т.к. \( (x_n \not\searrow ) \).
+        \item Любое \( x_n \in \mathbb{R} \) представлена в виде б.д.д.
 
-    2) Любое \( x_n \in \mathbb{R} \) представлена в виде б.д.д.
+        \item По \textbf{Л2}, такая (1) \( x_n \rightrightarrows a \)
 
-    3) По \textbf{Л2}, такая (1) \( x_n \rightrightarrows a \)
-
-    4) Покажем, что \(x_n \longrightarrow_{n \rightarrow \infty} a\)
+        \item Покажем, что \(x_n \longrightarrow_{n \rightarrow \infty} a\)
     \\ Надо \(\forall \varepsilon > 0 \ \exists N \ \: \ \forall n > N\), \(\abs{x_n - a} < \varepsilon\)
 
     пусть \( n > N_k \), где \( N_k \) - номер, когда \(k\)-ый столбец в (*) застабилиз., тогда 
     \[ \abs{x_n - a} = \abs{\gamma_0,\gamma_1....\gamma_k\alpha_{nk+1}\alpha_{nk+2}... - \gamma_0,\gamma_1\gamma_2...\gamma_k\gamma{k+1}\gamma_{k+2}...} \]
     \[ = 0,\underbrace{0...0}_k\beta_{k+1}\beta_{k+2}... < 0,\underbrace{0...0}_{k-1}1 = \frac{1}{10^k} < \frac{1}{9k} < \varepsilon \]
     \[k > \frac{1}{9\varepsilon}\quad \varepsilon \rightarrow k \rightarrow N_k = N \downarrow \]
-    
+    \end{enumerate}
+
     \textbf{Замечание 1.} 
     Если \(x_1 < 0\), тогда рассм. \(y_1 = x_1 + c\ : \ y_1 > 0\), тогда по доказ. \( y_n = x_n + c \not\searrow \), ограничена сверху и \( y_1 > 0 \Rightarrow \) по доказ \(y_n \xrightarrow[n \rightarrow \infty]{}\ \Rightarrow ............. \)
     
