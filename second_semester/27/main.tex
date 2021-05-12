@@ -32,9 +32,12 @@
     \section{Лекция №27}
 
     %\textbf{Теорема. Критерий Коши.} Числовая последовательность \( \{x_n\} \) сходится \( \Leftrightarrow \forall \varepsilon > 0\ \exists N(\varepsilon): \forall n, m > N: \abs{x_n - x_m} < \varepsilon \)
-    Покажем, что \( x_n \rightarrow a \), т.е. \(\forall \varepsilon > 0\ \exists N_0\ :\ \forall n, m > N_0,\ \abs{x_n - x_m} < \varepsilon \)\\
-    %Уже есть:
-    %\( \) 
+    Покажем, что \( x_n \rightarrow a \), т.е. \(\forall \varepsilon > 0\ \exists N_0\ :\ \forall n, m > N_0,\ \abs{x_n - x_m} < \varepsilon \)
+
+    Имеем:\\
+    \(\forall \varepsilon > 0\ \exists N_0\ :\ \forall n, m > N_0,\ \abs{x_n - x_m} < \frac{\varepsilon}{2}\) и\\
+    \(x_{nk} \rightarrow a\), т.е. \(\forall \varepsilon > 0\ \exists K_0\ :\ \forall k > K_0,\ \abs{x_{nk} - a} < \frac{\varepsilon}{2}\)
+
     \(\abs{x_n - a} = \abs{x_n - x_{nk} + x_{nk} - a} \leq \abs{x_n - x_{nk}} + \abs{x_{nk} - a} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\)
     \\ \(n_k > N_0\\ k > K_0\ n_k > n_{K_0}\)
     \\\(N = \max(N_0, n_{K_0})\)
