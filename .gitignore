@@ -7,4 +7,5 @@
 *.synctex.gz
 *.synctex(busy)
 *.toc
+*.pdf
 .vscode/
