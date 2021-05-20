@@ -1987,7 +1987,7 @@
     
     \subsection{Теорема Больцано-Вейерштрасса}
     
-    Если \( \{x_n\} \) \underline{ограничена}, то \( \exists \)-ет хотя бы одна сходящаяся последовательность.
+    Если \( \{x_n\} \) \underline{ограничена}, то \( \exists \)-ет хотя бы одна сходящаяся подпоследовательность.
 
     \(\uparrow\)
     \begin{enumerate}
@@ -2060,24 +2060,6 @@
 	
     \subsection{Необходимое и достаточное условие существования предела}
     
-    \textbf{Теорема.} У всякой \(\{x_n\}\ \exists\ \overline{\lim}\) и \(\underline{\lim}\).
-
-    \(\uparrow\)
-    \begin{enumerate}
-        \item \(x_n\) --- не ограничена сверху, то \(\overline{\lim}x_n = +\infty\)
-        \item \(x_n\) --- не ограничена снизу, то \(\underline{\lim}x_n = -\infty\)
-        \item \(x_n\) ограничена сверху и снизу
-    \end{enumerate}
-
-    дальше как в Т. Больцано-Вейерштрасса, только 3.1) если ищем \( \overline{\lim} \), то всегда беру правую половинку, если возникает выбор.
-    \\ 3.2) Для \(\underline{\lim}\), то беру левую половинку
-
-    \( \downarrow \)
-
-    \textbf{Замечание.} Очевидно, что \( \underline{\lim}x_n \leq \overline{\lim}x_n\)
-    
-    \subsection{Теорема о существовании верхнего и нижнего предела у произвольной последовательности}
-    
     \textbf{Теорема.} \( \exists\ \lim_{n \rightarrow \infty} x_n = A \) (конечн, \(+\infty\), \(-\infty\)) \( \Leftrightarrow \overline{\lim}x_n = \underline{\lim}x_n = A \)
 
     \(\uparrow\)
@@ -2103,6 +2085,24 @@
     Надо \( \forall \varepsilon > 0\ \exists N\ \forall n > N\ A - \varepsilon <_{\textrm{из } \underline{\lim}x_n = A} x_n <_{\textrm{из } \overline{\lim}x_n = A} A + \varepsilon \), т.е. \( \lim_{n \rightarrow \infty}x_n = A \)
     
     \( \downarrow \)
+    
+    \subsection{Теорема о существовании верхнего и нижнего предела у произвольной последовательности}
+    
+    \textbf{Теорема.} У всякой \(\{x_n\}\ \exists\ \overline{\lim}\) и \(\underline{\lim}\).
+
+    \(\uparrow\)
+    \begin{enumerate}
+        \item \(x_n\) --- не ограничена сверху, то \(\overline{\lim}x_n = +\infty\)
+        \item \(x_n\) --- не ограничена снизу, то \(\underline{\lim}x_n = -\infty\)
+        \item \(x_n\) ограничена сверху и снизу
+    \end{enumerate}
+
+    дальше как в Т. Больцано-Вейерштрасса, только 3.1) если ищем \( \overline{\lim} \), то всегда беру правую половинку, если возникает выбор.
+    \\ 3.2) Для \(\underline{\lim}\), то беру левую половинку
+
+    \( \downarrow \)
+
+    \textbf{Замечание.} Очевидно, что \( \underline{\lim}x_n \leq \overline{\lim}x_n\)
     
     \subsection{Фундаментальные последовательности, критерий Коши сходимости последовательности}
     
