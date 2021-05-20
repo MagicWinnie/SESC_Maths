@@ -1545,11 +1545,9 @@
     \[\underline{\abs{b} - \abs{a} \leq \abs{a - b}}\]
     \[-\abs{a-b} \leq \abs{a} - \abs{b} \leq \abs{a - b}\]
     \[\Downarrow\]
-    \[\underline{\abs{a} - \abs{b} \leq \abs{a - b}}\]
+    \[\underline{\abs{\abs{a} - \abs{b}} \leq \abs{a - b}}\]
     
     \(\abs{a} - \abs{x_n} \leq \abs{x_n - a} < \frac{\abs{a}}{2}\\ \frac{\abs{a}}{2} < \abs{x_n}\ \downarrow\)
-    
-    \subsection{Теорема о пределе последовательности, полученной сдвигом нумерации}
     
     \textbf{Теорема 4.} Если \(\lim_{n \rightarrow \infty}{x_n} = a\), то \(\lim_{n \rightarrow \infty}{\abs{x_n}} = \abs{a}\)
     
@@ -1558,10 +1556,21 @@
     \(\abs{\abs{x_n} - \abs{a}} \leq \abs{x_n - a} < \varepsilon\)
     
     Получилось \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{\abs{x_n} - \abs{a}} < \varepsilon\) --- определение \(\lim_{n \rightarrow \infty}{\abs{x_n}} = \abs{a}\ \downarrow\)
+
+    \subsection{Теорема о пределе последовательности, полученной сдвигом нумерации}
+    
+    \textbf{Теорема 5.} \(\lim_{n \rightarrow \infty}{x_n} = a\), тогда \(\lim_{n \rightarrow \infty}{x_{n+k}} = a\)
+    
+    \(\uparrow\) Дано: \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{x_n - a} < \varepsilon\)
+    
+    Надо: \(\forall \varepsilon > 0\ \exists\ N_1 : \forall n > N_1,\ \abs{x_{n+k} - a} < \varepsilon\)
+    
+    \(n' = n + k\ n' > N\) всё хорошо
+    \\ \(n + k > N\\ n > N - k\), т.е. \(N_1 = N - k\ \downarrow\)
     
     \subsection{Теорема о предельном переходе в неравенствах}
     
-    \textbf{Теорема 5.} Пусть \(x_n \xrightarrow[n \rightarrow \infty]{} a;\ y_n \xrightarrow[n \rightarrow \infty]{} b\) и \(\forall n\ x_n \leq y_n \Rightarrow a \leq b\)
+    \textbf{Теорема 6.} Пусть \(x_n \xrightarrow[n \rightarrow \infty]{} a;\ y_n \xrightarrow[n \rightarrow \infty]{} b\) и \(\forall n\ x_n \leq y_n \Rightarrow a \leq b\)
     
     \(\uparrow\) Дано: \(\forall \varepsilon > 0\ \begin{aligned}
     	&\exists\ N_1 : \forall n > N_1,\ a - \varepsilon < x_n < a + \varepsilon
@@ -1580,7 +1589,7 @@
     
     \subsection{Теорема о двух милиционерах}
     
-    \textbf{Теорема 6.} Пусть \(\begin{aligned}
+    \textbf{Теорема 7.} Пусть \(\begin{aligned}
     	&x_n \xrightarrow[n \rightarrow \infty]{} a\\
         &y_n \xrightarrow[n \rightarrow \infty]{} a
         \end{aligned}\) и \(\forall n\ x_n \leq z_n \leq y_n\), тогда \(\exists\ \lim_{n \rightarrow \infty}{z_n} = a\)
@@ -1591,15 +1600,6 @@
     	\end{aligned}\)
     
     \(\forall n > \max{(N_1, N_2)},\ a - \varepsilon < x_n \leq z_n \leq y_n < a + \varepsilon\), т.е. \(z_n \xrightarrow[n \rightarrow \infty]{} a\ \downarrow\)
-    
-    \textbf{Теорема 7.} \(\lim_{n \rightarrow \infty}{x_n} = a\), тогда \(\lim_{n \rightarrow \infty}{x_{n+k}} = a\)
-    
-    \(\uparrow\) Дано: \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{x_n - a} < \varepsilon\)
-    
-    Надо: \(\forall \varepsilon > 0\ \exists\ N_1 : \forall n > N_1,\ \abs{x_{n+k} - a} < \varepsilon\)
-    
-    \(n' = n + k\ n' > N\) всё хорошо
-    \\ \(n + k > N\\ n > N - k\), т.е. \(N_1 = N - k\ \downarrow\)
     
     \subsection{Теорема о сумме, разности, произведении и частном пределов}
     
