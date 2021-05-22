@@ -1706,7 +1706,7 @@
             
             \(\uparrow\) Надо: \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{q^n} < \varepsilon
             \\ q \not = 0 \Rightarrow \frac{1}{\abs{q}} > 1 \Rightarrow \frac{1}{\abs{q}} = 1 + \alpha,\ \alpha > 0\\
-            \frac{1}{\abs{q}} = (1 + \alpha)^n > \alpha n\\ \Downarrow\\ \abs{q}^n < \frac{1}{\alpha n}\)
+            \frac{1}{\abs{q}^n} = (1 + \alpha)^n > \alpha n\\ \Downarrow\\ \abs{q}^n < \frac{1}{\alpha n}\)
             
             \(\abs{q^n} = \abs{q}^n < \frac{1}{\alpha(> 0) n} < \varepsilon\\ n > \frac{1}{\alpha \varepsilon}\)
             
@@ -1792,18 +1792,28 @@
     
     \subsection{Неопределенности (понятие)}
     
-    \begin{enumerate}
-    	\item \(\infty - \infty\)
-    	\\ \(2n - n = n \rightarrow +\infty\)
-    	\\ \(\lim_{n \rightarrow \infty}{\sqrt{n+1} - \sqrt{n}} = \lim_{n \rightarrow \infty}{\frac{n+1-n}{\sqrt{n+1}+\sqrt{n}}}\) = 0
+    \textbf{Определение.} Предел последовательности, значение которого не может быть однозначно определено, называется неопределённостью
 
-    	\item \( \frac{\infty}{\infty} \)
+    \begin{enumerate}
+    	\item \(\{\infty - \infty\}\)
+    	
+    	\(2n - n = n \rightarrow +\infty\)
+    	
+        \(\lim_{n \rightarrow \infty}{\sqrt{n+1} - \sqrt{n}} = \lim_{n \rightarrow \infty}{\frac{n+1-n}{\sqrt{n+1}+\sqrt{n}}}\) = 0
+
+    	\item \(\{\frac{\infty}{\infty}\}\)
 
     	\( n^2,\ n,\ 2n \)
     
     	\( \frac{n^2}{n}  \rightarrow +\infty;\ \frac{n}{n^2} \rightarrow 0\)
 
-    	\item \(\infty * 0\)
+    	\item \(\{\infty * 0\}\)
+    	\item \(\{\frac{0}{0}\}\)
+    	
+    	% \(\lim_{n \rightarrow \infty}{a_n}\)
+    	\item \(\{1^{\infty}\}\)
+    	\item \(\{0^0\}\)
+    	\item \(\{\infty^0\}\)
     \end{enumerate}
     
     \subsection{Стабилизирующиеся последовательности}
@@ -1819,7 +1829,7 @@
 
     \includegraphics[scale=0.6]{8}
     
-    хотя число членов последовательности \(\infty\), но между \(a_1\) (самый маленький член последовательности т.к. \( a_n \not\searrow \)) и \(M\) есть только конечное число целых чисел, \(\Rightarrow\) только конечно число значений \(a_n\)\\
+    хотя число членов последовательности \(\infty\), но между \(a_1\) (самый маленький член последовательности т.к. \( a_n \not\searrow \)) и \(M\) есть только конечное число целых чисел, \(\Rightarrow\) только конечное число значений \(a_n\)\\
     Обозначним наибольшее значение принимаемое \( a_n \), ч/з \( \xi \), т.е. \( \exists n_0: a_{n_0} = \xi \leq M \), тогда \( \forall n > n_0\ a_n = \xi \), т.к. \( a_n \downarrow \)
     
     \textbf{Определение.} Будем говорить, что последовательность б.д.д. \( (>0) \{a_n\} \rightrightarrows \)\\
