@@ -1001,7 +1001,7 @@
         $\alpha_k' = N,n_1n_2...n_k + \frac{1}{10^k} \quad \searrow$ 
 
         \textbf{Определение.} Этот процесс (*) принято называть бесконечной десятичной дробью и обозначается\\ 
-        $\alpha N,n_1n_2...n_k...$
+        $\alpha = N,n_1n_2...n_k...$
         
         \textbf{Определение.} Число $\alpha_k = N,n_1n_2...n_k$ --- приближение $\alpha$ по недостатку с точностю до $\frac{1}{10^k}$
 
@@ -1415,7 +1415,7 @@
     
     \subsection{Числовые последовательности и их свойства}
     
-    \textbf{Определение.} Пусть \(\forall n \in \mathbb{N}\) поставить в соответствие единственное число \(x_n \in \mathbb{R}\), тогда \(x_n\) --- числовая последовательность. \(x_n\) --- отображение, заданное на множестве \(\mathbb{N}\).
+    \textbf{Определение.} Пусть \(\forall n \in \mathbb{N}\) поставить в соответствие единственное число \(x_n \in \mathbb{R}\), тогда \(x_n\) --- числовая последовательность. То есть \(x_n\) --- отображение, заданное на множестве \(\mathbb{N}\).
     
     \subsubsection{Способы задания последовательностей}
     
@@ -1435,34 +1435,50 @@
         \item невозрастающей, если \(\forall n \in \mathbb{N}\ x_n \geq x_{n+1}\)
   	\end{itemize}
     
+    \textbf{Определение.} Монотонная последовательность – это неубывающая или невозрастающая последовательность.
+
     \textbf{Определение.} Числовая последовательность \(\{x_n\}\) называется ограниченной, если \(\exists M\ :\ \forall n \in \mathbb{N}\ \abs{x_n} \leq M\); ограниченна снизу, если \(\exists m\ :\ \forall n \in \mathbb{N}\ x_n \geq m\); ограниченна сверху, если \(\exists M_1\ :\ \forall n \in \mathbb{N}\ x_n \leq M_1\).
     
     \subsection{Арифметическая и геометрическая прогрессии}
     
     \subsubsection{Арифметическая прогрессия}
     
-    \textbf{Определение.} Арифметической прогрессией конечной или бесконечной будем называть числовую последовательность, у которой каждый её член, начиная со второго, есть сумма предыдущего её члена и некоторого фиксированного числа
-    \\ \(x_{n+1} = x_n + d\); \(x_1\) --- задан, d --- разность арифметической прогрессии
+    \textbf{Определение.} Арифметической прогрессией конечной или бесконечной будем называть числовую последовательность, у которой каждый её член, начиная со второго, есть сумма предыдущего её члена и некоторого фиксированного числа.
+    \\ \(x_{n+1} = x_n + d\); \(x_1\) --- задан, d --- разность арифметической прогрессии.
     
     \textbf{Свойства}
     
     \begin{enumerate}
     	\item Три числа \(x_{n-1}\), \(x_{n}\), \(x_{n+1}\) являются последовательными членами а.п. \(\Leftrightarrow\) \(x_n = \frac{x_{n-1} + x_{n+1}}{2}\)
-        \item \(x_n = x_{n-1} + d = x_{n-2} + 2d = ... = x_1 + (n-1)*d\), \(x_n = x_1 + (n-1)*d\), \(x_n = x_k + (n-k)*d\).
-        \item \(x_n = x_{n-k} + k*d\) \(k \in \mathbb{N}\)
-        \\ \(x_{n+k} = x_n + k*d\\ d = \frac{x_n - x_{n-k}}{k}\)
-        \\ \(d = \frac{x_{n+k} - x_n}{k} \Leftrightarrow x_n - x_{n-k} = x_{n+k} - x_n\), \(x_n = \frac{x_{n-k} + x_{n+k}}{2}\)
+        \item \(x_n = x_k + (n-k)*d\)\\
+        \textit{Замечание.} \(x_n = x_1 + (n-1)*d\)\\
+        \(\uparrow\ x_n = x_{n-1} + d = x_{n-2} + 2d = ... = x_1 + (n-1)*d \downarrow\).
+
+        \item \(\begin{aligned}
+            x_n = x_{n-k} + k*d \\
+            x_{n+k} = x_n + k*d
+        \end{aligned}
+        ,\ k \in \mathbb{N} \Leftrightarrow 
+        \begin{aligned}
+            d = \frac{x_n - x_{n-k}}{k} \\
+            d = \frac{x_{n+k} - x_n}{k}
+        \end{aligned}
+        \Leftrightarrow x_n - x_{n-k} = x_{n+k} - x_n \Leftrightarrow x_n = \frac{x_{n-k} + x_{n+k}}{2}\)
+
 		\item \(x_k + x_l = x_m + x_n\), если \(k + l = m + n\)
-        \\ Пусть k --- самый маленький номер 
+        \\ \( \uparrow \) Пусть k --- самый маленький номер 
         \\ \(x_l = x_k + (l-k)d\\ x_m = x_k + (m - k)d\\ x_n = x_k + (n-k)d\)
         \\ левая часть = \(x_k + x_l = 2x_k + (l-k)d\)
-        \\ правая часть = \(x_m + x_n = 2x_k + (m+n-2k)d = 2x_k + (l-k)d\)
-        \item \(S_n = x_1 + x_2 + ... + x_n\)
-        \\+
+        \\ правая часть = \(x_m + x_n = 2x_k + (m+n-2k)d = 2x_k + (l-k)d\ \downarrow\)
+
+        \item \(S_n = \frac{(x_1 + x_n)n}{2}\)
+        \\ \(\uparrow\) 
+        \\ \(S_n = x_1 + x_2 + ... + x_n\)
+        \\ \(+\)
         \\ \(S_n = x_n + x_{n-1} + ... + x_2 + x_1\)
         \\ \(\Downarrow\)
         \\ \(2S_n = (x_1 + x_n)n\)
-        \\ \(S_n = \frac{(x_1 + x_n)n}{2}\)
+        \\ \(S_n = \frac{(x_1 + x_n)n}{2} \downarrow\)
     \end{enumerate}
     
     \subsubsection{Геометрическая прогрессия}
@@ -1473,20 +1489,21 @@
     \textbf{Свойства}
     
     \begin{enumerate}
-    	\item \(\begin{aligned}
+    	\item Три последовательных числа \(x_{n-1},\ x_n,\ x_{n+1}\) являются членами одной геометрической прогрессии(в указанном порядке) \(\Leftrightarrow x_n^2 = x_{n-1}*x_{n+1}\)
+        \\ \(\uparrow \begin{aligned}
 				&x_{n+1} = x_n * q\\
 				&x_n = x_{n-1} * q
 			\end{aligned} \Leftrightarrow
             \begin{aligned}
 				&q = \frac{x_{n+1}}{x_n}\\
 				&q = \frac{x_{n}}{x_{n-1}}
-			\end{aligned} \Leftrightarrow \frac{x_{n+1}}{x_n} = \frac{x_n}{x_{n-1}} \Leftrightarrow x_n^2 = x_{n-1} * x_{n+1}\)
-            
-            Три последовательных числа \(x_{n-1},\ x_n,\ x_{n+1}\) являются членами одной геометрической прогрессии(в указанном порядке) \(\Leftrightarrow x_n^2 = x_{n-1}*x_{n+1}\)
+			\end{aligned} \Leftrightarrow \frac{x_{n+1}}{x_n} = \frac{x_n}{x_{n-1}} \Leftrightarrow x_n^2 = x_{n-1} * x_{n+1} \downarrow\)
             
             \textbf{Замечание.} Если все \(x_n > 0,\ n \in \mathbb{N}\), тогда \(x_n = \sqrt{x_{n-1}*x_{n+1}}\)
+        
         \item Получим формулу \(x_n\).
         \\ \(x_n = x_{n-1}*q = x_{n-2} * q^2 = ... = x_1 * q^{n-1}\\ x_n = x_1 * q^{n-1}\\ x_n = x_k * q^{n-k}\)
+
         \item \(\begin{aligned}
 				&x_n = x_{n-k}*q^k\\
 				&x_{n+k} = x_n*q^k
@@ -1495,6 +1512,7 @@
 				&q^k = \frac{x_n}{x_{n-k}}\\
 				&q^k = \frac{x_{n+k}}{x_n}
 			\end{aligned} \Leftrightarrow x_n^2 = x_{n-k}*x_{n+k}\)
+        
         \item \(x_k * x_l = x_m * x_n\), если \(k+l=m+n\)
         
         Пусть k --- самый маленький номер\\
@@ -1502,7 +1520,7 @@
         x_m = x_k q^{m-k}\\
         x_n = x_k q^{n-k}\)\\
         левая часть \(= x_k x_l = x_k^2 q^{l-k}\)\\
-        правая часть \(= x_m x_n = x_k^2 q^{m + n - 2k} = x_n^2 q^{l + k - 2k} = x_n^2 q^{l-k}\)
+        правая часть \(= x_m x_n = x_k^2 q^{m + n - 2k} = x_k^2 q^{l + k - 2k} = x_k^2 q^{l-k}\)
         \item \(\begin{aligned}
         	&\quad S_n = x_1 + \cancel{x_1 q} + \cancel{x_1 q^2} + ... + \cancel{x_1 q^{n-1}}\\
             & -\\
@@ -1516,7 +1534,8 @@
             \item Если \(0 < q < 1\), то все \(x_n\) одного знака, \(\{x_n\}\) убывает по абсолютной величине
             \item Если \(q < -1\), то знаки последовательности чередуются, \(\{x_n\}\) возрастает по абсолютной величине
             \item Если \(-1 < q < 0\), то знаки последовательности чередуются, \(\{x_n\}\) убывает по абсолютной величине
-            \item Если \(q = 1 \rightarrow\) постоянна, \(\{x_n\} = x_1\\ q = -1 \rightarrow x_1, -x_1, x_1, -x_1, ...\)
+            \item Если \(q = 1 \Rightarrow\) постоянна, \(\{x_n\} = x_1\)
+            \item Если \(q = -1 \Rightarrow x_1, -x_1, x_1, -x_1, ...\)
         \end{enumerate}
     \end{enumerate}
     
@@ -1533,15 +1552,17 @@
     
     \subsection{Теорема о единственности существующего предела}
     
-    \textbf{Теорема 1.} Если \(\lim_{n \rightarrow \infty}{x_n} = a\), то \(a \exists !\)
+    \textbf{Теорема 1.} Если \(\lim_{n \rightarrow \infty}{x_n} = a\), то \(a\ \exists !\)
     
     \(\uparrow\) От противного
-    \\ Пусть \(\lim_{n \rightarrow}{x_n} = a_1\) и \(\lim_{n \rightarrow}{x_n} = a_2,\ a_1 < a_2\).
+    \\ Пусть \(\lim_{n \rightarrow \infty}{x_n} = a_1\) и \(\lim_{n \rightarrow \infty}{x_n} = a_2\), где \( a_1 < a_2\).
     
     Геометрический смысл:\\
     \(\forall \varepsilon > 0 \ \exists \  N_1 : n > N_1,\ a_1 - \varepsilon < x_n < a_1 + \varepsilon\\ \forall \varepsilon > 0 \ \exists \  N_2 : n > N_2,\ a_2 - \varepsilon < x_n < a_2 + \varepsilon
     \\ n > \max{(N_1, N_2)}\)
     
+    \textit{Примечание.} Далее $U_{\varepsilon}(a)$ обозначается $\varepsilon$-окрестность $a$.
+
     Пусть \(\varepsilon < \frac{a_2 - a_1}{2} \Rightarrow U_{\varepsilon}(a_1)\ \cancel{\cap}\ U_{\varepsilon}(a_2)\), но такого быть не может, т.к. для \(n > \max{(N_1, N_2)}\
     \begin{aligned}
     	&x_n \in U_{\varepsilon}(a_1)\ \textrm{и}\\
@@ -1561,7 +1582,7 @@
     
     \subsection{Теорема о сохранении знака (отделении от нуля)}
     
-    \textbf{Теорема 3.} Пусть \(x_n\) --- сходится, т.е. \(\exists\ \lim_{n \rightarrow \infty}{x_n} = a,\ a \not = 0\), тогда \(\exists\ N_1 : \forall n > N,\ \abs{x_n} > \frac{\abs{a}}{2}\ (*)\)
+    \textbf{Теорема 3.} Пусть \(x_n\) --- сходится, т.е. \(\exists\ \lim_{n \rightarrow \infty}{x_n} = a,\ a \not = 0\), тогда \(\exists\ N_1 : \forall n > N_1,\ \abs{x_n} > \frac{\abs{a}}{2}\ (*)\)
     
     В частности \(\begin{aligned}
     	&a > 0 \quad x_n > \frac{a}{2} > 0\ (1)\\
@@ -1584,17 +1605,21 @@
     \[\underline{\abs{a} - \abs{b} \leq \abs{a - b}}\]
     \[\abs{b} = \abs{b - a + a} \leq \abs{b - a}(= \abs{a - b}) + \abs{a}\]
     \[\Downarrow\]
-    \[\underline{\abs{b} - \abs{a} \leq \abs{a - b}}\]
+    \[\underline{\abs{b} - \abs{a} \leq \abs{a - b}}\ (*)\]
     \[-\abs{a-b} \leq \abs{a} - \abs{b} \leq \abs{a - b}\]
     \[\Downarrow\]
-    \[\underline{\abs{\abs{a} - \abs{b}} \leq \abs{a - b}}\]
+    \[\underline{\abs{\abs{a} - \abs{b}} \leq \abs{a - b}}\ (**)\]
     
+    По $(*):$
+
     \(\abs{a} - \abs{x_n} \leq \abs{x_n - a} < \frac{\abs{a}}{2}\\ \frac{\abs{a}}{2} < \abs{x_n}\ \downarrow\)
     
     \textbf{Теорема 4.} Если \(\lim_{n \rightarrow \infty}{x_n} = a\), то \(\lim_{n \rightarrow \infty}{\abs{x_n}} = \abs{a}\)
     
     \(\uparrow\) Дано: \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{x_n - a} < \varepsilon\)
     
+    По $(**):$
+
     \(\abs{\abs{x_n} - \abs{a}} \leq \abs{x_n - a} < \varepsilon\)
     
     Получилось \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{\abs{x_n} - \abs{a}} < \varepsilon\) --- определение \(\lim_{n \rightarrow \infty}{\abs{x_n}} = \abs{a}\ \downarrow\)
@@ -1646,12 +1671,13 @@
     \subsection{Теорема о сумме, разности, произведении и частном пределов}
     
     \textbf{Теорема 8.} Пусть \(\begin{aligned}
-    	&\lim_{n \rightarrow \infty}{x_n} = a\\
+    	\lim_{n \rightarrow \infty}{x_n} = a\\
+        \lim_{n \rightarrow \infty}{y_n} = b
         \end{aligned}\), то
         \begin{enumerate}
         	\item \(\lim_{n \rightarrow \infty}{x_n \pm y_n} = a \pm b\)
             \item \(\lim_{n \rightarrow \infty}{x_n y_n} = a*b\)
-            \item \(\lim_{n \rightarrow \infty}{\frac{x_n}{y_n}} = \frac{a}{b}\)
+            \item \(\lim_{n \rightarrow \infty}{\frac{x_n}{y_n}} = \frac{a}{b} \quad,\ b \neq 0,\ \forall n\ y_n \neq 0\)
         \end{enumerate}
     
     \(\uparrow\) Дано: \(\begin{aligned}
