@@ -53,7 +53,7 @@
             
             Россия, г. Новосибирск, СУНЦ НГУ, 2021 год
             
-            v1.3.0
+            v1.4.0
                 
         \end{center}
     \end{titlepage}
@@ -1670,6 +1670,8 @@
     
     \subsection{Теорема о сумме, разности, произведении и частном пределов}
     
+    \textbf{Определение.} Пусть существуют конечные пределы $\lim_{n \rightarrow \infty}{x_n} = a$ и $\lim_{n \rightarrow \infty}{y_n} = b$ числовых последовательностей $\{x_n\}$ и $\{y_n\}$. Тогда существуют пределы суммы, разности и произведения последовательностей, которые равны, соответственно, сумме, разности и произведению их пределов. Если  $b \neq 0$  и  $y_n \neq 0$  для всех $n$, то существует предел частного последовательностей, равный частному пределов.
+
     \textbf{Теорема 8.} Пусть \(\begin{aligned}
     	\lim_{n \rightarrow \infty}{x_n} = a\\
         \lim_{n \rightarrow \infty}{y_n} = b
@@ -1720,7 +1722,7 @@
         
         \(\uparrow\) Надо: \(\lim_{n \rightarrow \infty}{\alpha_n \beta_n} = 0\), т.е. \(\forall \varepsilon > 0\ \exists\ N : \forall n > N,\ \abs{\alpha_n \beta_n} < \varepsilon\)
         
-        Дано: \(\forall \varepsilon_1 > 0\ \exists\ N_1 : \forall n > N_1,\ \abs{\alpha_n} < \varepsilon_1;\ \forall n\ \abs{\beta_n} > M\)
+        Дано: \(\forall \varepsilon_1 > 0\ \exists\ N_1 : \forall n > N_1,\ \abs{\alpha_n} < \varepsilon_1;\ \forall n\ \abs{\beta_n} < M\)
         
         \(\abs{\alpha_n \beta_n} = \abs{\alpha_n} \abs{\beta_n} < \varepsilon_1 M = \varepsilon\\ \varepsilon_1 = \frac{\varepsilon}{M},\ N = N_1\ \downarrow\)
         
@@ -1818,14 +1820,13 @@
     \subsubsection{Свойства бесконечно больших числовых последовательностей}
     
     \begin{enumerate}
-        \item Если предел последовательности \( \lim_{n \rightarrow \infty }a_n = + \infty \)\( (+\infty + c) \), а \( \{b_n\} \) ограничена снизу, т.е. \( b_n \geq b\ \forall n \), тогда \(\lim_{n \rightarrow \infty}{(a_n + b_n)} = +\infty\)
+        \item Если \( \lim_{n \rightarrow \infty }a_n = + \infty\ (+\infty + c) \), а \( \{b_n\} \) ограничена снизу, т.е. \( b_n \geq b\ \forall n \), тогда \(\lim_{n \rightarrow \infty}{(a_n + b_n)} = +\infty\)
        
-        \item Если \( \lim_{n \rightarrow \infty }a_n = + \infty \)\( (+\infty + c) \), а \( \{b_n\} \) ограничена \( M: b_n \geq M > 0,\ \forall n \)
-    \(\lim_{n \rightarrow \infty}{(a_n * b_n)} = +\infty\)
+        \item Если \( \lim_{n \rightarrow \infty }a_n = + \infty\ (+\infty * c) \), а \( \{b_n\} \) ограничена снизу \( M: b_n \geq M > 0\ \forall n,\ \lim_{n \rightarrow \infty}{(a_n * b_n)} = +\infty\)
 
         \item Если \( \lim_{n \rightarrow \infty }a_n = +\infty \), а \( b_n \) ограничена, т.е. \( 0 < b_n < M (n \rightarrow \infty)\ \forall n \), то \[ (\frac{+\infty}{c > 0}) \lim_{n \rightarrow \infty}{\frac{a_n}{b_n}} = +\infty\]
     
-        \item Если \(\lim_{n \rightarrow \infty}{a_n} = \infty\), а \(b_n\) ограничена; \(\abs{b_n} \leq M\  \forall n\), \[ (\frac{M}{\infty}) \lim_{n \rightarrow \infty }\frac{b_n}{a_n} = 0\]
+        \item Если \(\lim_{n \rightarrow \infty}{a_n} = \infty\), а \(b_n\) ограничена: \(\abs{b_n} \leq M\  \forall n\), \[ (\frac{M}{\infty}) \lim_{n \rightarrow \infty }\frac{b_n}{a_n} = 0\]
     \end{enumerate}
     
     \subsection{Неопределенности (понятие)}
@@ -1857,7 +1858,7 @@
     \subsection{Стабилизирующиеся последовательности}
     
     \textbf{Определение.}
-    Числовая последовательность целых чисел называется стабилизирующейся к \(\xi\), если \( \exists\ n_0 : \forall n > n_0\  a_n = \xi,\ a_n \rightrightarrows \xi \)
+    Числовая последовательность целых чисел называется стабилизирующейся к \(\xi\), если \( \exists\ n_0 : \forall n > n_0\  a_n = \xi\), то есть \(a_n \rightrightarrows \xi \)
     
     \subsubsection{Лемма 1}
     
@@ -1870,15 +1871,27 @@
     хотя число членов последовательности \(\infty\), но между \(a_1\) (самый маленький член последовательности т.к. \( a_n \not\searrow \)) и \(M\) есть только конечное число целых чисел, \(\Rightarrow\) только конечное число значений \(a_n\)\\
     Обозначим наибольшее значение принимаемое \( a_n \), ч/з \( \xi \), т.е. \( \exists n_0: a_{n_0} = \xi \leq M \), тогда \( \forall n > n_0\ a_n = \xi \), т.к. \( a_n \not \searrow\ \downarrow \)
     
-    \textbf{Определение.} Будем говорить, что последовательность б.д.д. \( (>0) \{a_n\} \rightrightarrows \)\\
-    \( a = \gamma_0,\gamma_1\gamma_2\gamma_3...\ (a_n \rightarrow a) \), если \(\forall k \ \alpha_{n_k} \rightrightarrows \gamma_k\)
+    Рассмотрим $\{a_n\}$ --- последовательность б.д.д. Обозначим следующую таблицу (*)
+
+    \(
+      a_1 = \alpha_{10},\alpha_{11},\alpha_{12},\alpha_{13}...\\
+      a_2 = \alpha_{20},\alpha_{21},\alpha_{22},\alpha_{23}...\\
+      a_3 = \alpha_{30},\alpha_{31},\alpha_{32},\alpha_{33}...\\
+      .\\
+      .\\
+      .\\
+      .\\
+      a_n = \alpha_{n0},\alpha_{n1},\alpha_{n2},\alpha_{n3}...\\
+      -----------\\
+      a = \gamma_{0},\gamma_{1},\gamma_{2},\gamma_{3}...
+    \)
+
+    \textbf{Определение.} Будем говорить, что последовательность б.д.д. \( (>0)\ \{a_n\} \rightrightarrows \)\\
+    \( a = \gamma_0,\gamma_1\gamma_2\gamma_3...\ (a_n \rightrightarrows a) \), если \(\forall k \ \alpha_{nk} \rightrightarrows \gamma_k\)
 
     \subsubsection{Лемма 2}
     
     \(\{a_n\}\) --- б.д.д. >  0
-
-    \(a_1 = \alpha_{10},\alpha_{11},\alpha_{12},\alpha_{13}.....\\ a_2 = \alpha_{20},\alpha_{21},\alpha_{22},\alpha_{23}.....\\ a_3 = \alpha_{30},\alpha_{31},\alpha_{32},\alpha_{33}.....\\
-    .\\.\\.\\.\\ a_n = \alpha_{n0},\alpha_{n1},\alpha_{n2},\alpha_{n3}.....\)(*)
 
     Если \( \{a_n\} \) --- последовательность неотрицательных б.д.д. (*) является неубывающей и ограниченной (т.е. \( \exists M \) (б.д.д., не оканчивающася последовательностью 9-ок)): \( \forall\ n\ a_n \leq M) \), то \( \exists\ a \):
     
