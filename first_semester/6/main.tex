@@ -1,0 +1,161 @@
+\documentclass{article}
+% PKGS START
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb} 
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+% PKGS END
+% INIT START
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\pagenumbering{arabic}
+% INIT END
+\begin{document}
+    \subsection{Линейная функция и её график}
+
+    Почти все прямые на плоскости могут быть описаны линейной функцией.
+
+    \subsubsection{Уравнение прямой}
+
+    Пусть точка \(A(x,y)\) принадлежит прямой \(l\), проходящей через точку \(A_0(x_0, y_0)\) и перпендикулярной вектору \(\overset{\rightarrow}{n} = (a_1, b_1)\). Выясним, какому уравнению удовлетворяют координаты точки \(A\).
+    \begin{equation}\label{*}
+        a_1x + b_1y = c_1,\quad a_1^2 + b_1^2 \not = 0
+    \end{equation}
+    Уравнение \ref{*} называется \textit{общим уравнением} прямой на плоскости.
+
+    \textbf{Утверждение.} Любая прямая на плоскости задаётся уравнением \ref{*}.
+
+    \(\uparrow\)
+    \begin{enumerate}
+        \item Мы уже показали, что если точка принадлежит некоторой прямой \(l\), проходящей через точку \(A_0(x_0, y_0)\)
+        и перпендикулярной вектору \(\overset{\rightarrow}{n} = (a_1, b_1)\), то её координаты удовлетворяют уравнению типа \ref{*}.
+        \item Покажем, что если координаты точки удовлетворяют уравнению \ref{*}, то она принадлежит прямой.
+        
+        Пусть \(b_1 \not = 0\). Рассмотрим точку \(B\) с координатами \((0, c_1/b_1)\). Запишем уравнение прямой, проходящей через эту точку \(B\) и перпендикулярной вектору \(\overset{\rightarrow}{n} = (a_1, b_1)\):
+
+        \(a_1(x-0) + b_1(y - \frac{c_1}{b_1}) = 0\), т.е. \(a_1x+b_1y=c_1\).
+
+        Таким образом, уравнение \ref{*} --- это уравнение некоторой прямой.\quad \(\downarrow\)
+    \end{enumerate}
+
+    \textbf{Пример.} \(x+y=2\). Это прямая, перпендикулярная вектору \(\overset{\rightarrow}{n} = (1, 1)\).
+
+    \textbf{Утверждение.} Уравнение прямой, проходящей через точку \(A_0(x_0,y_0)\) и параллельной вектору \(\tau(\tau_1, \tau_2)\), имеет вид:
+    \begin{equation}
+        \frac{x - x_0}{\tau_1} = \frac{y - y_0}{\tau_2}
+    \end{equation}
+    Возьмём произвольную точку \(A(x, y) \in l\). Тогда вектор \(\overset{\longrightarrow}{A_0A} = (x - x_0, y - y_0)\). Так как \(\overset{\longrightarrow}{A_0A}\ ||\ \overset{\rightarrow}{\tau}\), то их координаты пропорциональны:
+    \[\frac{x - x_0}{\tau_1} = \frac{y - y_0}{\tau_2}\]
+    Уравнение прямой ещё можно записать в параметрическом виде:
+    \begin{equation}
+        \frac{x - x_0}{\tau_1} = \frac{y - y_0}{\tau_2} = \lambda,\ \lambda \in \mathbb{R}.
+    \end{equation}
+    \begin{center}
+        \(\begin{cases}
+            x = x_0 + \lambda \tau_1;\\
+            y = y_0 + \lambda \tau_2.
+        \end{cases}\), \(\lambda \in \mathbb{R}\).
+    \end{center}
+
+    \subsubsection{Система двух линейных уравнений с двумя неизвестными}
+
+    \begin{center}
+        \(\begin{cases}
+            a_1x + b_1y = c_1\\
+            a_2x + b_2y = c_2
+        \end{cases}\)
+    \end{center}
+    Вам известны два подхода к решению таких систем:
+    \begin{enumerate}
+        \item Выразить из одного уравнения одно из неизвестных и подставить во второе.
+        \item Сложить/вычесть уравнения системы с подходящими коэффициентами, чтобы избавиться от одного из неизвестных.
+    \end{enumerate}
+    Иногда, требуется не столько решить систему, сколько сказать: имеет ли эта система решения? Сколько их?
+
+    Достаточно просто можно ответить на этот вопрос, если обратиться с геометрической интерпретации системы двух линейных уравнений с двумя неизвестными.
+
+    Если \(a_1^2 + b_1^2 \not = 0\) и \(a_2^2 + b_2^2 \not = 0\), то каждое из уравнений системы мы можем рассматривать как уравнение прямой на плоскости.
+    Значит, вопрос о числе решений системы двух линейных уравнений может быть рассмотрен как вопрос о взаимном расположении двух прямых на плоскости.
+
+    Две прямые на плоскости могут:
+
+    %images at 33:50
+
+    \begin{multicols}{3}
+        \(\exists!\) решение системы(точка)
+
+        нормали не параллельны
+        \[\frac{a_1}{a_2} \not = \frac{b_1}{b_2}\]
+        \[\Delta = a_1b_2 - a_2b_1 \not = 0\]
+        \columnbreak
+
+        \(\infty\) число решений системы(прямая)\\
+        нормали параллельны
+        \[\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}\]
+        \[\Delta = a_1b_2 - a_2b_1 = 0\]
+        \[\Delta_1 = a_1c_2 - a_2c_1 = 0\]
+        \[\Delta_2 = b_1c_2 - b_2c_1 = 0\]
+        \columnbreak
+
+        \(\emptyset\) решений системы
+
+        нормали параллельны
+        \[\frac{a_1}{a_2} = \frac{b_1}{b_2} \not = \frac{c_1}{c_2}\]
+        \[\Delta = a_1b_2 - a_2b_1 = 0\]
+        \[\Delta_1 = a_1c_2 - a_2c_1 \not = 0\]
+        \[\Delta_2 = b_1c_2 - b_2c_1 \not = 0\]
+    \end{multicols}
+
+    Осталось рассмотреть случаи:
+    \begin{enumerate}
+        \item \(a_1^2 + b_1^2 \not = 0,\ a_2 = b_2 = 0\). Здесь, если \(c_2 = 0\), то система имеет бесконечно много решений(прямая), если \(c_2 \not = 0\), система не имеет решений;
+        \item \(a_2^2 + b_2^2 \not = 0,\ a_1 = b_1 = 0\). Здесь, если \(c_1 = 0\), то система имеет бесконечно много решений(прямая), если \(c_1 \not = 0\), система не имеет решений;
+        \item \(a_1 = b_1 = a_2 = b_2 = 0\). Здесь, если \(c_1 = c_2 = 0\), то система имеет бесконечно много решений(вся плоскость \(OXY\)), иначе, система не имеет решений.
+    \end{enumerate}
+
+    Пусть дана система \(\begin{cases} a_1x + b_1y = c_1\\ a_2x + b_2y = c_2 \end{cases}\)
+
+    Введём обозначения:
+    \[\Delta = a_1b_2 - a_2b_1\qquad \Delta_1 = a_1c_2 - a_2c_1\qquad \Delta_2 = b_1c_2 - b_2c_1\]
+
+    \(\Delta = 0 \overset{\textrm{нет}}{\longrightarrow}\) ед. решение, совместная система, точка
+
+    \(\downarrow\)да
+
+    \(\Delta_1 = \Delta_2 = 0 \overset{\textrm{нет}}{\longrightarrow} \emptyset\) решений, несовместная система, \(||\) прямые
+
+    \(\downarrow\)да
+
+    \(a_1 = b_1 = a_2 = b_2 = 0 \overset{\textrm{нет}}{\longrightarrow} \infty\) решений, неопределённая система, прямая
+
+    \(\downarrow\)да
+
+    \(c_1 = c_2 = 0 \overset{\textrm{нет}}{\longrightarrow} \emptyset\) решений, несовместная система
+
+    \(\downarrow\)да
+
+    \(\infty\) решений, неопределённая система, плоскость
+
+    \subsection{Квадратичная функция и её график}
+
+    Рассмотрим квадратичную функцию: \(y = ax^2+bx+c,\ a \not = 0\).
+\end{document}
