@@ -1,0 +1,56 @@
+\documentclass{article}
+% PKGS START
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb} 
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+% PKGS END
+% INIT START
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\pagenumbering{arabic}
+% INIT END
+\begin{document}
+    В общем случае:
+    \textbf{Определение 1.} Пусть имеются предметы \(n\) видов и из них составлются наборы, содержащие k элементов. 
+    Два набора считаются одинаковыми, если имеют одинаковый состав. 
+    Такие наборы назовем сочетаниями с повторениями из \(n\) по \(k\) элементов.
+
+    Число сочетаний с повторениями обозначается \(\overline{C_n^k}\)
+
+    \textbf{Задача.} Найдем \(\overline{C_n^k}\)
+
+    \(\uparrow\) 1) \((k_1, k_2, ..., k_n): k_1 + k_2 + ... + k_n = k\)
+
+    2) \((k_1, k_2, ..., k_n) \leftrightarrow (0001111...10)\) последовательность из \(k\) единиц и \(n-1\) нуля.
+
+    3) \(\overline{C_n^k} = P(k, n-1) = \frac{(k+n-1)!}{k!(n-1)!} = C_{k+n-1}^k\) \(\downarrow\)
+    
+    %11 лекция 9:00 таблица - обобщение материала по комбинаторике
+
+    \section{Бином Ньютона (Формула Ньютона для бинома)}
+
+    Формулы сокращенного умножения для \((a + b)^n\)
+
+    \textbf{Теорема.} \(\forall\ a\) и \(b\) и произвольного \(n \in \mathbb{N}\) справедлива формула \((a + b)^n = \sum\limits_{k=0}^n C_n^k a^{n-k} b^k\) или, подробнее, \((a + b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + C_n^2 a^{n-2} b^2 + ... + C_n^{k} a^{n-k} b^k + ... + C_n^n b^n\).
+
+    \(\uparrow\) 1) \(n = 1\) \(C_1^0 a + C_1^1 b = \frac{1!}{0!1!} a + \frac{1!}{1!0!} b = a + b\)
+\end{document}
