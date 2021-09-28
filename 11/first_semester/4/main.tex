@@ -1,0 +1,150 @@
+\documentclass{article}
+% PKGS START
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+% PKGS END
+% INIT START
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\pagenumbering{arabic}
+% INIT END
+\begin{document}
+    \subsection{Первый замечательный предел}
+    \( \lim_{x \rightarrow 0} \frac{sin\ x}{x} = 1;\ \lim_{x \rightarrow 0+} f(x) = \lim_{x \rightarrow 0-} f(x) \rightarrow\ \exists\ \lim_{x \rightarrow 0} f(x) = A \)
+    
+    \begin{enumerate}
+        \item Пусть \(0 < x < \frac{\pi}{2}\)
+        
+        % TODO тригонометрическая окружность
+        \( S_{OP_1P_0} < S_{\textrm{сект}} < S_{OP_1A}  \)
+        
+        \(\not \frac{1}{2} * 1 * 1 * sin\ x < \not \frac{1}{2} x < \not \frac{1}{2} * 1 * tg\ x \Rightarrow\)
+        
+        \(\Rightarrow \frac{1}{tg\ x} < \frac{1}{x} < \frac{1}{sin\ x}\)\\
+        \(cos\ x < \frac{sin\ x}{x} < 1\)
+
+        \(cos\ x \xrightarrow[]{x \rightarrow 0+} 1\)\\
+        \(1 \xrightarrow[]{x \rightarrow 0+} 1\)
+
+        \(\xRightarrow[]{\textrm{по теореме о 2х милиционерах}} lim_{x \rightarrow 0+} \frac{sin\ x}{x} = 1\)
+
+        \item \( \lim_{x \rightarrow 0-} \frac{sin\ x}{x} = 
+        \begin{cases}
+            t = -x\\
+            t \rightarrow 0+    
+        \end{cases} = lim_{t \rightarrow 0+} \frac{sin(-t)}{-t} = lim_{t \rightarrow 0+} \frac{-sin(t)}{-t} = 1
+        \)
+        \item \( lim_{x \rightarrow 0+} \frac{sin(x)}{x} = lim_{x \rightarrow 0-} \frac{sin(x)}{x} = 1 \Rightarrow lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1 \)
+    \end{enumerate}
+    \textbf{Примеры.}
+
+    \begin{enumerate}
+        \item \( lim_{x \rightarrow 0} \frac{tg(x)}{x} = lim_{x \rightarrow 0} \frac{sin(x)}{x}\frac{1}{cos(x)} = 1 \)
+        \item \( lim_{x \rightarrow 0} \frac{(sin(5x)) 5x}{(5x) 8x} = lim_{x \rightarrow 0} \frac{sin(5x)}{5x} * lim_{x \rightarrow 0} \frac{5}{8} = \frac{5}{8}\)
+    \end{enumerate}
+    
+    \( lim_{x \rightarrow +\infty} \frac{sin(x)}{x} = 0\)\\
+    Не путать с первым замечательным пределом
+
+    \subsection{Точная верхняя и точная нижняя грани множества}
+    \( \mathbb{E} \) --- числовое множество\\
+    \( \mathbb{Z} \) --- неограничено\\
+    \( \mathbb{N} \) --- неограничено сверху, снизу ограничено \( min = 1 \)\\
+    \( [a; b] \) --- ограничено снизу, ограничено сверху \( min = a, max = b \)\\
+    \( (0; 1] \) --- ограничено \( max +;  min - \); 0 --- точная верхняя грань, 1 --- точная нижняя грань
+
+    \textbf{Определение.} Конечное число \(M\) называется точной верхней гранью множества \(\mathbb{E}\)\\ 
+    \(M = sup\ \mathbb{E} - "supremum")\), если
+    \begin{enumerate}
+        \item \( \forall\ x \in \mathbb{E}\ x \leq M \)
+        \item \( \forall\ \varepsilon > 0\ \exists\ x_1 \in \mathbb{E}:\ M - \varepsilon < x_1 \leq M \)
+    \end{enumerate}
+    
+    \textbf{Определение.} Конечное число \(m\) называется точной нижней гранью множества \(\mathbb{E}\)\\
+    \(m = inf\ \mathbb{E} - "infimum")\), если
+    \begin{enumerate}
+        \item \( \forall\ x \in \mathbb{E}\ m \leq x \)
+        \item \( \forall\ \varepsilon > 0\ \exists\ x_1 \in \mathbb{E}:\ m \leq x_1 < m + \varepsilon \)
+    \end{enumerate}
+
+    \textbf{Пример.}
+    
+    \( \mathbb{E} = \{ \frac{n}{n + 1}, n \in \mathbb{N} \} = \{ \frac{1}{2}; \frac{2}{3}; \frac{3}{4}; ... \} \)\\
+    \( inf\ \mathbb{E} = \frac{1}{2} = min \mathbb{E} \)
+
+    \(max\ \mathbb{E} = \emptyset\)\\
+    \(sup\ \mathbb{E} = 1\) --- ?
+
+    \(\uparrow\)
+    \begin{enumerate}
+        \item \(\forall x \in \mathbb{E}\ \frac{n}{n+1} \leq^{?} 1\ \frac{n}{n+1} = 1 - \frac{1}{n+1} < 1\)
+        \item \( \forall\ \varepsilon > 0\ \exists\ x_1 = \frac{n_1}{n_1 + 1} \)
+        
+        \( 1 - \varepsilon < \frac{n_1}{n_1 + 1} \leq 1 \)
+
+        \( 1 - \varepsilon < 1 - \frac{1}{n_1 + 1} \)
+        
+        \( 0 < \frac{1}{n_1 + 1} < \varepsilon_{> 0} \)
+
+        \( \frac{1}{\varepsilon} < n_1 + 1 \)
+
+        \( n_1 > \frac{1}{\varepsilon} - 1\)
+        
+        ч.т.д.
+    \end{enumerate}
+    \(\downarrow\)
+    
+    \textbf{Теорема.} Если числовое множество \(\mathbb{E}\) ограничено сверху(снизу), то для него существует \(sup\ \mathbb{E}(inf\ \mathbb{E})\).
+
+    Если числовое множество \(\mathbb{E}\)  
+    \begin{enumerate}
+        \item неограничено сверху, то \(sup\ \mathbb{E} \stackrel{df}{=} +\infty\)
+        \item неограничено снизу, то \(inf\ \mathbb{E} \stackrel{df}{=} -\infty\)
+    \end{enumerate}
+
+    \subsection{Функции, непрерывные на отрезке}
+    \textbf{Определение.} Функция \( y = f(x) \) называется непрерывной на отрезке \( [a, b] \), если она непрерывна в любой \( x \in (a, b) \); непрерывна в \( x = a \) справа и в \( x = b \) слева.
+
+    \textbf{Теорема Коши.} Функция \( y = f(x) \) непрерывная на \( [a, b] \) ограничена на нем.
+
+    
+
+    \textbf{Теорема Вейерштрасса.} Функция \( y = f(x) \) непрерывна на \( [a, b] \), то она достигает своего наибольшего и наименьшего значения. То есть \( \exists\ \alpha, \beta \in [a, b] \), такие что \( f(\alpha) = min_{x \in [a, b]} f(x)\); \( f(\beta) = max_{x \in [a, b]} f(x)\)
+
+
+    
+    \textbf{Теорема Больцано.} Если непрерывная на \([a, b]\) функция \(y = f(x):\ f(a) * f(b) < 0\), то существует хотя бы одна \(c \in (a, b):\ f(c) = c\).
+
+    \textbf{Следствие.} Если непрерывная на \([a, b]\) функция принимает значения \([m, M]\); где \(m = min\ f(x)(x \in [a, b]);\ M = max\ f(x)\) и \(c \in (m, M)\), то \(\exists\ x_0 \in (a,b)\)
+    
+
+    \textbf{Теорема .}
+
+
+    \textbf{Теорема .}
+
+
+
+\end{document}
