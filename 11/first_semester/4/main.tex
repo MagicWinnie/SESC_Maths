@@ -127,24 +127,79 @@
     \subsection{Функции, непрерывные на отрезке}
     \textbf{Определение.} Функция \( y = f(x) \) называется непрерывной на отрезке \( [a, b] \), если она непрерывна в любой \( x \in (a, b) \); непрерывна в \( x = a \) справа и в \( x = b \) слева.
 
-    \textbf{Теорема Коши.} Функция \( y = f(x) \) непрерывная на \( [a, b] \) ограничена на нем.
 
+    \subsubsection{Теорема Коши}
+    \textbf{Теорема.} Функция \( y = f(x) \) непрерывная на \( [a, b] \) ограничена на нем.
+
+    \(\uparrow\) от противного
+
+    \(\underline{\textrm{Неограничена на отрезке}}\), т.е.
+
+    \(\forall n \in \mathbb{N}\ \exists\ x_n \in [a,b]:\ f(x_n)^{=y_n} > n\), но это означает, что \(lim_{n \rightarrow \infty} f(x_n) = +\infty\) (*),\\
+    \underline{\underline{но}} \(x_n \in [a,b]\), т.е. \(\{x_n\}\) --- ограничена из ограниченной последовательности всегда можем выделить сходящуюся подпоследовательность\\
+    \(\exists\ x_{nk}:\ x_{nk} \xrightarrow[k \rightarrow \infty]{} d \in [a,b]\)
+
+    \(lim_{k \rightarrow \infty} f(x_{nk}) = f(d)\), это противоречит (*) \(\downarrow\)
+
+    \textbf{Замечание.}
+    \( y = \begin{cases}
+        \frac{1}{x},\ x \neq 0\\
+        0,\ x = 0
+    \end{cases} \) на \( (0; 1] \)
     
 
-    \textbf{Теорема Вейерштрасса.} Функция \( y = f(x) \) непрерывна на \( [a, b] \), то она достигает своего наибольшего и наименьшего значения. То есть \( \exists\ \alpha, \beta \in [a, b] \), такие что \( f(\alpha) = min_{x \in [a, b]} f(x)\); \( f(\beta) = max_{x \in [a, b]} f(x)\)
+    \subsubsection{Теорема Вейерштрасса}
+    \textbf{Теорема.} Функция \( y = f(x) \) непрерывна на \( [a, b] \), то она достигает своего наибольшего и наименьшего значения. То есть \( \exists\ \alpha, \beta \in [a, b] \), такие что \( f(\alpha) = min_{x \in [a, b]} f(x)\); \( f(\beta) = max_{x \in [a, b]} f(x)\)
+    \( f(\alpha) = min\ f(x); f(\beta) = max \)
 
-
+    \(\uparrow\) по Т. Коши функция \(f(x)\) ограничена на \([a,b] \Rightarrow\ \exists\ inf\ f(x)\) и \(sup\ f(x) = M\)
     
-    \textbf{Теорема Больцано.} Если непрерывная на \([a, b]\) функция \(y = f(x):\ f(a) * f(b) < 0\), то существует хотя бы одна \(c \in (a, b):\ f(c) = c\).
+    Докажем, что \(\exists\ max\), т.е. из \(\exists\)-ния \(sup\) 
 
-    \textbf{Следствие.} Если непрерывная на \([a, b]\) функция принимает значения \([m, M]\); где \(m = min\ f(x)(x \in [a, b]);\ M = max\ f(x)\) и \(c \in (m, M)\), то \(\exists\ x_0 \in (a,b)\)
+    \begin{enumerate}
+        \item \(f(x) \leq M\)
+        \item \(\forall \varepsilon > 0\ \exists\ x_1 \in [a,b]:\ M - \varepsilon < f(x_1) \leq M\)
+        Возьмём \(\varepsilon = \frac{1}{n} \Rightarrow\ \exists\ x_n:\\\)
+        \(M - \frac{1}{n} < f(x_n) \leq M\\ \Rightarrow lim_{n \rightarrow \infty} f(x_n) = M\)
+
+        \(x_n \in [a,b] \Rightarrow \{x_n\}\) --- ограничена \(\Rightarrow\ \exists\) подпоследовательность \(x_{nk}:\ x_{nk} \xrightarrow[k \rightarrow \infty]{} B \in [a, b]\).
+
+        В силу непрерывности \( f(x) \) на \( [a, b]:\ lim_{k \to \infty} f(x_{nk}) = f(\beta) \).
+
+        В силу единственности \( lim:\ f(\beta) = M \) --- это \( max \). \( \downarrow \)
+    \end{enumerate}
+
+    \textbf{Замечание.} 
+
+    \( y = x \) на \( [0, 1) \) \( max \) значение не достигается\\
+    \( sup_{[0, 1)} x = 1 \)
+
+
+    \subsubsection{Теорема Больцано}
+    \textbf{Теорема.} Если непрерывная на \([a, b]\) функция \(y = f(x):\ f(a) * f(b) < 0\), то существует хотя бы одна \(c \in (a, b):\ f(c) = c\).
+
+    \( \uparrow \) пусть \( \sigma_0 = [a, b] \)
+
+    \begin{enumerate}
+        \item делим \( \frac{\sigma_0}{2} \); \( f(\frac{a + b}{2})\ ?\ 0 \)
+        
+        \( \sigma_1 = [a, \frac{a + b}{2}] \) или \( [\frac{a + b}{2}; b] \), чтобы на концах функция принимала значения разных знаков:\\
+        если \(f(a)*f(\frac{a+b}{2}) < 0\); если \(f(\frac{a+b}{2}) * f(b) < 0\).
+        
+        \item \( \frac{\sigma_1}{2} \rightarrow \) если \(f(c_1) = 0\), то процесс завершился, иначе \(\sigma_2:\) на концах \(f\) принимает значение разных знаков \( \abs{\sigma_2} = \frac{b - 2}{2^2} \) и т.д. 
+        
+        Или 1) наткнемся на \( c: f(c) = 0 \)
+        
+        Или 2) \( \sigma_0 > \sigma_1 > \sigma_2 > ... \)
+    \end{enumerate}
+    
+    \textbf{Замечание.}
+
+    \(\abs{\sigma_n} = \frac{b-a}{2^n} \xrightarrow[n \rightarrow \infty]{} 0 \Rightarrow\ \exists !\) общая точка \(c\) этих вложенных промежутков. Очевидно, что \(f(c) = 0\)(если \(f(c) > 0\), то по т. о сохранении знака \(\exists\ U(c)\) в \(U(c) f(x) > 0\), но при больших \(n\ \exists\ \sigma_n \ca U(c);\) противоречие).
+
+    \textbf{Следствие 1.} Если непрерывная на \([a, b]\) функция принимает значения \([m, M]\); где \(m = min\ f(x)(x \in [a, b]);\ M = max\ f(x)\) и \(c \in (m, M)\), то \(\exists\ x_0 \in [a,b]:\ f(x_0) = c\).
     
 
-    \textbf{Теорема .}
-
-
-    \textbf{Теорема .}
-
-
+    \textbf{Следствие 2.} Если \( f(x) \) --- непрерывна на \( [a, b] \) и \( f(a) = f(b) = 0 \), и \(\nexists\) на \( [a, b] \) других точек, в которых \( f(x) \) обращается в ноль, то \( f(x) \) сохраняет знак \( (>0; <0) \) на всем \( (a, b) \).
 
 \end{document}
