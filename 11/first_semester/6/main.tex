@@ -67,9 +67,9 @@
         
         При \( n = 2k + 1:\ y = \frac{1}{x^{2k + 1}} \) --- нечетная
         
-        \item \(lim_{x \rightarrow 0+} \frac{1}{x^n} = +\infty\)
+        \item \(\lim_{x \rightarrow 0+} \frac{1}{x^n} = +\infty\)
 
-            \(lim_{x \rightarrow +\infty} \frac{1}{x^n} = 0\)
+            \(\lim_{x \rightarrow +\infty} \frac{1}{x^n} = 0\)
 
             \(x = 0\) --- вертикальная асимптота\\
             \(y = 0\) --- горизонтальная асимптота
@@ -110,15 +110,15 @@
         \begin{enumerate}
             \item \(r > 0\)
             
-            \(lim_{x \rightarrow +\infty} x^r = +\infty\)
+            \(\lim_{x \rightarrow +\infty} x^r = +\infty\)
         
-            \(lim_{x \rightarrow 0} x^r = 0\)
+            \(\lim_{x \rightarrow 0} x^r = 0\)
 
             \item \(r < 0\)
             
-            \(lim_{x \rightarrow +\infty} x^r = 0\)
+            \(\lim_{x \rightarrow +\infty} x^r = 0\)
 
-            \(lim_{x \rightarrow 0+} x^n = +\infty\)
+            \(\lim_{x \rightarrow 0+} x^n = +\infty\)
         \end{enumerate}
         \item Монотонность
         \begin{enumerate}
@@ -220,8 +220,8 @@
 
             \begin{enumerate}
                 \item \( a^{r_1} \) ограничено сверху, например, \( a^r;\ r > x;\ a^{r_1} > 0 \)
-                \item \( lim_{n \to \infty}(a^\frac{1}{n} - 1) = 0 \) бесконечно малая последовательность
-                \item \( lim_{n \to \infty}(a^{r_1}(a^\frac{1}{n} - 1)) = 0\)
+                \item \( \lim_{n \to \infty}(a^\frac{1}{n} - 1) = 0 \) бесконечно малая последовательность
+                \item \( \lim_{n \to \infty}(a^{r_1}(a^\frac{1}{n} - 1)) = 0\)
                 \item \(\forall \varepsilon > 0\ \exists\ N:\ \forall n > N\ \abs{a^{r_2^n} - a^{r_1^n}} < \varepsilon\)
             \end{enumerate}
             
@@ -241,6 +241,8 @@
     \( y = a^x;\ a > 0;\ x \in \mathbb{R} \)
 
     \begin{enumerate}
+        \item О.О. \( x \in \mathbb{R} \)
+
         \item О.З. \( y = a^x > 0 \), т.к.
         
         \( a > 1\ \forall x\ \exists r:\ x > r \Rightarrow a^x > a^r > 0 \)
@@ -269,15 +271,78 @@
         \begin{enumerate}
             \item \(a > 1\)
 
-            \(lim_{x \to +\infty} a^x = +\infty\)
+            \(\lim_{x \to +\infty} a^x = +\infty\)
             
             \(\uparrow\) Надо \(\forall E > 0\ \exists\ \Delta:\ \forall x > \Delta\ a^x > E\)
-            \item \(a = 1\)
+
+            Значит, что 
+
+            \( \lim_{n \to +\infty} a^n = +\infty \), т.е. \( \forall E > 0\ \exists\ N_*:\ \forall n > N_*\ a^n > E \)
+            
+            \(a^x \nearrow a > 1\ \forall x > n\ :\ a^x > a^n\)
+            
+            \(\Delta = N_* + 1\), тогда \(\forall x > N_* + 1 = \Delta\)
+
+            \(a^x > a^{N_*+1} > E\ \downarrow\)
+                        
             \item \(0 < a < 1\)
 
-            Из п.1 \( lim_{x \to +\infty}(a^x) = 0 = lim_{x \to +\infty}(\frac{1}{(\frac{1}{a})^x}) \)
+            Из п.1 \( \lim_{x \to +\infty}(a^x) = 0 = \lim_{x \to +\infty}(\frac{1}{(\frac{1}{a})^x}) \)
         \end{enumerate}
-    \end{enumerate}
 
+        \item
+        \begin{enumerate}
+            \item \( a > 1 \)
+            
+            \( \lim_{x \to -\infty} a^x = \lim_{y \to +\infty} a^{-y} = \lim_{y \to +\infty} \frac{1}{a^y} = 0 \)
+            
+            \item \( 0 < a < 1 \) 
+            
+            \( \lim_{x \to -\infty} a^x = +\infty \)
+        \end{enumerate}
+        
+        \item Функция \(y = a^x\) непрерывна на \(\mathbb{R}\)
+
+        \(\uparrow\) Надо \(\forall \varepsilon > 0\ \exists\ \delta\ :\ \forall x\ \abs{x - x_0} < \delta \Rightarrow \abs{f(x) - f(x_0)} = \abs{a^x-a^x_0} < \varepsilon\)
+
+        \(\uparrow\) для \(x_0\ \exists\ r_1 = \frac{l}{10^n};\ r_2 = \frac{l + 1}{10^n};\ \frac{l}{10^n} \leq x_0 \leq \frac{l + 1}{10^n} \)
+        
+        \begin{enumerate}
+            \item \( a > 1 \) Доказывали, что \( \abs{a^x - a^{x_0}} < \abs{a^{r_2} - a^{r_1}} < \varepsilon \)
+        
+            \(\forall x \in U_{\delta}(x_0)\ :\ U_{\delta}(x_0) \in [r_1, r_2]\)
+
+            \item \( 0 < a < 1 \) Аналогично. \(\downarrow\)
+        \end{enumerate}
+        
+        \item Функция \(y = a^x,\ a \neq 1\) принимает все положительные значения, т.е. \(\forall b \in (0; +\infty)\ \exists\ c:\ a^c = b\).
+
+        Док-во следует из \(\lim_{x \to \pm \infty} a^x\) и следствия т. Больцано.
+
+        \item График
+        \begin{enumerate}
+            \item \( a > 1 \) % img 
+            \item \( 0 < a < 1 \) % img 
+            \item \( a = 1 \) % img
+        \end{enumerate}
+
+        \( \Rightarrow \) при \(a > 0;\ a \neq 1\) функция \(y = a^x\) имеет обратную(обратима).
+
+        \item Сохраняются свойства степени:
+        \begin{enumerate}
+            \item \( (ab)^x = a^x b^x \)
+            
+            \(\uparrow\) \( \forall \) иррациональных \(x\ \exists\ r_n: r_n \xrightarrow[n \to \infty]{} x \)
+
+            \( y = a^x \) --- непрерывная \(\Rightarrow a^x = \lim_{n \to \infty} a^{r_n}\)
+
+            \( (ab)^x = \lim_{n \to \infty}(ab)^{r_n} = \lim_{n \to \infty}a^{r_n} b^{r_n} = \lim*\lim = a^x b^x\ \downarrow \)
+
+            \item \((\frac{a}{b})^x = \frac{a^x}{b^x}\)
+            \item \( a^x a^y = a^{x + y} \)
+            \item \( \frac{a^x}{a^y} = a^{x - y} \)
+            \item \( (a^x)^y = a^{xy} \)
+        \end{enumerate}    
+    \end{enumerate}
 
 \end{document}
