@@ -1,0 +1,148 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+    В общем случае:
+
+    \textbf{Определение 1.} Пусть имеются предметы \(n\) видов и из них составлются наборы, содержащие k элементов. 
+    Два набора считаются одинаковыми, если имеют одинаковый состав. 
+    Такие наборы назовем сочетаниями с повторениями из \(n\) по \(k\) элементов.
+
+    Число сочетаний с повторениями обозначается \(\overline{C_n^k}\)
+
+    \textbf{Задача.} Найдем \(\overline{C_n^k}\)
+
+    \(\uparrow\) 1) \((k_1, k_2, ..., k_n): k_1 + k_2 + ... + k_n = k\)
+
+    2) \((k_1, k_2, ..., k_n) \leftrightarrow (0001111...10)\) последовательность из \(k\) единиц и \(n-1\) нуля.
+
+    3) \(\overline{C_n^k} = P(k, n-1) = \frac{(k+n-1)!}{k!(n-1)!} = C_{k+n-1}^k\) \(\downarrow\)
+    
+    %лекция 11 9:00 таблица - обобщение материала по комбинаторике
+
+    \section{Бином Ньютона (Формула Ньютона для бинома)}
+
+    Формулы сокращенного умножения для \((a + b)^n\)
+
+    \textbf{Теорема.} \(\forall\ a\) и \(b\) и произвольного \(n \in \mathbb{N}\) справедлива формула \((a + b)^n = \sum\limits_{k=0}^n C_n^k a^{n-k} b^k\) или, подробнее, \((a + b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + C_n^2 a^{n-2} b^2 + ... + C_n^{k} a^{n-k} b^k + ... + C_n^n b^n\).
+
+    \(\uparrow\) 1) \(n = 1\) 
+    \\\(C_1^0 a + C_1^1 b = \frac{1!}{0!1!} a + \frac{1!}{1!0!} b = a + b\)
+
+    \(n = 2\)
+    \\\(C_2^0 a^2 + C_2^1 ab + C_2^2 b^2 = \frac{2!}{0!2!} a^2 + \frac{2!}{1!1!} ab + \frac{2!}{2!0!} b^2 = a^2 + 2ab + b^2 = (a + b)^2\)
+
+    2) Пусть при \(n = m\) равенство справедливо: \((a + b)^m = \sum\limits_{k=0}^m C_m^k a^{m-k} b^k\)
+
+    3) Докажем при \(n = m + 1\): \((a + b)^{m+1} = \sum\limits_{k=0}^{m+1} C_{m+1}^k a^{m+1-k} b^k\)
+
+    \begin{center}
+        \((a + b)^{m+1} = (a + b)(a + b)^m = (a + b)(C_m^0 a^m + C_m^1 a^{m-1} b + C_m^2 a^{m-1} b^2 + ... + C_m^k a^{m-k} b^k + ... + C_m^m b^m) =\)
+    
+        \(= C_m^0 a^{m+1} + \boxed{C_m^1} a^m b + C_m^2 a^{m-1} b^2 + ... + C_m^k a{m+1-k} b^k + ... + C_m^{m-1} a^2 b^{m-1} + C_m^m ab^m +\)
+        
+        \(+\ \boxed{C_m^0} a^m b + C_m^1 a^{m-1} b^2 + ... + C_m^{k-1} a^{m+1-k} b^k + ... + C_m^{m-1} ab^m + C_m^m b^{m+1} =\)
+        
+        \(= \{C_m^0 = C_{m+1}^0,\ C_m^m = C_{m+1}^{m+1},\ C_m^{k-1} + C_m^k = C_{m+1}^k\} =\)
+    
+        \(= C_{m+1} a^{m+1} b^0 + C_{m+1}^1 a^m b + C_{m+1}^2 a^{m-1} b^2 + ... + C_{m+1}^k a^{m+1-k} b^k + ... + C_{m+1}^m ab^m + C_{m+1}^{m+1} a^0 b^{m+1} =\)
+    
+        \(= \sum\limits_{k=0}^{m+1} C_{m+1}^k a^{m+1-k} b^k \downarrow\)
+
+        \((a + b)^n = \sum\limits_{k=0}^n C_n^k a^{n-k} b^k\)
+    \end{center}
+
+    \textbf{Замечание.} В формуле правая часть - биномиальное разложение (в сумму) или разложение бинома. 
+    Коэффициенты \(C_n^0, C_n^1, C_n^2, ..., C_n^n\) - биномиальные коэффициенты.
+
+    \textbf{Свойства разложения бинома}
+
+    1. Число членов разложения на единицу больше степени бинома. (т.е. \(n + 1\)).
+
+    2. Сумма показателей степеней \(a\) и \(b\) для каждого члена разложения равна степени бинома \(n\).
+
+    3. Коэффициенты, одинаково удаленные от первого и последнего членовв разложения, равны. \(C_n^k = C_n^{n-k}\)
+
+    4. Треугольник Паскаля.
+    %лекция 11 42:08 - треугольник Паскаля
+
+    5. Каждый биномиальный коэффициент, начиная с \(C_n^1\), равен предшествующему, умноженному на \(\frac{n - k + 1}{k}\)
+
+    \(\uparrow \frac{C_n^k}{C_n^{k-1}} = \frac{n!}{k!(n - k)!} * \frac{(k - 1)!(n - k + 1)!}{n!} = \frac{n - k + 1}{k} \Rightarrow C_n^k = \frac{n - k + 1}{k} C_n^{k-1} \downarrow\)
+
+    6. Если \(n = 2l\) (четная степень), то число слагаемых равно \(2l + 1\),
+
+    \begin{center}
+        \(C_{2l}^0 < C_{2l}^1 < C_{2l}^l\) и \(C_{2l}^l > C_{2l}^{l+1} > ... > C_{2l}^n\)
+    \end{center}
+
+    при \(k \leq l\) имеем \(C_{2l}^k = \frac{2l - k + 1}{k} * C_{2l}^{k-1} = \frac{l - k + l + 1}{k} * C_{2l}^{k-1} = (\frac{l - k}{k}_{\geq 0} + \frac{l + 1}{k}_{> 1}) C_{2l}^{k-1} > C_{2l}^{k-1}\)
+
+    а для \(k \geq l\) по правилу симметрии.
+
+    Если \(n = 2l + 1\) (нечетная степень), то число слагаемых равно \(2l + 2\),
+
+    \begin{center}
+        \(C_{2l+1}^0 < C_{2l+1}^1 < ... < C_{2l+1}^l\ C_{2l+1}^l = C_{2l+1}^{l+1}\ C_{2l+1}^{l+1} > ... > C_{2l+1}^{2l+1}\)
+    \end{center}
+
+    7. \(\sum\limits{k=0}^n C_n^k = 2^n\). Достаточно рассмотреть \((1 + 1)^n\).
+
+    8. Сумма биномиальных коэффициентов, стоящих на четных местах, равна сумме биномиальных коэффициентов, стоящих на нечетных местах, и равна \(2^(n-1)\).
+
+    \((1 - 1)^n = (1 + (-1))^n = C_n^0 - C_n^1 + C_n^2 - C_n^3 + ... + (-1)^n C_n^n = (C_n^0 + C_n^2 + ...) - (C_n^1 + C_n^3 + ...) = S_even - S_uneven\)
+
+    Тогда имеем:
+    \begin{equation*}
+        \begin{cases}
+            S_{even} - S_{uneven} = 0
+            \\
+            S_{even} + S_{uneven} = 2^n
+        \end{cases}
+        \Rightarrow S_{even} = S_{uneven} = 2^{n-1}
+    \end{equation*}
+
+    \textbf{Утверждение.} Неравенство Бернулли 1.
+
+    \(\forall\) действительного \(b > 1\) и \(\forall\) натурального \(n > 1\) верно неравенство: \(b^n > 1 + n(b - 1)\).
+
+    \(\uparrow\) Так как \(b > 1\), то пусть \(b = 1 + t\), где \(t > 0\)
+
+    \(b^n = (1 + t)^n = 1 + nt + \frac{n(n - 1)}{2} t^2 + ... + t^n > {t > 0} > 1 + nt = 1 + n(b - 1) \downarrow\)
+
+    \textbf{Замечание.} Неравенство Бернулли 2.
+
+    Для любого действительного \(t \geq -1\) и \(\forall\) натурального \(n > 1\) верно неравенство \((t + 1)^n \geq 1 + tn\). (т.е. неравенство Бернулли верно для \(b \geq 0\)).
+
+    \(\uparrow\) 1) Проверим при \(n = 2\): \((t + 1)^2 = t^2 + 2t + 1 \geq 1 + 2t\) -- верно;
+
+    2) Пусть выполняется при \(n = k\): \((t + 1)^{k+1} \geq 1 + t(k + 1)\)
+
+    \((t + 1)^{k+1} = (t + 1)(t + 1)^k \geq (t + 1)(1 + tk) = t^2k + t(k + 1) + 1 \geq 1 + t(k + 1)\), ч.т.д. \(\downarrow\)
+
+    \textbf{Утверждение.} \(\forall\) действительного все мне лень дальше
+    %1:25:55
+\end{document}
