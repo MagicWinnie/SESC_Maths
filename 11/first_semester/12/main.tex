@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+    \textbf{Определение.} Пусть \(f(x)\) определена на полубесконечном интервале \((a; +\infty)\). Прямая \(y = kx + b\) называется асимптотой графика функции \(y = f(x)\) при \(x \to +\infty\), если
+    
+    \[\lim_{x \to +\infty} (f(x) - (kx+b)) = 0\]
+
+    Аналогично на \(-\infty\).
+
+    \textbf{Теорема.} Для того, чтобы \( y = kx + b \) являлась асимптотой для графика функции \( y = f(x) \) при \( x \to +\infty \) необходимо и достаточно, чтобы существовали конечные пределы
+    
+    1) \( \lim_{x \to +\infty} \frac{f(x)}{x} = k \)
+
+    2) \( \lim_{f(x) - kx} = b \)
+
+    \( \uparrow \) ``\( \Rightarrow \)'' Пусть \( y = kx + b \) --- асимптота, тогда \( \lim_{x \to +\infty}[f(x) - (kx + b)] = 0 \)
+
+    Из существования предела получаем, что \( f(x) - (kx + b) = \alpha(x) \), где \( \alpha(x) \xrightarrow[x \to +\infty]{} 0 \)
+
+    Найдем следующие пределы:
+
+    \( \lim_{x \to +\infty} \frac{f(x)}{x} = \lim_{x \to +\infty} \frac{kx + b + \alpha(x)}{x} = \lim_{x \to +\infty}(k + \frac{b}{x} + \frac{\alpha(x)}{x}) = k \)
+
+    \( \lim_{x \to +\infty} (f(x) - kx) = \lim_{x \to +\infty} (\alpha(x) + b) = b \)
+    
+    ``\(\Leftarrow\)'' Пусть существуют пределы \(1)\) и \(2)\), тогда из второго
+
+    \[\lim_{x \to +\infty} ((f(x)-kx)-b) = 0 = \lim_{x \to -\infty} (f(x) - (kx+b))\]
+
+    т.е. \(y = kx + b\) --- наклонная асимптота по определению. \(\downarrow\)
+
+    \textbf{Замечание.} Если \(k=0\), то \(y=b\) --- горизонтальная асимптота.
+    
+    \subsection{Раскрытие неопределённостей}
+
+    \textbf{Теорема 1.} Пусть функции \(f(x)\) и \(\varphi(x)\) непрерывны и имеют производные в окрестности точки \(x=a\)(\(a\) --- конечное число или \(\infty\)), за исключением, быть может, точки \(a\). Пусть при этом \(\varphi(x)\) и \(\varphi'(x)\) отличны от нуля в указанной окрестности и \(\lim_{x \to a} f(x) = \lim_{x \to a} \varphi(x) = 0\).
+    Тогда, если \(\exists \lim_{x \to a} \frac{f'(x)}{\varphi'(x)} = A\)(конечный или \(\infty\)), то \(\exists \lim_{x \to a} \frac{f(x)}{\varphi(x)} = \lim_{x \to a} \frac{f'(x)}{\varphi'(x)} = A\).
+
+    \(\uparrow\)
+    \begin{enumerate}
+        \item Пусть \(a\) --- конечное число. Доопределим \(f(x)\) и \(\varphi(x)\) в точке \(x=a\) по непрерывности:
+
+        \(f(a) = \lim_{x \to a} f(x) = 0,\ \lim_{x \to a} \varphi(x) = 0\).
+
+        В \(U(a)\) можем применить т. Коши: \(\frac{f(x)}{\varphi(x)} = \frac{f(x) - f(a)}{\varphi(x) - \varphi(a)} = \frac{f'(c)}{\varphi(c)},\ \begin{array}{l} c = a + \theta(x-a),\\ 0 < \theta < 1\end{array}\)
+
+        Заметим, если \(x \to a\), то \(c \to a\). Тогда получаем \(\lim_{x \to a} \frac{f(x)}{\varphi(x)} = \lim_{c \to a} \frac{f'(c)}{\varphi'(c)} = A\).
+        
+        \item Пусть $a$ бесконечно.
+        
+        Сделаем подстановку \( x = \frac{1}{u} \). Получим функции: \( f(x) = f(\frac{1}{u}) = F(u) \), \( \varphi(x) = \varphi(\frac{1}{u}) = \textrm{Ф}(u) \). Функции \( F(u) \) и \( \textrm{Ф}(u) \), как фукнции от переменной $u$, непрерывны в окрестности $u = 0$ (при $a = +\infty/-\infty$ в правой/левой окрестности нуля), имеют производные (по $u$) в этой точке и \( \textrm{Ф}(u),\ \textrm{Ф}'(u) \neq 0 \) в этой окрестности. При этом
+
+        \( \lim_{u \to 0}F(u) = \lim_{x \to 0}f(x) = 0,\ \lim_{u \to 0}\textrm{Ф}(u) = \lim_{x \to \infty}\varphi(x) = 0 (*) \) 
+        
+        Заметим, что 
+
+        \(\lim_{u \to 0} \frac{F_u'(u)}{\Phi_u'(u)} = \{F_u'(u) = F_x*x_u = f_x(-\frac{1}{u^2})\} = \lim_{u \to 0} \frac{f_x\frac{1}{u}(-\frac{1}{u^2})}{\varphi_x\frac{1}{u}(-\frac{1}{u^2})} = \lim_{x \to \infty} \frac{f'(x)}{\varphi'(x)}\)(**)
+    
+        Поэтому \( \lim_{x \to \infty}\frac{f(x)}{\varphi(x)} = \{*\} = \lim_{u \to \infty}\frac{F(u)}{\textrm{Ф}(u)} = \{1.\} = \lim_{u \to 0}\frac{F_u'(u)}{\textrm{Ф}_u'(u)} = \{**\} = \lim_{x \to \infty}\frac{f'(x)}{\varphi'(x)} = A \)
+    \end{enumerate}
+    \(\downarrow\)
+
+    \textbf{Теорема 2.} Пусть функции \(f(x)\) и \(\varphi(x)\) непрерывны и имеют производные в окрестности точки \(x=a\)(\(a\) --- конечное число или \(\infty\)), за исключением, быть может, точки \(a\). Пусть при этом \(\varphi'(x)\) тлична от нуля в указанной окрестности
+
+    \[\lim_{x \to a} f(x) = \lim_{x \to a} \varphi(x) = \infty\]
+
+    Тогда, если \(\exists \lim_{x \to a} \frac{f'(x)}{\varphi'(x)} = A\)(конечной или \(\infty\)), то \(\exists \lim_{x \to a} \frac{f(x)}{\varphi(x)} = \lim_{x \to a} \frac{f'(x)}{\varphi'(x)} = A\).
+
+    \section{Аналитическая геометрия}
+
+    \subsection{Векторы. Коллинеарные и компланарные векторы}
+
+    \textbf{Определения.} Вектором называется направленный отрезок.
+    Вектор определяется парой точек, превая из них --- начало вектора(точка приложения), а вторая --- конец вектора.
+
+    Обозначение: \(\overrightarrow{a}, \overrightarrow{AB}\).
+
+    Длина вектора называется его модулем. \(\abs{\overrightarrow{a}}\)
+
+    Если начало вектора совпадает с концом, вектор называется нулевым.
+
+    \textbf{Определение.} Два ненулевых вектора называются коллинеарными, если они лежат на одной прямой или на параллельных прямых.
+
+    Коллинеарные вектора бывают одинаково направленными(\(\overrightarrow{a} \uparrow\uparrow \overrightarrow{b}\)) и противоположно направленными (\(\overrightarrow{a} \uparrow\downarrow \overrightarrow{b}\)).
+
+    \textbf{Определение.} Два ненулевых вектора называются равными, если они коллинеарны, одинаково направлены и имеют равные модули, т.е.
+
+    \[\vec{a} = \vec{b} \Leftrightarrow (\vec{a} \uparrow\uparrow \vec{b})\wedge(\abs{\vec{a}} = \abs{\vec{b}})\]
+    
+    \(\Rightarrow\) от любой фиксированной точки можем отложить вектор равный данному вектору, и при этом только один.
+
+    \textbf{Определение.} Ненулевые векторы называются компланарными, если они параллельны одной и той же плоскости.
+    
+    Любые два вектора всегда компланарны. Три вектора могут быть и некомпланарны.
+
+    \subsection{Линейные операции над векторами}
+
+    Пусть даны два ненулевых вектора: \( \overrightarrow{a}, \overrightarrow{b} \neq 0 \)
+    
+    Отложим от конца вектора $a$ вектор, равный вектору $b$. Соединим начало вектора $a$ с концом вектора $b$.
+    
+    \( \overrightarrow{a} + \overrightarrow{b} = \overrightarrow{AB} + \overrightarrow{B'C'} = \overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC} \)
+
+    Это правило треугольника сложения векторов.
+
+    \textbf{Замечание.} Правило применимо и в случае, если вектора коллинеарны.
+    
+    \subsubsection{Свойства сложения векторов}
+    
+    \begin{enumerate}
+        \item \(\vec{a} + \vec{b} = \vec{b} + \vec{a}\)
+        \item \((\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c})\)
+        \item \(\vec{a} + \vec{0} = \vec{a}\)
+    \end{enumerate}
+
+    \subsubsection{Свойства противоположных векторов}
+
+    \textbf{Определение.} Пусть \(\vec{a} = \vec{AB}\). Тогда \(\vec{BA}\) называется противоположным вектору \(\vec{a}\) и обозначается \(-\vec{a}\).
+
+    \begin{enumerate}
+        \item \(\vec{a} + (-\vec{a}) = \vec{0}\)
+        \item \(\abs{\vec{a}}=\abs{-\vec{a}},\ \vec{a} \uparrow\downarrow -\vec{a}\)
+    \end{enumerate}
+
+    \textbf{Определение.} %ДОПИСАТЬ
+\end{document}
