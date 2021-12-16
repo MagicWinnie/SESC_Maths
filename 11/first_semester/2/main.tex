@@ -26,27 +26,24 @@
 
 \begin{document}
   \textbf{Пример.}
-  \begin{enumerate}
-    \item %TODO
-    \item %TODO
-    \item \(y=sign\ x=\begin{cases}1;\ x>0\\ 0;\ x=0\\ -1;\ x<0\end{cases}\)
+  
+  \(y=sign\ x=\begin{cases}1;\ x>0\\ 0;\ x=0\\ -1;\ x<0\end{cases}\)
 
-    \(\not \exists\ lim_{x \rightarrow 0}\ sign\ x\)
+  \(\not \exists\ lim_{x \rightarrow 0}\ sign\ x\)
 
-    \(
-    \begin{array}{l}
-      x_n = \frac{1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n)=1 \xrightarrow[n \rightarrow \infty]{} 1\\
-      x_n' = \frac{-1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n')=-1 \xrightarrow[n \rightarrow \infty]{} -1
-    \end{array} \Rightarrow
-    \not\exists\ lim_{x \rightarrow 0} sign\ x
-    \)
+  \(
+  \begin{array}{l}
+    x_n = \frac{1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n)=1 \xrightarrow[n \rightarrow \infty]{} 1\\
+    x_n' = \frac{-1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n')=-1 \xrightarrow[n \rightarrow \infty]{} -1
+  \end{array} \Rightarrow
+  \not\exists\ lim_{x \rightarrow 0} sign\ x
+  \)
 
-    На языке \(\varepsilon - \delta.\)
+  На языке \(\varepsilon - \delta.\)
 
-    Пусть \(\exists\ lim_{x \rightarrow 0} sign\ x = A\), тогда \(\forall \varepsilon > 0 \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x} < \delta;\ \abs{f(x)-A}<\varepsilon\)
+  Пусть \(\exists\ lim_{x \rightarrow 0} sign\ x = A\), тогда \(\forall \varepsilon > 0 \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x} < \delta;\ \abs{f(x)-A}<\varepsilon\)
 
-    Возьмём \(x_1 = \frac{\delta}{2},\ x_2 = -\frac{\delta}{2}\). \(\abs{f(x_1)-f(x_2)} = \abs{f(x_1)-A+A-f(x_2)} \leq\\ \leq \abs{f(x_1)-A}+\abs{f(x_2-A)} < 2 \varepsilon \Rightarrow 2 < 2\varepsilon\) --- противоречие(например, \(\varepsilon = 1\)).
-  \end{enumerate}
+  Возьмём \(x_1 = \frac{\delta}{2},\ x_2 = -\frac{\delta}{2}\). \(\abs{f(x_1)-f(x_2)} = \abs{f(x_1)-A+A-f(x_2)} \leq\\ \leq \abs{f(x_1)-A}+\abs{f(x_2-A)} < 2 \varepsilon \Rightarrow 2 < 2\varepsilon\) --- противоречие(например, \(\varepsilon = 1\)).
 
   \subsection{Основные теоремы}
   \begin{enumerate}
@@ -186,7 +183,7 @@
 
   \textbf{Пример.} \(y = sign\ x\)
 
-  % TODO SIGNUM FUNCTION(3)
+  \includegraphics[scale=0.35]{11_1_2_1.png}
   
   \( \exists lim_{x \rightarrow 0} sign\ x \)
 
