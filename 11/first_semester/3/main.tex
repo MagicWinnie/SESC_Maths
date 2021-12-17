@@ -37,9 +37,9 @@
         
         Подробнее:
 
-        \( \forall\ \varepsilon > 0\ \exists\ \delta(\varepsilon):\ \forall\ x:\ \abs{x - a} < \delta \Rightarrow \abs{f(x) - f(a)} < \varepsilon \)
+        \( \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ \abs{x - a} < \delta \Rightarrow \abs{f(x) - f(a)} < \varepsilon \)
 
-        \(\exists\ \varepsilon:\ \forall \delta\ \exists\ x:\ \abs{x-a}<\delta\ \abs{f(x)-f(a)} \geq \varepsilon\)
+        \(\exists \varepsilon:\ \forall \delta\ \exists x:\ \abs{x-a}<\delta\ \abs{f(x)-f(a)} \geq \varepsilon\)
     \end{enumerate}
 
     \begin{minipage}{0.49\linewidth}
@@ -54,14 +54,14 @@
     \textbf{Определение.} Функция \(y = f(x)\) называется непрерывной слева в \(x = a\), если
 
     \begin{enumerate}
-        \item \(f(x)\) определена \( \forall\ x \in (a - \delta; a] \)
+        \item \(f(x)\) определена \( \forall x \in (a - \delta; a] \)
         \item \(lim_{x\rightarrow a-0} f(x)=f(a)\)
     \end{enumerate}
 
     \textbf{Определение.} Функция \(y = f(x)\) называется непрерывной справа в \(x = a\), если
     
     \begin{enumerate}
-        \item \(f(x)\) определена \( \forall\ x \in [a; a + \delta) \)
+        \item \(f(x)\) определена \( \forall x \in [a; a + \delta) \)
         \item \(lim_{x\rightarrow a+0} f(x)=f(a)\)
     \end{enumerate}
 
@@ -91,7 +91,7 @@
 
     \begin{enumerate}
         \item \( f(x) \pm g(x) \)
-        \item \( f(x) * g(x) \)
+        \item \( f(x) \cdot g(x) \)
         \item \( \frac{f(x)}{g(x)},\ g(a) \neq 0 \)
     \end{enumerate}
     
@@ -99,12 +99,12 @@
 
     \(\uparrow\) Доказывается как следствие теоремы об арифметических операциях над пределами функций. \(\downarrow\)
 
-    \textbf{Теорема 2.} Если \(f(x)\) непрерывна в \(x = a\), то \(\exists\ \delta:\ f(x)\) ограничена \(U_{\delta}(a)\)
+    \textbf{Теорема 2.} Если \(f(x)\) непрерывна в \(x = a\), то \(\exists \delta:\ f(x)\) ограничена \(U_{\delta}(a)\)
     
-    \(\uparrow\ \exists\ lim_{x \rightarrow a} f(x)=f(a):\ \forall \varepsilon > 0\ \exists\ \delta:\ \forall x\ \abs{x-a}<\delta\ \abs{f(x)-f(a)} < \varepsilon\), при \(\varepsilon = 1, \abs{f(x)}<\abs{f(a)}+1\ \downarrow\)
+    \(\uparrow\ \exists lim_{x \rightarrow a} f(x)=f(a):\ \forall \varepsilon > 0\ \exists \delta:\ \forall x\ \abs{x-a}<\delta\ \abs{f(x)-f(a)} < \varepsilon\), при \(\varepsilon = 1, \abs{f(x)}<\abs{f(a)}+1\ \downarrow\)
 
 
-    \textbf{Теорема 3 (об отделимости от нуля).} Если \(f(x)\) непрерывна в \(x = a\) и \( f(a) \neq 0 \), то в \(\exists\ \delta:\ \forall\ x \in U_{\delta}(a)\)
+    \textbf{Теорема 3 (об отделимости от нуля).} Если \(f(x)\) непрерывна в \(x = a\) и \( f(a) \neq 0 \), то в \(\exists \delta:\ \forall x \in U_{\delta}(a)\)
 
     \begin{enumerate}
         \item \(\abs{f(x)}>\frac{\abs{f(a)}}{2}\)
@@ -112,7 +112,7 @@
         \item Если \(f(a)<0\); то \(f(x)<\frac{f(a)}{2}\)
     \end{enumerate}
 
-    \(\uparrow\) Известно, что \(\forall \varepsilon > 0\ \exists\ \delta(\varepsilon):\ \forall x:\ \abs{x-a}=U_\delta(a)<\delta\ \abs{f(x)-f(a)}<\varepsilon\)
+    \(\uparrow\) Известно, что \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ \abs{x-a}=U_\delta(a)<\delta\ \abs{f(x)-f(a)}<\varepsilon\)
 
     Если \( \varepsilon = \frac{\abs{f(a)}}{2} \), то последнее неравенство 
 
@@ -134,9 +134,9 @@
 
     \(\uparrow\)
     \begin{enumerate}
-        \item \( g(y) \) непрерывна в \(y = b\), т.е. \( \forall\ \varepsilon > 0\ \exists\ \delta(\varepsilon):\ \forall\ y:\ \abs{y - b} < \delta (=\abs{f(x) - f(a)} < \delta)\ \abs{g(y)-g(b)}<\varepsilon \)
-        \item Из непрерывности \(y = f(x)\), по \(\delta(\varepsilon)\ \exists\ \delta_1(\delta):\ \forall x:\ \abs{x-a}<\delta_1\ \abs{f(x)-f(a)}<\delta\)
-        \item В итоге по \(\forall\ \varepsilon > 0\ \exists\ \delta_1(\delta(\varepsilon)):\ \forall\ x:\ \abs{x - a} < \delta_1 \Rightarrow_{\textrm{п. 2}} \abs{f(x) - f(a)} < \delta \Rightarrow_{\textrm{п. 1}} \abs{g(f(x)) - g(f(a))} < \varepsilon\)
+        \item \( g(y) \) непрерывна в \(y = b\), т.е. \( \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall y:\ \abs{y - b} < \delta (=\abs{f(x) - f(a)} < \delta)\ \abs{g(y)-g(b)}<\varepsilon \)
+        \item Из непрерывности \(y = f(x)\), по \(\delta(\varepsilon)\ \exists \delta_1(\delta):\ \forall x:\ \abs{x-a}<\delta_1\ \abs{f(x)-f(a)}<\delta\)
+        \item В итоге по \(\forall \varepsilon > 0\ \exists \delta_1(\delta(\varepsilon)):\ \forall x:\ \abs{x - a} < \delta_1 \Rightarrow_{\textrm{п. 2}} \abs{f(x) - f(a)} < \delta \Rightarrow_{\textrm{п. 1}} \abs{g(f(x)) - g(f(a))} < \varepsilon\)
         
         А \( \abs{g(f(x)) - g(f(a))} < \varepsilon = \abs{h(x) - h(a)} < \varepsilon \)    
     \end{enumerate}
@@ -149,11 +149,11 @@
     \begin{enumerate}
         \item \( y=c=const \) непрерывна \( \forall x \)
         
-        \( \forall \varepsilon > 0\ \exists\ \delta:\ \abs{x - a} < \delta \abs{f(x) - f(a)} = \abs{c - c} = 0 < \varepsilon \)
+        \( \forall \varepsilon > 0\ \exists \delta:\ \abs{x - a} < \delta \abs{f(x) - f(a)} = \abs{c - c} = 0 < \varepsilon \)
 
         \item \(y=x\) непрерывна \(\forall x\)
         
-        \(\forall \varepsilon > 0\ \exists\ \delta:\ \abs{x - a} < \delta \abs{f(x) - f(a)} = \abs{x - a} < \delta = \varepsilon\)
+        \(\forall \varepsilon > 0\ \exists \delta:\ \abs{x - a} < \delta \abs{f(x) - f(a)} = \abs{x - a} < \delta = \varepsilon\)
     
         \(y=x^n\) непрерывна \(\forall x\), как произведение непрерывных функций
         
@@ -179,9 +179,9 @@
             \(\abs{P_1P_2}<P_1PP_2 \Rightarrow \abs{sin\ \alpha} < \abs{\alpha}\)
 
             \item при \( \alpha = 0 \), равенство
-            \item \( \abs{\alpha} > frac{\pi}{2}\ \abs{sin\ \alpha} \leq 1 < \frac{\pi}{2} < \abs{\alpha} \)
+            \item \( \abs{\alpha} > \frac{\pi}{2}\ \abs{sin\ \alpha} \leq 1 < \frac{\pi}{2} < \abs{\alpha} \)
             
-            \( \forall\ \varepsilon > 0\ \exists\ \delta:\ \forall\ x \abs{x - a} < \delta \Rightarrow \abs{sin\ x - sin\ a} < \varepsilon \)
+            \( \forall \varepsilon > 0\ \exists \delta:\ \forall x \abs{x - a} < \delta \Rightarrow \abs{sin\ x - sin\ a} < \varepsilon \)
             
             \(\abs{sin\ x - sin\ a} = \abs{2sin\frac{x-a}{2}cos\frac{x+a}{2}} = 2\abs{sin\frac{x - a}{2}}\abs{cos\frac{x + a}{2}} < 2 * \frac{\abs{x - a}}{\abs{2}} * 1 < \delta = \varepsilon\)
         \end{enumerate}

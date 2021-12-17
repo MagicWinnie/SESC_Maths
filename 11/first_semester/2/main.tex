@@ -29,19 +29,19 @@
   
   \(y=sign\ x=\begin{cases}1;\ x>0\\ 0;\ x=0\\ -1;\ x<0\end{cases}\)
 
-  \(\not \exists\ lim_{x \rightarrow 0}\ sign\ x\)
+  \(\not\exists lim_{x \rightarrow 0}\ sign\ x\)
 
   \(
   \begin{array}{l}
     x_n = \frac{1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n)=1 \xrightarrow[n \rightarrow \infty]{} 1\\
     x_n' = \frac{-1}{n} \xrightarrow[n \rightarrow \infty]{} 0\ f(x_n')=-1 \xrightarrow[n \rightarrow \infty]{} -1
   \end{array} \Rightarrow
-  \not\exists\ lim_{x \rightarrow 0} sign\ x
+  \ \not\exists lim_{x \rightarrow 0} sign\ x
   \)
 
   На языке \(\varepsilon - \delta.\)
 
-  Пусть \(\exists\ lim_{x \rightarrow 0} sign\ x = A\), тогда \(\forall \varepsilon > 0 \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x} < \delta;\ \abs{f(x)-A}<\varepsilon\)
+  Пусть \(\exists lim_{x \rightarrow 0} sign\ x = A\), тогда \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x} < \delta;\ \abs{f(x)-A}<\varepsilon\)
 
   Возьмём \(x_1 = \frac{\delta}{2},\ x_2 = -\frac{\delta}{2}\). \(\abs{f(x_1)-f(x_2)} = \abs{f(x_1)-A+A-f(x_2)} \leq\\ \leq \abs{f(x_1)-A}+\abs{f(x_2-A)} < 2 \varepsilon \Rightarrow 2 < 2\varepsilon\) --- противоречие(например, \(\varepsilon = 1\)).
 
@@ -49,10 +49,10 @@
   \begin{enumerate}
     \item \textbf{Теорема о локальной ограниченности}
 
-    Если \(\exists\ lim_{x \rightarrow a} f(x) = A;\) то \(\exists\) окрестность \(x = a:\ f(x)\) - ограничена в этой окрестности. \\
-    \( (\exists U(a): \exists M: \abs{f(x)} < M) \)
+    Если \(\exists lim_{x \rightarrow a} f(x) = A;\) то \(\exists\) окрестность \(x = a:\ f(x)\) - ограничена в этой окрестности. \\
+    \( (\exists U(a):\ \exists M: \abs{f(x)} < M) \)
 
-    \(\uparrow\ \exists\ lim \Rightarrow \forall \varepsilon > 0\ \exists\ \delta(\varepsilon):\ \forall x:\ 0 < \abs{x-a} < \delta.\\ \abs{f(x)}-\abs{A} \leq \abs{f(x)-A}<\varepsilon=1\)\\
+    \(\uparrow\ \exists lim \Rightarrow\ \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x-a} < \delta.\\ \abs{f(x)}-\abs{A} \leq \abs{f(x)-A}<\varepsilon=1\)\\
     \(\abs{f(x)}< \underbrace{1+\abs{A}}_{=M}\ \downarrow\)
 
     \item \textbf{Теорема о сохранении знака неравенства}
@@ -61,7 +61,7 @@
 
     \(\uparrow\) На языке последовательностей:\\
     \(\forall x_n \rightarrow a \begin{array}{l} y_n = f(x_n) \rightarrow A.\\ z_n = g(x_n) \rightarrow B. \end{array}\)\\
-    \(\forall \delta\ \exists\ N:\ \forall n > N\ \abs{x_n - a} < \delta\) в этой \(U \delta(a)\) начиная с некоторого номера
+    \(\forall \delta\ \exists N:\ \forall n > N\ \abs{x_n - a} < \delta\) в этой \(U \delta(a)\) начиная с некоторого номера
     \begin{equation*}
       \begin{array}{l}
         y_n = f(x_n) \leq g(x_n) = z_n \\
@@ -90,31 +90,31 @@
     
     \item \textbf{Теорема об арифметических операциях}
 
-      Если \(\exists\ lim_{x \rightarrow a} f(x)=A\) и \(lim_{x\rightarrow a} g(x) = B\), то
+      Если \(\exists lim_{x \rightarrow a} f(x)=A\) и \(lim_{x\rightarrow a} g(x) = B\), то
       \begin{enumerate}
         \item \(lim_{x \rightarrow a}(f(x)\pm g(x))=A\pm B\)
-        \item \(lim_{x \rightarrow a} f(x)g(x) = A*B\)
+        \item \(lim_{x \rightarrow a} f(x)g(x) = A \cdot B\)
         \item \(lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \frac{A}{B}\), при \(B \neq 0\); \(g(x) \neq 0\) в окрестности \(x=a\).
       \end{enumerate}
 
       \(\uparrow\) Для произв. На языке последовательностей.
 
       \(\forall x_n \rightarrow a\) изв \(\begin{array}{l} lim_{n \rightarrow \infty} f(x_n) = A\\ lim_{n \rightarrow \infty} g(x_n) = B\end{array}\\ 
-      lim_{n \rightarrow \infty} f(x_n)g(x_n)=lim_{n \rightarrow \infty} f(x_n) * lim_{n \rightarrow \infty} g(x_n)=A*B\)\\
+      lim_{n \rightarrow \infty} f(x_n)g(x_n)=lim_{n \rightarrow \infty} f(x_n) \cdot lim_{n \rightarrow \infty} g(x_n)=A \cdot B\)\\
       в силу произвольности \(x_n \rightarrow a\) по определению на языке последовательностей ч.т.д. \(\downarrow\)
   
       \item \textbf{Критерий Коши существования предела функции в точке}
       
-      \( \exists lim_{x \rightarrow a} f(x) = A \Leftrightarrow \forall \varepsilon > 0 \exists \delta(\varepsilon): \forall\ x',x'': \)
+      \( \exists lim_{x \rightarrow a} f(x) = A \Leftrightarrow\ \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x',x'': \)
       \[ 0 < \abs{x' - a} < \delta \]
       \[ 0 < \abs{x'' - a} < \delta \]
       \[ \abs{f(x') - f(x'')} < \varepsilon \]
       
       \textbf{Отступление. Критерий Коши для числовых последовательностей.}
       
-      для \(\{y_n\}\ \forall \varepsilon > 0\ \exists\ N:\ \forall n, m > N\ \abs{y_n - y_m} < \varepsilon\)
+      для \(\{y_n\}\ \forall \varepsilon > 0\ \exists N:\ \forall n, m > N\ \abs{y_n - y_m} < \varepsilon\)
   
-      \( \uparrow \) ``\(\Rightarrow\)'' дано \( \forall\ \varepsilon > 0 \exists\ \delta(\varepsilon): \forall\ x:\ 0 < \abs{x - a} < \delta (*)\)
+      \( \uparrow \) ``\(\Rightarrow\)'' дано \( \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x: 0 < \abs{x - a} < \delta (*)\)
 
       \( \abs{f(x) - A} < \frac{\varepsilon}{2} \)
       
@@ -122,13 +122,13 @@
 
       \( \abs{f(x') - f(x'')} = \abs{f(x') - A + A - f(x'')} \leq \abs{f(x') - A} + \abs{f(x'') - A} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon \)
 
-      ``\(\Rightarrow\)'' дано: \(\forall\ \varepsilon > 0 \exists\ \delta(\varepsilon): \forall\ x',x'':\ \begin{array}{l}0 < \abs{x' - a} < \delta\\ 0 < \abs{x'' - a} < \delta\end{array}\) выполняется:\\
-      \(\abs{f(x')-f(x'')} < \varepsilon \Rightarrow\ \exists\ lim_{x \rightarrow a} f(x)\)
+      ``\(\Rightarrow\)'' дано: \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x',x'':\ \begin{array}{l}0 < \abs{x' - a} < \delta\\ 0 < \abs{x'' - a} < \delta\end{array}\) выполняется:\\
+      \(\abs{f(x')-f(x'')} < \varepsilon \Rightarrow\ \exists lim_{x \rightarrow a} f(x)\)
 
-      \(\forall x_n \xrightarrow[n \rightarrow \infty]{} a \Rightarrow f(x_n) \rightarrow ... \forall \delta\ \exists\ N:\ \forall n,m > N \begin{array}{l}0 < \abs{x_n - a} < \delta\\ 0 < \abs{x_m - a} < \delta \end{array} \Rightarrow\\
+      \(\forall x_n \xrightarrow[n \rightarrow \infty]{} a \Rightarrow f(x_n) \rightarrow ...\ \forall \delta\ \exists N:\ \forall n,m > N \begin{array}{l}0 < \abs{x_n - a} < \delta\\ 0 < \abs{x_m - a} < \delta \end{array} \Rightarrow\\
       \Rightarrow \abs{f(x_n)-f(x_m)}< \varepsilon\)
       
-      \(\Rightarrow\) по Критерию Коши для числовых последовательностей \(\exists \lim_{n \rightarrow \infty} y_n\) (т.е. \(\exists\ lim_{n \rightarrow \infty} f(x_n)\))
+      \(\Rightarrow\) по Критерию Коши для числовых последовательностей \(\exists \lim_{n \rightarrow \infty} y_n\) (т.е. \(\exists lim_{n \rightarrow \infty} f(x_n)\))
             
       Пусть \( \lim_{n \rightarrow \infty} y_n = A \)
 
@@ -141,13 +141,13 @@
   \textbf{Определение 1.} \(lim_{x \rightarrow +\infty} f(x) = A\). Означает, что:
   \begin{enumerate}
     \item Функция \(y = f(x)\) определена \(\forall x > K(K\) --- некоторое число)
-    \item \(\forall \varepsilon > 0\ \exists\ \Delta > 0\ \forall x:\ x > \Delta\ \abs{f(x)-A} < \varepsilon\)
+    \item \(\forall \varepsilon > 0\ \exists \Delta > 0\ \forall x:\ x > \Delta\ \abs{f(x)-A} < \varepsilon\)
   \end{enumerate}
 
   \textbf{Определение 1'.} 
   \begin{enumerate}
     \item \(-||-\)
-    \item \( \forall\ x_n \xrightarrow[n \rightarrow \infty]{} +\infty \)
+    \item \( \forall x_n \xrightarrow[n \rightarrow \infty]{} +\infty \)
     
     \(f(x_n) \xrightarrow[n \rightarrow \infty]{} A\)
   \end{enumerate}
@@ -156,7 +156,7 @@
   \textbf{Определение 2.} \(lim_{x \rightarrow -\infty} f(x) = A\). Означает, что:
   \begin{enumerate}
     \item \(f(x)\) определено \(\forall x:\ x < K(K\) --- некоторое число)
-    \item \(\forall \varepsilon > 0\ \exists\ \Delta(\varepsilon):\ \forall x\ x < \Delta\ \abs{f(x)-A}<\varepsilon\)
+    \item \(\forall \varepsilon > 0\ \exists \Delta(\varepsilon):\ \forall x\ x < \Delta\ \abs{f(x)-A}<\varepsilon\)
   \end{enumerate}
 
 
@@ -172,13 +172,13 @@
 
   \begin{enumerate}
     \item \(f(x)\) определено в правой окрестности точки \(x = a\) (при \( x \in (a; a + \delta) \))
-    \item \(\forall \varepsilon > 0\ \exists\ \delta:\ \forall x\ 0 < x-a < \delta\ \abs{f(x)-A}<\varepsilon\)
+    \item \(\forall \varepsilon > 0\ \exists \delta:\ \forall x\ 0 < x-a < \delta\ \abs{f(x)-A}<\varepsilon\)
   \end{enumerate}
 
   \textbf{Определение 2.} \( lim_{x \rightarrow a-} f(x) = A \) означает, что
   \begin{enumerate}
     \item \(f(x)\) определена в левой окрестности \(x=a(\forall x\ x \in (a-\delta; a))\)
-    \item \( \forall \varepsilon > 0 \exists\ \delta:\ \forall\ x:\ a - \delta < x < a \) выполняется \( \abs{f(x) - A} < \varepsilon \)
+    \item \( \forall \varepsilon > 0\ \exists \delta:\ \forall x:\ a - \delta < x < a \) выполняется \( \abs{f(x) - A} < \varepsilon \)
      \end{enumerate}
 
   \textbf{Пример.} \(y = sign\ x\)

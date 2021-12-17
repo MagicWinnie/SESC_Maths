@@ -216,7 +216,7 @@
                 \item \( a^{r_1} \) ограничено сверху, например, \( a^r;\ r > x;\ a^{r_1} > 0 \)
                 \item \( \lim_{n \to \infty}(a^\frac{1}{n} - 1) = 0 \) бесконечно малая последовательность
                 \item \( \lim_{n \to \infty}(a^{r_1}(a^\frac{1}{n} - 1)) = 0\)
-                \item \(\forall \varepsilon > 0\ \exists\ N:\ \forall n > N\ \abs{a^{r_2^n} - a^{r_1^n}} < \varepsilon\)
+                \item \(\forall \varepsilon > 0\ \exists N:\ \forall n > N\ \abs{a^{r_2^n} - a^{r_1^n}} < \varepsilon\)
             \end{enumerate}
             
             Т.е \(\exists\) единственное разделяющее число \(c = a^x\) для \(A\) и \(B\).
@@ -256,7 +256,7 @@
             
             \(x_2\) --- иррациональное, \(x_1\) --- рациональное: \(a^{x_1} < a^{x_2}\) (из определения \(a^x\))
 
-            \( x_1, x_2 \) --- иррациональные: \( \exists\ x \) --- рациональное: \( x_1 < x < x_2 \Rightarrow a^{x_1} < a^x < a^{x_2} \) (из определения \(a^x\))
+            \( x_1, x_2 \) --- иррациональные: \( \exists x \) --- рациональное: \( x_1 < x < x_2 \Rightarrow a^{x_1} < a^x < a^{x_2} \) (из определения \(a^x\))
             \item \( a = 1:\ const \)
             \item \( 0 < a < 1:\ \searrow \)
         \end{enumerate}
@@ -267,11 +267,11 @@
 
             \(\lim_{x \to +\infty} a^x = +\infty\)
             
-            \(\uparrow\) Надо \(\forall E > 0\ \exists\ \Delta:\ \forall x > \Delta\ a^x > E\)
+            \(\uparrow\) Надо \(\forall E > 0\ \exists \Delta:\ \forall x > \Delta\ a^x > E\)
 
             Значит, что 
 
-            \( \lim_{n \to +\infty} a^n = +\infty \), т.е. \( \forall E > 0\ \exists\ N_*:\ \forall n > N_*\ a^n > E \)
+            \( \lim_{n \to +\infty} a^n = +\infty \), т.е. \( \forall E > 0\ \exists N_*:\ \forall n > N_*\ a^n > E \)
             
             \(a^x \nearrow a > 1\ \forall x > n\ :\ a^x > a^n\)
             
@@ -297,9 +297,9 @@
         
         \item Функция \(y = a^x\) непрерывна на \(\mathbb{R}\)
 
-        \(\uparrow\) Надо \(\forall \varepsilon > 0\ \exists\ \delta\ :\ \forall x\ \abs{x - x_0} < \delta \Rightarrow \abs{f(x) - f(x_0)} = \abs{a^x-a^x_0} < \varepsilon\)
+        \(\uparrow\) Надо \(\forall \varepsilon > 0\ \exists \delta\ :\ \forall x\ \abs{x - x_0} < \delta \Rightarrow \abs{f(x) - f(x_0)} = \abs{a^x-a^x_0} < \varepsilon\)
 
-        \(\uparrow\) для \(x_0\ \exists\ r_1 = \frac{l}{10^n};\ r_2 = \frac{l + 1}{10^n};\ \frac{l}{10^n} \leq x_0 \leq \frac{l + 1}{10^n} \)
+        \(\uparrow\) для \(x_0\ \exists r_1 = \frac{l}{10^n};\ r_2 = \frac{l + 1}{10^n};\ \frac{l}{10^n} \leq x_0 \leq \frac{l + 1}{10^n} \)
         
         \begin{enumerate}
             \item \( a > 1 \) Доказывали, что \( \abs{a^x - a^{x_0}} < \abs{a^{r_2} - a^{r_1}} < \varepsilon \)
@@ -309,7 +309,7 @@
             \item \( 0 < a < 1 \) Аналогично. \(\downarrow\)
         \end{enumerate}
         
-        \item Функция \(y = a^x,\ a \neq 1\) принимает все положительные значения, т.е. \(\forall b \in (0; +\infty)\ \exists\ c:\ a^c = b\).
+        \item Функция \(y = a^x,\ a \neq 1\) принимает все положительные значения, т.е. \(\forall b \in (0; +\infty)\ \exists c:\ a^c = b\).
 
         Док-во следует из \(\lim_{x \to \pm \infty} a^x\) и следствия т. Больцано.
 
@@ -332,11 +332,11 @@
         \begin{enumerate}
             \item \( (ab)^x = a^x b^x \)
             
-            \(\uparrow\) \( \forall \) иррациональных \(x\ \exists\ r_n: r_n \xrightarrow[n \to \infty]{} x \)
+            \(\uparrow\) \( \forall \) иррациональных \(x\ \exists r_n: r_n \xrightarrow[n \to \infty]{} x \)
 
             \( y = a^x \) --- непрерывная \(\Rightarrow a^x = \lim_{n \to \infty} a^{r_n}\)
 
-            \( (ab)^x = \lim_{n \to \infty}(ab)^{r_n} = \lim_{n \to \infty}a^{r_n} b^{r_n} = \lim*\lim = a^x b^x\ \downarrow \)
+            \( (ab)^x = \lim_{n \to \infty}(ab)^{r_n} = \lim_{n \to \infty}a^{r_n} b^{r_n} = \lim \cdot \lim = a^x b^x\ \downarrow \)
 
             \item \((\frac{a}{b})^x = \frac{a^x}{b^x}\)
             \item \( a^x a^y = a^{x + y} \)

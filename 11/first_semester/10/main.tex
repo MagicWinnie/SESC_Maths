@@ -42,18 +42,18 @@
 \textbf{Определение.} Функция \(y = f(x)\)
 
 \begin{enumerate}
-    \item Возрастает в точке \(x\), если \(\exists \delta > 0\ \forall\ \Delta x: 0 < \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x} > 0\)
+    \item Возрастает в точке \(x\), если \(\exists \delta > 0\ \forall \Delta x: 0 < \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x} > 0\)
     
-    (\(\exists \delta > 0\ \forall\ x_1 \in (x-\delta, x), x_2 \in (x, x + \delta)\ f(x_1) < f(x) < f(x_2)\))
-    \item Убывает в точке \(x\), если \(\exists \delta > 0\ \forall\ \Delta x: 0 < \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x} < 0\)
+    (\(\exists \delta > 0\ \forall x_1 \in (x-\delta, x), x_2 \in (x, x + \delta)\ f(x_1) < f(x) < f(x_2)\))
+    \item Убывает в точке \(x\), если \(\exists \delta > 0\ \forall \Delta x: 0 < \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x} < 0\)
     
-    (\(\exists \delta > 0\ \forall\ x_1 \in (x-\delta, x), x_2 \in (x, x + \delta)\ f(x_1) > f(x) > f(x_2)\))
+    (\(\exists \delta > 0\ \forall x_1 \in (x-\delta, x), x_2 \in (x, x + \delta)\ f(x_1) > f(x) > f(x_2)\))
     \item Достигает локального максимума в точке \(x\), если
     
-    \(\exists \delta > 0\ \forall\ \Delta x: \abs{\Delta x} < \delta\ \Delta y < 0(\exists \delta > 0\ \forall\ x_1 \in (x - \delta, x + \delta)\ f(x_1) < f(x))\)
+    \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y < 0(\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) < f(x))\)
     \item Достигает локального минимума в точке \(x\), если
     
-    \(\exists \delta > 0\ \forall\ \Delta x: \abs{\Delta x} < \delta\ \Delta y > 0(\exists \delta > 0\ \forall\ x_1 \in (x - \delta, x + \delta)\ f(x_1) > f(x))\)
+    \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y > 0(\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) > f(x))\)
 \end{enumerate}
 
 \textbf{Замечание.} Здесь \(\Delta x\) малая величина как \(>0\), так и \(<0\), т.е. работаем с двусторонними окрестностями.
@@ -62,7 +62,7 @@
 
 \(\uparrow\) Пусть \(f'(x) > 0\), т.е. \(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A > 0\).
 
-По теореме об отделении от нуля для пределов функций получаем, что в окрестности т. \(x\ \exists \delta > 0:\ \forall\ \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} > 0\).
+По теореме об отделении от нуля для пределов функций получаем, что в окрестности т. \(x\ \exists \delta > 0:\ \forall \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} > 0\).
 
 Таким образом, по п.1 определения \(y = f(x)\) возрастает в точке \(x\). Аналогично можно доказать, если \(f(x) < 0\), то функция убывает в точке \(x.\ \downarrow\)
 
@@ -140,7 +140,7 @@
 \end{array}\)
 т.е. \(F(a) = F(b)\)
 
-По теореме Ролля \(\exists\ c \in (a, b):\ f'(c) = 0\)
+По теореме Ролля \(\exists c \in (a, b):\ f'(c) = 0\)
 
 \(F'(x) = f'(x) - 0 - \frac{f(b) - f(a)}{g(b) - g(a)}g'(x) \Rightarrow F'(c) = f'(c) - \frac{f(b) - f(a)}{g(b) - g(a)}g'(c)=0\)
 
@@ -148,7 +148,7 @@
 
 \textbf{Теорема.} Функция, непрерывная на отрезке \([a, b]\) и имеющая производную \(f'(x) > 0(\geq 0)\) на интервале \((a, b)\), строго возрастает(не убывает) на \([a, b]\).
 
-\(\uparrow\) Пусть \(x_1, x_2:\ a \leq x_1 < x_2 \leq b\), тогда на \([x_1, x_2]\) выполняются условия теоремы Лагранжа, следовательно, \(\exists c \in (x_1, x_2):\ f(x_2) - f(x_1) = f'(c)*(x_2 - x_1)_{>0}\).
+\(\uparrow\) Пусть \(x_1, x_2:\ a \leq x_1 < x_2 \leq b\), тогда на \([x_1, x_2]\) выполняются условия теоремы Лагранжа, следовательно, \(\exists c \in (x_1, x_2):\ f(x_2) - f(x_1) = f'(c) \cdot (x_2 - x_1)_{>0}\).
 
 Если \(f'(x) > 0\), то \(f(x_2) - f(x_1) > 0\), т.е. функция строго возрастает на \([a, b]\),
 
@@ -169,7 +169,7 @@
 
 \(\uparrow\) из теоремы Лагранжа получали формулу конечных приращений. В окрестности точки \(x_0\) её можно записать:
 
-\[\Delta f = f(x) - f(x_0) = f'(x_0 + \Theta(x-x_0))*(x-x_0),\ 0 < \Theta < 1\]
+\[\Delta f = f(x) - f(x_0) = f'(x_0 + \Theta(x-x_0)) \cdot (x-x_0),\ 0 < \Theta < 1\]
 
 В 1м случае:
 \begin{enumerate}

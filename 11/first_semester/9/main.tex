@@ -27,12 +27,12 @@
 \begin{document}
     \textbf{Теорема 1. (производная сложной функции)}
 
-    \( y = f(u), u = \varphi(x) \) имеют производную, \( \exists\ y= F(x) = f(\varphi(x)) \), тогда \( F'(x) = f_u'(\varphi(x)) \cdot \varphi_x'(x) \)\\
+    \( y = f(u), u = \varphi(x) \) имеют производную, \( \exists y= F(x) = f(\varphi(x)) \), тогда \( F'(x) = f_u'(\varphi(x)) \cdot \varphi_x'(x) \)\\
     \( \uparrow \)
     
     \(x\) придали приращение \(\Delta x\); то \(u\) получила приращение \(\Delta u = \varphi(x + \Delta x) - \varphi(x)\), тогда \(y\) получила приращение \(\Delta y = f(u + \Delta u) - f(u) \).
     
-    \(\exists\ f_u\), т.е. \( f_u' = \lim_{\Delta u \to 0} \frac{\Delta y}{\Delta u} \Rightarrow \frac{\Delta y}{\Delta u} = f_u' + \alpha(\Delta u); \alpha(\Delta u) \xrightarrow[\Delta u \to 0]{} 0\)
+    \(\exists f_u\), т.е. \( f_u' = \lim_{\Delta u \to 0} \frac{\Delta y}{\Delta u} \Rightarrow \frac{\Delta y}{\Delta u} = f_u' + \alpha(\Delta u); \alpha(\Delta u) \xrightarrow[\Delta u \to 0]{} 0\)
     
     \(\Delta y = f_u'\Delta u + \alpha(\Delta u)\Delta u\)
 
@@ -169,7 +169,7 @@
 
     \(f'(x) = \lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0}\frac{A(x)\Delta x + o(\Delta x)}{\Delta x} = A(x) + 0 \)
 
-    ``\( \Leftarrow \)'' \(\exists\ f'(x) \Rightarrow\ \exists\ \) представление для \(\Delta y\) вида (*), где \(A(x) = f'(x) \downarrow\).
+    ``\( \Leftarrow \)'' \(\exists f'(x) \Rightarrow\ \exists \) представление для \(\Delta y\) вида (*), где \(A(x) = f'(x) \downarrow\).
 
     \subsubsection{Геометрический смысл дифференциала}
 
@@ -223,7 +223,7 @@
 
             \( \Delta x = \varphi(t + \Delta t) - \varphi(t) \)
 
-            \( \exists\ \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t} = \varphi_t'(t) \Rightarrow \Delta x = \varphi_t' \cdot \Delta t + \alpha(\Delta t)\cdot\Delta t \), если это подставить в (**), то \( dy = f_x'\varphi_t'\Delta t + f_x'\alpha(\Delta t)\Delta t = F_t'\Delta t + f_x'\alpha(\Delta t)\Delta t \)
+            \( \exists \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t} = \varphi_t'(t) \Rightarrow \Delta x = \varphi_t' \cdot \Delta t + \alpha(\Delta t)\cdot\Delta t \), если это подставить в (**), то \( dy = f_x'\varphi_t'\Delta t + f_x'\alpha(\Delta t)\Delta t = F_t'\Delta t + f_x'\alpha(\Delta t)\Delta t \)
 
             % Должно было получиться \( dy = F_t'\Delta t \),
         \end{enumerate}

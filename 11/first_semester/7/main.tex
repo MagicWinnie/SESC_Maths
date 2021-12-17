@@ -29,7 +29,7 @@
 
     \subsection{Определения}
 
-    Может оказаться так, что есть \( \mathbb{R} \ni \begin{cases} b_1\qquad\qquad\  a^{c_1}\\ b_2 \xrightarrow[a > 0,\ a \neq 1]{} a^{c_2}\\ b_3\qquad\qquad\  a^{c_3} \end{cases} \), т.к. \( \forall b > 0\ \exists\ c:\ a^c = b, \) где \( a > 0,\ a \neq 1 \). \( c \) - и есть \(log\).
+    Может оказаться так, что есть \( \mathbb{R} \ni \begin{cases} b_1\qquad\qquad\  a^{c_1}\\ b_2 \xrightarrow[a > 0,\ a \neq 1]{} a^{c_2}\\ b_3\qquad\qquad\  a^{c_3} \end{cases} \), т.к. \( \forall b > 0\ \exists c:\ a^c = b, \) где \( a > 0,\ a \neq 1 \). \( c \) - и есть \(log\).
     
     \textbf{Определение.} Логарифмом числа \(b\) по основанию \(a\) называется такое число \(c\), что \(a^c = b\).
 
@@ -138,7 +138,7 @@
 
         \( \alpha = k\log_a x\ a^{\alpha} = x \)
         
-        \(a^t = x^k = (a^\alpha)^k = a^{k*\alpha} \xLeftarrow[]{a \neq 1} t = k*\alpha\)
+        \(a^t = x^k = (a^\alpha)^k = a^{k \cdot \alpha} \xLeftarrow[]{a \neq 1} t = k \cdot \alpha\)
 
         \textbf{Примеры.}
 
@@ -175,7 +175,7 @@
 
     \( x > 0\ \lim_{x \to +\infty} (1 + \frac{1}{x})^x \)
 
-    \(\forall x \in \mathbb{R}\ \exists\ [x] = n,\ n \in \mathbb{N} \cup \{ 0 \} \)
+    \(\forall x \in \mathbb{R}\ \exists [x] = n,\ n \in \mathbb{N} \cup \{ 0 \} \)
 
     т.к. \( x \to +\infty \)\\
     \( 0 < n \leq x < n + 1 \Leftrightarrow \frac{1}{n + 1} < \frac{1}{x} \leq \frac{1}{n} \Leftrightarrow (1 + \frac{1}{n + 1})^n < (1 + \frac{1}{n + 1})^x < (1 + \frac{1}{x})^x \leq (1 + \frac{1}{n})^x < (1 + \frac{1}{n})^{n + 1} \)\\
@@ -183,7 +183,7 @@
     \( x \to +\infty \), то \( n = [x] \to +\infty \)
     
     \( \lim_{n \to +\infty}(1 + \frac{1}{n + 1})^n = \lim_{n \to +\infty}\frac{(1 + \frac{1}{n + 1})^{n + 1}}{(1 + \frac{1}{n + 1})} = \frac{e}{1} = e \)\\    
-    \(\lim_{n \to +\infty}(1 + \frac{1}{n})^{n+1} = \lim_{n \to +\infty}(1+\frac{1}{n})^n(1+\frac{1}{n}) = e * 1 = e\)
+    \(\lim_{n \to +\infty}(1 + \frac{1}{n})^{n+1} = \lim_{n \to +\infty}(1+\frac{1}{n})^n(1+\frac{1}{n}) = e \cdot 1 = e\)
 
     \(\Rightarrow\) по т. о 2-х милиционерах \(\lim_{x \to +\infty}(1 + \frac{1}{x})^x = e\)
 

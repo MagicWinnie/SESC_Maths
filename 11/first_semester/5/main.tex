@@ -33,11 +33,11 @@
 
     \(lim_{x \rightarrow x_0} f(x) = f(x_0)\)
 
-    \(\forall \varepsilon > 0\ \exists\ \delta(\varepsilon):\ \forall x:\ \abs{x-x_0} < \delta\ \abs{f(x)-f(x_0)}<\varepsilon\).
+    \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ \abs{x-x_0} < \delta\ \abs{f(x)-f(x_0)}<\varepsilon\).
 
     Если \(x \in X\), то \(\delta\ ||\ \varepsilon;\ x_0\).
 
-    \textbf{Определение.} Будем говорить, что функция \(y = f(x)\) является равномерно непрерывной на некотором "промежутке" \(X\), если \(\forall \varepsilon > 0\ \exists\ \delta(\varepsilon)^{\textrm{не зависит от } x',x''}:\ \forall x',x'' \in X:\ \abs{x'-x''} < \delta\ \abs{f(x')-f(x'')} < \varepsilon\).
+    \textbf{Определение.} Будем говорить, что функция \(y = f(x)\) является равномерно непрерывной на некотором "промежутке" \(X\), если \(\forall \varepsilon > 0\ \exists \delta(\varepsilon)^{\textrm{не зависит от } x',x''}:\ \forall x',x'' \in X:\ \abs{x'-x''} < \delta\ \abs{f(x')-f(x'')} < \varepsilon\).
     
     \subsubsection{Теорема Кантора о равномерной непрерывности}
 
@@ -46,8 +46,8 @@
     \(\uparrow\) От противного.
     
     \begin{enumerate}
-        \item \(\exists\ \varepsilon > 0:\ \forall \delta\ \exists\ x', x'':\ \abs{x' - x''} < \delta\), при этом \(\abs{f(x')-f(x'')} \geq \varepsilon\).
-        \item Рассмотрим \(\delta_n \rightarrow 0\), для каждого из \(\delta_n \exists\ x_n', x_n'', \abs{x_n' - x_n''} < \delta_n\) и \(f(x_n') - f(x_n'') \geq \varepsilon(\star)\).
+        \item \(\exists \varepsilon > 0:\ \forall \delta\ \exists x', x'':\ \abs{x' - x''} < \delta\), при этом \(\abs{f(x')-f(x'')} \geq \varepsilon\).
+        \item Рассмотрим \(\delta_n \rightarrow 0\), для каждого из \(\delta_n\ \exists x_n', x_n'', \abs{x_n' - x_n''} < \delta_n\) и \(f(x_n') - f(x_n'') \geq \varepsilon(\star)\).
         \item Смотрим на \(x_n' \in [a; b]\), т.е. \(x_n'\) ограничена \(\Rightarrow\ \exists\) сходящаяся подпоследовательность \(x_{nk}':\ x_{nk}' \xrightarrow[k \rightarrow \infty]{} x_0 \in [a; b]\).
         \item Т.к. \( \abs{x_n' - x_n''} < \delta_n \)
         
@@ -73,7 +73,7 @@
 
         (\( [\mu_{\textrm{фиксированное}}; 1] \) --- здесь равномерно непрерывна)
     
-        Не являясь равномерно непрерывной \( \in (0; 1]\ \exists\ \varepsilon > 0:\ \forall\ \delta\ \exists\ x', x'':\ \abs{x' - x''} < \delta, \abs{f(x') - f(x'')} \geq \varepsilon \).
+        Не являясь равномерно непрерывной \( \in (0; 1]\ \exists \varepsilon > 0:\ \forall \delta\ \exists x', x'':\ \abs{x' - x''} < \delta, \abs{f(x') - f(x'')} \geq \varepsilon \).
         
         Возьмём:
     
@@ -81,7 +81,7 @@
         \( x_n'' = \frac{1}{2n} \)\\
         \( \abs{x_n' - x_n''} = \frac{1}{2n} < \delta \)\\
         \( \abs{f(x_n') - f(x_n'')} = \abs{n - 2n} = n \geq 1 \)\\
-        \( \exists\ \varepsilon = 1:\ \forall\ \delta\ \exists\ x_n', x_n'':\ \abs{x_n' - x_n''} < \delta \), то \( \abs{f(x_n') - f(x_n'')} \geq 1\)
+        \( \exists \varepsilon = 1:\ \forall \delta\ \exists x_n', x_n'':\ \abs{x_n' - x_n''} < \delta \), то \( \abs{f(x_n') - f(x_n'')} \geq 1\)
         
         \item \( y = x^2 \) на \( (0; 1) \)
         
@@ -118,7 +118,7 @@
         \begin{enumerate}
             \item Если \(0 < x < 1\)
 
-            \(x^n = x^{n-m}x^m < 1 * x^m\)
+            \(x^n = x^{n-m}x^m < 1 \cdot x^m\)
 
             \item Если \(x > 1\)
 
@@ -128,14 +128,14 @@
         \item При \( x \geq 0 \Rightarrow y = x^n \in [0; +\infty) \).
         \item При \( x \geq 0 \Rightarrow y = x^n \) принимает все значения \( \in [0; +\infty) \).
 
-        \(\forall A \in [0; +\infty)\) надо показать \(\exists\ x_0:\ x_0^n = A\)
+        \(\forall A \in [0; +\infty)\) надо показать \(\exists x_0:\ x_0^n = A\)
 
-        \(\uparrow\) Т.к. \(lim_{x \rightarrow +\infty} x^n = +\infty\), то \(\forall A\ \exists\ c:\ c^n > A\). Тогда на \([0; c]\) пользуемся следствием 1 из т. Больцано, ч.т.д. \(\downarrow\)
+        \(\uparrow\) Т.к. \(lim_{x \rightarrow +\infty} x^n = +\infty\), то \(\forall A\ \exists c:\ c^n > A\). Тогда на \([0; c]\) пользуемся следствием 1 из т. Больцано, ч.т.д. \(\downarrow\)
         
     \end{enumerate}
 
     Из п. 7 и п. 3 получаем, что \( y = x^n \) взаимнооднозначное отображение "на" или \( y = x^n \) --- обратимая функция.
 
-    \( y = x^n \Rightarrow\ \exists\ x = \sqrt[n]{y} \) или \( y = \sqrt[n]{x} \),
+    \( y = x^n \Rightarrow\ \exists x = \sqrt[n]{y} \) или \( y = \sqrt[n]{x} \),
     
 \end{document}

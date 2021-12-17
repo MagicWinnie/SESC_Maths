@@ -110,7 +110,7 @@
 
     \textbf{Лемма 1.} Если \(y = f(x)\) имеет в некоторой точке \(x\) производную (конечную), то \( y = f(x) \) непрерывна в этой точке.
 
-    \( \uparrow\ \exists\ f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} \) 
+    \( \uparrow\ \exists f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} \) 
 
     Тогда \( \frac{f(x + \Delta x) - f(x)}{\Delta x} = f'(x) + \alpha(\Delta x)\quad (\alpha \xrightarrow[\Delta x \to 0]{} 0) \)
 
@@ -130,7 +130,7 @@
 
     \( \lim_{\Delta x \to 0-} \frac{f(0 + \Delta x) - f(0)}{\Delta x} = \lim_{\Delta \to 0-} \frac{\abs{\Delta x}}{\Delta x} = \lim_{\Delta x \to 0-} \frac{-\Delta x}{\Delta x} = -1 \)
 
-    \( 1 \neq -1 \Rightarrow \not\exists \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \)
+    \( 1 \neq -1 \Rightarrow\ \not\exists \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \)
 
     \subsubsection{Геометрический смысл производной}
 
@@ -221,14 +221,14 @@
 
             \( \Delta y = \frac{u + \Delta u}{v + \Delta v} - \frac{u}{v} = \frac{uv + v\Delta u - uv - u\Delta v}{v(v + \Delta v)} \)
             
-            \(\lim_{\Delta x \to 0}{\frac{\Delta y}{\Delta x}} = \lim_{\Delta x \to 0}{\frac{v\Delta u - u\Delta v}{\Delta x}*\frac{1}{v(v+\Delta v)}} = (u'v - uv')\lim_{\Delta x \to 0}{\frac{1}{v(v+\Delta v)}} = \frac{u'v - uv'}{v^2}\downarrow\)
+            \(\lim_{\Delta x \to 0}{\frac{\Delta y}{\Delta x}} = \lim_{\Delta x \to 0}{\frac{v\Delta u - u\Delta v}{\Delta x} \cdot \frac{1}{v(v+\Delta v)}} = (u'v - uv')\lim_{\Delta x \to 0}{\frac{1}{v(v+\Delta v)}} = \frac{u'v - uv'}{v^2}\downarrow\)
         
             \textbf{Пример.}
             
             \( (tg(x))' = (\frac{sin(x)}{cos(x)})' = \frac{(sin(x))'cos(x) - sin(x)(cos(x))'}{cos(x)^2} = \frac{cos(x)^2 + sin(x)^2}{cos(x)^2} = \frac{1}{sin(x)^2} \)
     \end{enumerate}
     
-    \textbf{Утверждение.} Пусть заданы \( y = f(u) \) и \( u = \phi(x) \), имеют производную \(u\) в точке \(x\), \(y\) в \(u = f(x)\) и \( \exists\ F(x) = y = f(\phi(x)) \), тогда \(\exists\) производная \(F_x(x):\ F_x(x) = f_u'(u)\phi_x' = f_u'(\phi(x))\phi_x' \)
+    \textbf{Утверждение.} Пусть заданы \( y = f(u) \) и \( u = \phi(x) \), имеют производную \(u\) в точке \(x\), \(y\) в \(u = f(x)\) и \( \exists F(x) = y = f(\phi(x)) \), тогда \(\exists\) производная \(F_x(x):\ F_x(x) = f_u'(u)\phi_x' = f_u'(\phi(x))\phi_x' \)
     
     \(y = f(u)\) имеет производную; \(\exists \lim_{\Delta u \to 0}{\frac{f(u+\Delta u) - f(u)}{\Delta u}} = \lim_{\Delta u \to 0}{\frac{\Delta y}{\Delta u}} = f_u'\)
 
