@@ -26,7 +26,9 @@
 
 \begin{document}
 \textbf{Теорема 4.} Если \( y = f(x):\ \exists\ y'(c) = 0 \) и \( y''(c) > 0 \), то \( x = c \) --- точка локального минимума функции. Если же \( y''(c) < 0 \), то \( x = c \) --- точка локального максимума.
-% TODO IMG
+
+\includegraphics[trim={0 0 0 12cm}, clip, scale=0.08]{11_1_11_1.png}
+
 \( \uparrow \) Так как \( y''(c)\ \exists \), то \( y'(x)\ \exists \) в некоторой окрестности точки \( x = c \). \( \varphi(x):\ \varphi(c) = 0, \varphi'(x) > 0 \) в \( x = c \). \( \Rightarrow \varphi(x) \) возрастает в \( x = c \).
 
 Т.е. \( y'(x): \) при \( x < c:\ y'(x) < 0 \) и \( x > c:\ y'(x) > 0\ \xRightarrow[]{\textrm{Т. 3}} x = c \) --- точка локального минимума.
@@ -55,18 +57,15 @@
 
 \subsection{Направление выпуклости функции. Точки перегиба}
 
-% TODO IMG TIMECODE: 25:00
-
 \textbf{Определение.} Если дуга \( y = f(x);\ a \leq x \leq b \) расположена не ниже касательной, проведенной в любой точке \(x \in (a, b)\), то \( y = f(x) \) называется \underline{выпуклой вниз} (по горбу) или \underline{вогнутая вверх} (по рогам) на \((a, b)\).
 
 \textbf{Определение.} Аналогично, если не выше любой касательной, то \underline{выпуклая вверх}.
 
-\textbf{Теоерма.} Пусть \(y = f(x)\) непрерывна на \([a,b]\); и \(\exists\ f''(x)\) на \((a,b)\), если \(f''(x) > 0\) на \((a,b)\), то функция \(y = f(x)\) выпукла вниз на \((a,b)\)(если \(f''(x) < 0\), то выпукла вверх).
-
-% TODO IMG TIMECODE: 36:17
+\textbf{Теорема.} Пусть \(y = f(x)\) непрерывна на \([a,b]\); и \(\exists\ f''(x)\) на \((a,b)\), если \(f''(x) > 0\) на \((a,b)\), то функция \(y = f(x)\) выпукла вниз на \((a,b)\)(если \(f''(x) < 0\), то выпукла вверх).
 
 \(\uparrow\) Рассмотрим произвольную точку \( c \): \( a < c < x \leq b \). Проведем касательную в точке \( c: y_{\textrm{кас}} = f'(c)(x - c) + f(c) \). Рассмотрим вспомогательную функцию \( F(x) = y_{\textrm{крив}} - y_{\textrm{кас}} = f(x) - f(c) - f'(c)(x - c) \)
 
+\includegraphics[scale=0.25]{11_1_11_2}
 
 \( 
     \begin{array}{l}
@@ -100,17 +99,23 @@
     \begin{enumerate}
         \item \( t = x^2;\ t_{1, 2} = \frac{3 \pm \sqrt{9 - 4}}{1} \Rightarrow \) 4 корня.
         \item \(y' = 4x^3-12x = 4x(x^2 - 3) = 4x(x + \sqrt{3})(x - \sqrt{3})\)
-        %TODO IMG TIMECODE: 05:53
+        
+        \includegraphics[trim={10cm, 5cm, 0, 20cm}, scale=0.15]{11_1_11_3.png}
 
         \( f(0) = 4 \)
 
         \( f(\pm \sqrt{3}) = 9 - 18 + 4 = -5 \)
-        %TODO IMG TIMECODE: 07:42
+        
+        \includegraphics[scale=0.3]{11_1_11_4.png}
 
         \item \( y'' = 12x^2 - 12 = 12(x^2 - 1) = 12(x - 1)(x + 1) \)
-        %TODO IMG TIMECODE: 10:40
+        
+        \includegraphics[trim={10cm, 5cm, 0, 20cm}, scale=0.15]{11_1_11_5.png}
 
-        \( y(1) = 1 - 6 + 4 = -1 \)
+        \( x = \pm 1\) --- точки перегиба.
+
+        \includegraphics[scale=0.45, width=8cm]{11_1_11_6.png}
+
     \end{enumerate}
     \item \( y = \sqrt[3]{x} = x^{\frac{1}{3}} \)
     
@@ -119,14 +124,13 @@
         \item \(y = 0 \Leftrightarrow x = 0\).
         \item \( y' = \frac{1}{3}x^{-\frac{2}{3}} = \frac{1}{3}\frac{1}{x^{\frac{2}{3}}} \)
         \item \( y''(x) = \frac{1}{3}(-\frac{2}{3})x^{-\frac{5}{3}} = -\frac{2}{9}\frac{1}{x^{\frac{5}{3}}} \)
-        % TODO IMG TIMECODE: 17:50
         \( x = 0 \) --- точка перегиба.
     \end{enumerate}
 \end{enumerate}
 
 \textbf{Замечание.} Если первая производная в точке перегиба существует, то функция пересекает касательную, проведённую в этой точке.
 
-%TODO IMG TIMECODE: 22:06
+\includegraphics[scale=0.3]{11_1_11_7.png}
 
 \textbf{Теорема.} Если \( y = f(x) \) на промежутке \( [a, b] \) выпукла вниз, то \( \forall\ x \in [a, b]: f(x) \) расположена не выше хорды \(AB\). (аналогично для выпуклых вверх)
 
