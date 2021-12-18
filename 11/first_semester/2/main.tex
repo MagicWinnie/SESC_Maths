@@ -45,7 +45,7 @@
 
   Пусть \(\exists lim_{x \rightarrow 0} sign\ x = A\), тогда \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x:\ 0 < \abs{x} < \delta;\ \abs{f(x)-A}<\varepsilon\)
 
-  Возьмём \(x_1 = \frac{\delta}{2},\ x_2 = -\frac{\delta}{2}\). \(\abs{f(x_1)-f(x_2)} = \abs{f(x_1)-A+A-f(x_2)} \leq\\ \leq \abs{f(x_1)-A}+\abs{f(x_2-A)} < 2 \varepsilon \Rightarrow 2 < 2\varepsilon\) --- противоречие(например, \(\varepsilon = 1\)).
+  Возьмём \(x_1 = \frac{\delta}{2},\ x_2 = -\frac{\delta}{2}\). \(2 = \abs{1 - (-1)} = \abs{f(x_1)-f(x_2)} = \abs{f(x_1)-A+A-f(x_2)} \leq\\ \leq \abs{f(x_1)-A}+\abs{f(x_2-A)} < 2 \varepsilon \Rightarrow 2 < 2\varepsilon\) --- противоречие(например, \(\varepsilon = 1\)).
 
   \subsection{Основные теоремы}
   \begin{enumerate}
@@ -101,7 +101,7 @@
 
       \(\uparrow\) Для произв. На языке последовательностей.
 
-      \(\forall x_n \rightarrow a\) изв \(\begin{array}{l} lim_{n \rightarrow \infty} f(x_n) = A\\ lim_{n \rightarrow \infty} g(x_n) = B\end{array}\\ 
+      \(\forall x_n \rightarrow a\) известно \(\begin{array}{l} lim_{n \rightarrow \infty} f(x_n) = A\\ lim_{n \rightarrow \infty} g(x_n) = B\end{array}\\ 
       lim_{n \rightarrow \infty} f(x_n)g(x_n)=lim_{n \rightarrow \infty} f(x_n) \cdot lim_{n \rightarrow \infty} g(x_n)=A \cdot B\)\\
       в силу произвольности \(x_n \rightarrow a\) по определению на языке последовательностей ч.т.д. \(\downarrow\)
   
@@ -127,7 +127,7 @@
       ``\(\Leftarrow\)'' дано: \(\forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x',x'':\ \begin{array}{l}0 < \abs{x' - a} < \delta\\ 0 < \abs{x'' - a} < \delta\end{array}\) выполняется:\\
       \(\abs{f(x')-f(x'')} < \varepsilon \Rightarrow\ \exists lim_{x \rightarrow a} f(x)\)
 
-      \(\forall x_n \xrightarrow[n \rightarrow \infty]{} a \Rightarrow f(x_n) \rightarrow ...\ \forall \delta\ \exists N:\ \forall n,m > N \begin{array}{l}0 < \abs{x_n - a} < \delta\\ 0 < \abs{x_m - a} < \delta \end{array} \Rightarrow\\
+      \(\forall x_n \xrightarrow[n \rightarrow \infty]{} a \Rightarrow f(x_n) \rightarrow \forall \delta\ \exists N:\ \forall n,m > N \begin{array}{l}0 < \abs{x_n - a} < \delta\\ 0 < \abs{x_m - a} < \delta \end{array} \Rightarrow\\
       \Rightarrow \abs{f(x_n)-f(x_m)}< \varepsilon\)
       
       \(\Rightarrow\) по Критерию Коши для числовых последовательностей \(\exists \lim_{n \rightarrow \infty} y_n\) (т.е. \(\exists lim_{n \rightarrow \infty} f(x_n)\))
