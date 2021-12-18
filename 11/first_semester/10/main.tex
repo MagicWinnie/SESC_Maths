@@ -48,12 +48,12 @@
     \item Убывает в точке \(x\), если \(\exists \delta > 0\ \forall \Delta x: 0 < \abs{\Delta x} < \delta\ \frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x} < 0\)
     
     (\(\exists \delta > 0\ \forall x_1 \in (x-\delta, x), x_2 \in (x, x + \delta)\ f(x_1) > f(x) > f(x_2)\))
-    \item Достигает локального максимума в точке \(x\), если
+    \item Достигает локального максимума в точке \(x\), если \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y < 0\) 
     
-    \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y < 0(\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) < f(x))\)
-    \item Достигает локального минимума в точке \(x\), если
+    \((\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) < f(x))\)
+    \item Достигает локального минимума в точке \(x\), если \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y > 0\) 
     
-    \(\exists \delta > 0\ \forall \Delta x: \abs{\Delta x} < \delta\ \Delta y > 0(\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) > f(x))\)
+    \((\exists \delta > 0\ \forall x_1 \in (x - \delta, x + \delta)\ f(x_1) > f(x))\)
 \end{enumerate}
 
 \textbf{Замечание.} Здесь \(\Delta x\) малая величина как \(>0\), так и \(<0\), т.е. работаем с двусторонними окрестностями.
@@ -181,4 +181,6 @@
 Аналогично 2й случай. \(\downarrow\)
 
 \textbf{Замечание.} Обратите внимание, что в теореме не предполагалось существование \(f'(x_0)\).
+
+
 \end{document}

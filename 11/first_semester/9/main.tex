@@ -25,6 +25,8 @@
 \pagenumbering{arabic}
 
 \begin{document}
+
+
     \textbf{Теорема 1. (производная сложной функции)}
 
     \( y = f(u), u = \varphi(x) \) имеют производную, \( \exists y= F(x) = f(\varphi(x)) \), тогда \( F'(x) = f_u'(\varphi(x)) \cdot \varphi_x'(x) \)\\
@@ -36,7 +38,7 @@
     
     \(\Delta y = f_u'\Delta u + \alpha(\Delta u)\Delta u\)
 
-    \( F'(x) = \lim{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} [f_u'\frac{\Delta u}{\Delta x} + \alpha(\Delta u)\frac{\Delta u}{\Delta x}] = f_u'(\varphi(x)) \cdot \varphi_x'(x) + 0 \cdot \varphi'(x) \), т.к. если \( \Delta x \to 0 \), то \(\Delta u \to 0\) (непр.) \( \Rightarrow \alpha(\Delta u) \to 0 \).
+    \( F'(x) = \lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} [f_u'\frac{\Delta u}{\Delta x} + \alpha(\Delta u)\frac{\Delta u}{\Delta x}] = f_u'(\varphi(x)) \cdot \varphi_x'(x) + 0 \cdot \varphi'(x) \), т.к. если \( \Delta x \to 0 \), то \(\Delta u \to 0\) (непр.) \( \Rightarrow \alpha(\Delta u) \to 0 \).
     \(\downarrow\)
 
     \textbf{Теорема 2. (производная обратной функции)}
@@ -124,7 +126,7 @@
     \begin{enumerate}
         \item \( y' = mx^{m - 1} \)
         \item \( y'' = (m)(m - 1)x^{m - 2} \)
-        \item \( y'' = (m)(m - 1)(m - 2)x^{m - 3} \)
+        \item \( y''' = (m)(m - 1)(m - 2)x^{m - 3} \)
         \item \( y^{IV} = (m)(m - 1)(m - 2)(m - 3)x^{m - 4} \)
         \item[\(n\).] \( y^{(n)} = (m)(m - 1)...(m - (n - 1))x^{m - n}\) при \(n < m\)
         
@@ -195,7 +197,7 @@
 
     \( \Delta y = \sqrt{4 + 0.02} - \sqrt{4} \approx \frac{1}{2\sqrt{4}}0.02 \)
 
-    \( \sqrt{4.02} \approx \sqrt{4} + \frac{0.02}{4} = 2 + \frac{0.01}{2} = 2.005 \)/
+    \( \sqrt{4.02} \approx \sqrt{4} + \frac{0.02}{4} = 2 + \frac{0.01}{2} = 2.005 \)
 
     \subsubsection{Свойства.}
 
