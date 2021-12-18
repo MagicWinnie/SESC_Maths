@@ -82,13 +82,13 @@
   \end{enumerate}
 
   \subsubsection{Теорема Вейерштрасса о предельной точке}
-  Если бесконечное числовое множество \(\mathbb{E}\) ограничено, то для него существует хотя бы одна предельная точка.
+  \textbf{Теорема.} Если бесконечное числовое множество \(\mathbb{E}\) ограничено, то для него существует хотя бы одна предельная точка.
 
   \(\uparrow\) Т.к. \(\mathbb{E}\) ограничено, \(\ \exists [m; M]:\ \mathbb{E} \subset  [m; M]\)
 
   \begin{enumerate}
       \item Делим \([m; M]:\ \begin{cases}[m; \frac{m+M}{2}]\\ [\frac{m+M}{2}; M]\end{cases}\)
-      и выбираем ту часть, в которой содержится \(\infty\) число эл-тов из \(\mathbb{E}\), в ней берём какой-то \(x\)
+      и выбираем ту часть, в которой содержится \(\infty\) число эл-тов из \(\mathbb{E}\), в ней берём какой-то \(x_1\)
       \item снова делим на 2 и в одной из частей берем \(x_2 \neq x_1\)
   \end{enumerate}
   и т.д. \(\Rightarrow \{x_n\} \in \mathbb{E}\)
@@ -102,7 +102,7 @@
 
   \(y=f(x):\ X \rightarrow Y, a\) --- предельная точка \(X:\ \lim_{x \rightarrow a}{f(x)} = A\)
 
-  \textbf{Определение.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A) \), если
+  \textbf{Определение 1.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A) \), если
 
   \begin{enumerate}
       \item функция \(f(x)\) определена в некоторой окрестности точки \(x=a\); за исключением, возможно, самой \(x=a\)
@@ -112,9 +112,9 @@
 
   \(A - \varepsilon < f(x) < A + \varepsilon\)
 
-  \textbf{Отрицание} \(\ \exists \varepsilon > 0:\ \forall \delta(\varepsilon)\ \exists x: 0 < \abs{x - a} < \delta\) и \(\abs{f(x) - A} \geq \varepsilon\)
+  \textbf{Отрицание.} \(\ \exists \varepsilon > 0:\ \forall \delta(\varepsilon)\ \exists x: 0 < \abs{x - a} < \delta\) и \(\abs{f(x) - A} \geq \varepsilon\)
 
-  \textbf{Определение.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A \textrm{ или } f(x) \xrightarrow[x \rightarrow a]{} A)\); если
+  \textbf{Определение 2.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A \textrm{ или } f(x) \xrightarrow[x \rightarrow a]{} A)\); если
 
   \begin{enumerate}
     \item \(f(x)\) определено в \(U_\delta(a)\)
