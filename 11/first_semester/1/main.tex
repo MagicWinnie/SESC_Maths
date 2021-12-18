@@ -100,7 +100,9 @@
 
   \subsection{Предел функции в точке}
 
-  \(y=f(x):\ X \rightarrow Y, a\) --- предельная точка \(X:\ \lim_{x \rightarrow a}{f(x)} = A\)
+  \(y=f(x):\ X \rightarrow Y, a\) --- предельная точка \(X\) 
+  
+  \(\lim_{x \rightarrow a}{f(x)} = A\)
 
   \textbf{Определение 1.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A) \), если
 
@@ -108,16 +110,18 @@
       \item функция \(f(x)\) определена в некоторой окрестности точки \(x=a\); за исключением, возможно, самой \(x=a\)
       \item \(\ \forall \varepsilon > 0\ \exists \delta(\varepsilon):\ \forall x: 0 < \abs{x - a} < \delta\) выполняется \(\abs{f(x) - A} < \varepsilon\).
   \end{enumerate}
-  \(a - \delta < x < a + \delta\ x \neq a\).
+  \(0 < \abs{x - a} < \delta:\ a - \delta < x < a + \delta,\ x \neq a\).
 
-  \(A - \varepsilon < f(x) < A + \varepsilon\)
+  \(\abs{f(x) - A} < \varepsilon:\ A - \varepsilon < f(x) < A + \varepsilon\).
+
+  (Определение на языке \(\varepsilon - \delta\) или определение по Коши)
 
   \textbf{Отрицание.} \(\ \exists \varepsilon > 0:\ \forall \delta(\varepsilon)\ \exists x: 0 < \abs{x - a} < \delta\) и \(\abs{f(x) - A} \geq \varepsilon\)
 
   \textbf{Определение 2.} Будем говорить, что существует предел функции f(x) при \(x \rightarrow a\) \( (lim_{x\rightarrow a} f(x) = A \textrm{ или } f(x) \xrightarrow[x \rightarrow a]{} A)\); если
 
   \begin{enumerate}
-    \item \(f(x)\) определено в \(U_\delta(a)\)
+    \item \(f(x)\) определено в \(\dot{U}_\delta(a)\)
     \item \(\forall x_n \rightarrow a \Rightarrow y_n = f(x_n)\rightarrow A\)
   \end{enumerate}
   (Определение по Гейне)
