@@ -1,0 +1,303 @@
+
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+\section{Аналитическая геометрия}
+
+    \subsection{Векторы. Коллинеарные и компланарные векторы}
+
+    \textbf{Определения.} Вектором называется направленный отрезок.
+    Вектор определяется парой точек, превая из них --- начало вектора(точка приложения), а вторая --- конец вектора.
+
+    Обозначение: \(\overrightarrow{a}, \overrightarrow{AB}\).
+
+    Длина вектора называется его модулем. \(\abs{\overrightarrow{a}}\)
+
+    Если начало вектора совпадает с концом, вектор называется нулевым.
+
+    \textbf{Определение.} Два ненулевых вектора называются коллинеарными, если они лежат на одной прямой или на параллельных прямых.
+
+    Коллинеарные вектора бывают одинаково направленными(\(\overrightarrow{a} \uparrow\uparrow \overrightarrow{b}\)) и противоположно направленными (\(\overrightarrow{a} \uparrow\downarrow \overrightarrow{b}\)).
+
+    \textbf{Определение.} Два ненулевых вектора называются равными, если они коллинеарны, одинаково направлены и имеют равные модули, т.е.
+
+    \[\overrightarrow{a} = \overrightarrow{b} \Leftrightarrow (\overrightarrow{a} \uparrow\uparrow \overrightarrow{b})\wedge(\abs{\overrightarrow{a}} = \abs{\overrightarrow{b}})\]
+    
+    \(\Rightarrow\) от любой фиксированной точки можем отложить вектор равный данному вектору, и при этом только один.
+
+    \textbf{Определение.} Ненулевые векторы называются компланарными, если они параллельны одной и той же плоскости.
+    
+    Любые два вектора всегда компланарны. Три вектора могут быть и некомпланарны.
+
+    \subsection{Линейные операции над векторами}
+
+    Пусть даны два ненулевых вектора: \( \overrightarrow{a}, \overrightarrow{b} \neq 0 \)
+    
+    Отложим от конца вектора $a$ вектор, равный вектору $b$. Соединим начало вектора $a$ с концом вектора $b$.
+    
+    \( \overrightarrow{a} + \overrightarrow{b} = \overrightarrow{AB} + \overrightarrow{B'C'} = \overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC} \)
+
+    Это правило треугольника сложения векторов.
+
+    \textbf{Замечание.} Правило применимо и в случае, если вектора коллинеарны.
+    
+    \subsubsection{Свойства сложения векторов}
+    
+    \begin{enumerate}
+        \item \(\overrightarrow{a} + \overrightarrow{b} = \overrightarrow{b} + \overrightarrow{a}\)
+        \item \((\overrightarrow{a} + \overrightarrow{b}) + \overrightarrow{c} = \overrightarrow{a} + (\overrightarrow{b} + \overrightarrow{c})\)
+        \item \(\overrightarrow{a} + \overrightarrow{0} = \overrightarrow{a}\)
+    \end{enumerate}
+
+    \subsubsection{Свойства противоположных векторов}
+
+    \textbf{Определение.} Пусть \(\overrightarrow{a} = \overrightarrow{AB}\). Тогда \(\overrightarrow{BA}\) называется противоположным вектору \(\overrightarrow{a}\) и обозначается \(-\overrightarrow{a}\).
+
+    \begin{enumerate}
+        \item \(\overrightarrow{a} + (-\overrightarrow{a}) = \overrightarrow{0}\)
+        \item \(\abs{\overrightarrow{a}}=\abs{-\overrightarrow{a}},\ \overrightarrow{a} \uparrow\downarrow -\overrightarrow{a}\)
+    \end{enumerate}
+
+    \textbf{Определение.} Разностью \(\overrightarrow a - \overrightarrow b\) двух векторов называется \(\overrightarrow a + (-\overrightarrow b)\).
+
+    Отсюда слагаемые в векторных равенствах можно переносить из одной части в другую, изменив их знак на противоположный.
+
+    \subsubsection{Неравенство треугольника для векторов}
+
+    \textbf{Свойство.} Неравенство треугольника \(\abs{\overrightarrow{a} + \overrightarrow{b}} \leq \abs{\overrightarrow{a}} + \abs{\overrightarrow{b}}\).
+
+    \subsubsection{Умножение вектора на число}
+
+    \textbf{Определение.} Произведение ненулевого вектора \(\overrightarrow{a}\) на число \(x \in \mathbb{R}; x \neq 0\) называем вектор : его длина \(= \abs{x}\cdot\abs{\overrightarrow{a}}\); сонаправлен с \(\overrightarrow{a}\), если \(x > 0\), и \(\uparrow\downarrow\) с \(\overrightarrow{a}\), если \(x < 0\).
+
+    \textbf{Свойства.}
+
+    \begin{enumerate}
+        \item \( x(y\overrightarrow{a}) = (xy)\overrightarrow{a} \)
+        \item \( x\overrightarrow{a} + y\overrightarrow{a} = (x + y)\overrightarrow{a} \)
+        \item \( x\overrightarrow{a} + x\overrightarrow{b} = x(\overrightarrow{a} + \overrightarrow{b}) \)
+        \item \( 0 \cdot \overrightarrow{a} \stackrel{df}{=} \overrightarrow{0} \); \( x \cdot \overrightarrow{0} \stackrel{df}{=} \overrightarrow{0} \)
+    \end{enumerate}
+
+    \subsubsection{Критерий коллинеарности векторов}
+    
+    \textbf{Теорема.} Вектор $\overrightarrow{b}$ коллинеарен ненулевому вектору $\overrightarrow{a} \Leftrightarrow\ \exists x : \overrightarrow{b} = x\cdot\overrightarrow{a} $ 
+
+    $\uparrow$ ``$\Rightarrow$'' Если \(\overrightarrow{b} = 0\), то ч.т.д.
+    
+    Если $\overrightarrow{b} \neq \overrightarrow{0}$
+
+    \begin{enumerate}
+        \item Если \(\overrightarrow{b} \uparrow\uparrow \overrightarrow{a}\), то рассмотрим \( x = \frac{\abs{\overrightarrow{b}}}{\abs{\overrightarrow{a}}} > 0 \)
+        
+        Тогда, т.к. \(x > 0\), \(x\overrightarrow{a} \uparrow\uparrow \overrightarrow{a} \uparrow\uparrow \overrightarrow{b} \Rightarrow x\overrightarrow{a} \uparrow\uparrow \overrightarrow{b};\ \abs{x\overrightarrow{a}} = \abs{x}\abs{\overrightarrow{a}} = \frac{\abs{\overrightarrow{b}}}{\abs{\overrightarrow{a}}}\abs{\overrightarrow{a}} = \abs{\overrightarrow{b}} \Rightarrow \overrightarrow{b} = x\overrightarrow{a}\)
+        \item \( \overrightarrow{a} \uparrow\downarrow \overrightarrow{b} \Rightarrow \) то \( x = -\frac{\abs{\overrightarrow{b}}}{\abs{\overrightarrow{a}}} \Rightarrow x\overrightarrow{a} \uparrow\downarrow \overrightarrow{a} \uparrow\downarrow \overrightarrow{b} \Rightarrow x\overrightarrow{a} \uparrow\uparrow \overrightarrow{b} \)
+        
+        \( \abs{x\overrightarrow{a}} = \abs{x}\abs{\overrightarrow{a}} = \frac{\abs{\overrightarrow{b}}}{\abs{\overrightarrow{a}}}\abs{\overrightarrow{a}} = \abs{\overrightarrow{b}} \Rightarrow \overrightarrow{b} = x\overrightarrow{a} \)
+    \end{enumerate}
+    
+    ``\(\Leftarrow\)'' Пусть \(\overrightarrow{b} = x\overrightarrow{a}\)
+
+    \begin{enumerate}
+        \item Если \(x \neq 0\ \overrightarrow{b}\) коллинеарен \(\overrightarrow{a}\) по определению умножения вектора на число.
+        \item \(x = 0 \Rightarrow \overrightarrow{b} = \overrightarrow{0}\), а он коллинеарен любому.
+    \end{enumerate}
+
+    \(\downarrow\)
+
+    \textbf{Лемма.} Если \( \overrightarrow{a} \) и \( \overrightarrow{b} \) неколлинеарны и для них \( x\overrightarrow{a} + y\overrightarrow{b} = 0 \Leftrightarrow x = y = 0 \)
+
+    \( \uparrow \) ``\(\Leftarrow\)'' \( x = y = 0 \Rightarrow x\overrightarrow{a} + y\overrightarrow{b} = 0 \)
+
+    ``\( \Rightarrow \)'' \( x\overrightarrow{a} + y\overrightarrow{b} = \overrightarrow{0} \)
+
+    Пусть \( x \neq 0 \)  \( x\overrightarrow{a} = -y\overrightarrow{b} \xRightarrow[]{x \neq 0} \overrightarrow{a} = -\frac{y}{x}\overrightarrow{b} \). Противоречие.
+
+    Аналогично, если \( y \neq 0 \Rightarrow \overrightarrow{b} = -\frac{x}{y}\overrightarrow{a} \downarrow \)
+    
+    \subsection{Критерий компланарности векторов. Разложение вектора по 3-м некомпланарным векторам}
+
+    \(\overrightarrow{a}, \overrightarrow{b}, \overrightarrow{c}\) компланарны.
+
+    Пусть \(\overrightarrow{a}\) и \(\overrightarrow{b}\) неколлинеарны.
+
+    % TODO: IMG 32:40
+    
+    \( \overrightarrow{OC} = \overrightarrow{c} \)
+
+    \subsubsection{Критерий компланарности 3-х векторов}
+    
+    \textbf{Теорема.} Пусть \(\overrightarrow{a}, \overrightarrow{b}\) неколлинеарны, тогда \(\overrightarrow{c}\) компланарен \(\overrightarrow{a}\) и \(\overrightarrow{b} \Leftrightarrow \overrightarrow{c} = x\overrightarrow{a} + y\overrightarrow{b}\).
+
+    Это представление \(\exists!\)
+
+    (\(x\overrightarrow{a} + y\overrightarrow{b} = \overrightarrow{c}\) --- линейная комбинация векторов \(\overrightarrow{a}, \overrightarrow{b}\))
+
+    % TODO: IMG 38:50
+
+    \( c \in (OAB) \)
+
+    Через \( c \) прямые \(|| \overrightarrow{a}, || \overrightarrow{b}\)
+
+    \( \overrightarrow{c} = \overrightarrow{OC} = \overrightarrow{OC_1} + \overrightarrow{OC_2} = x\overrightarrow{a} + y\overrightarrow{b} \)
+
+    Покажем, что такое представление \(\exists!\)
+
+    От противного:
+
+    \(\overrightarrow{c} = x_1\overrightarrow{a} + y_1\overrightarrow{b} = x_2\overrightarrow{a} + y_2\overrightarrow{b}\)
+
+    \((x_1-x_2)\overrightarrow{a} + (y_1-y_2)\overrightarrow{b} = 0\), т.к. \(\overrightarrow{a}, \overrightarrow{b}\) неколлинеарны, \(\begin{cases} x_1-x_2=0\\ y_1-y_2=0 \end{cases} \Leftrightarrow \begin{cases} x_1=x_2\\ y_1=y_2\end{cases}\)
+
+    ``\(\Leftarrow\)'' \( \overrightarrow{c} = x\overrightarrow{a} + y\overrightarrow{b} \)
+
+    \begin{enumerate}
+        \item \( x; y \neq 0 \)
+    
+        \( x\overrightarrow{a} \) коллинеарен \( \overrightarrow{a} \)
+        
+        \( y\overrightarrow{b} \) коллинеарен \( \overrightarrow{b} \)
+
+        \( \overrightarrow{a}, \overrightarrow{b} \) неколлинеарны, то \(x\overrightarrow{a}, y\overrightarrow{b}\) --- неколлинеарны.
+
+        % TODO IMG 47:25
+        
+        \( \overrightarrow{c} = x\overrightarrow{a} + y\overrightarrow{b} = \overrightarrow{OC}\ :\ c \in (OC_1C_2) \Rightarrow \in (OAB) \Rightarrow \overrightarrow{OC} \) компланарен \(\overrightarrow{a}\) и \(\overrightarrow{b} \Rightarrow \overrightarrow{c}\) компланарны \(\overrightarrow{a}\) и \(\overrightarrow{b}\).
+    
+        \item \(x = 0\) или \(y = 0\)
+        
+        \(\overrightarrow{c} = y\overrightarrow{b}\) или \(\overrightarrow{c} = x\overrightarrow{a}\), вектора \(\overrightarrow{c}\) и \(\overrightarrow{a}\)(или \(\overrightarrow{b}\)) коллинеарны.
+    \end{enumerate}
+    
+    \textbf{Лемма.} \( \overrightarrow{a}, \overrightarrow{b}, \overrightarrow{c} \) некомпланарны, тогда \( x\overrightarrow{a} + y\overrightarrow{b} + z\overrightarrow{c} = 0 \Leftrightarrow x = y = z = 0 \)
+
+    \(\uparrow\) ``\(\Leftarrow\)'' очевидно.
+
+    ``\(\Rightarrow\)'' если \( x \neq 0 \Rightarrow \overrightarrow{a} = (-\frac{y}{x})\overrightarrow{b} + (-\frac{z}{x})\overrightarrow{c} \) по теореме \(\overrightarrow{a}\) компланарен с \(\overrightarrow{b}, \overrightarrow{c}\). Противоречие. 
+
+    \textbf{Теорема.} Пусть \(\overrightarrow{a}, \overrightarrow{b}, \overrightarrow{c}\) некомпланарны, тогда любой \(\overrightarrow{d}(D_3)\) можно представить в виде линейной комбинации: \( d = x\overrightarrow{a} + y\overrightarrow{b} + z\overrightarrow{c} \) и такое представление \(\exists!\)
+
+    \(\uparrow\) Набросаем доказательство
+
+    \begin{enumerate}
+        \item \( \overrightarrow{d} = 0 \Rightarrow \overrightarrow{d} = 0\cdot\overrightarrow{a} + 0\cdot\overrightarrow{b} + 0\cdot\overrightarrow{c} \)
+    
+        % TODO IMG 18:05
+
+        \item \( \overrightarrow{d} \) компланарен с \( \overrightarrow{a} \) и \( \overrightarrow{b} \)
+        
+        \( \overrightarrow{d} = x\cdot\overrightarrow{a} + y\cdot\overrightarrow{b} + 0\cdot\overrightarrow{c} \)
+
+        % TODO IMG 21:00
+        
+        \item \(\overrightarrow{d} = \overrightarrow{OD} = \overrightarrow{OD_1} + \overrightarrow{D_1D} = \overrightarrow{OD_1} + z\overrightarrow{c} = x\overrightarrow{a} + y\overrightarrow{b} + z\overrightarrow{c}\), это представление \(\exists!\ \downarrow\)
+    \end{enumerate}
+    
+    \subsection{Угол между векторами. Скалярное произведение векторов}
+
+    % TODO IMG 25:50
+    
+    \(\angle (\overrightarrow{a}, \overrightarrow{b}) = \varphi \in [0; \pi]\)
+    
+    \( \varphi = 0 \Rightarrow \) сонаправленные
+    
+    \( \varphi = \pi \Rightarrow \) противоположные
+    
+    \( \varphi = \frac{\pi}{2} \Rightarrow \) ортогональные
+
+    \textbf{Определение.} Скалярным произведением векторов называется число \( \overrightarrow{a}\cdot\overrightarrow{b} = \abs{\overrightarrow{a}}\cdot\abs{\overrightarrow{b}}\cdot\cos\varphi \)
+    
+    \(\overrightarrow{a}\cdot\overrightarrow{b} < 0 \Leftrightarrow \varphi \) --- тупой
+    
+    \(\overrightarrow{a}\cdot\overrightarrow{b} > 0 \Leftrightarrow \varphi \) --- острый
+
+    \(\overrightarrow{a}\cdot\overrightarrow{b} = 0 \Leftrightarrow \varphi = \frac{\pi}{2}\)
+    
+    \textbf{Свойства.}
+    
+    \begin{enumerate}
+        \item \( \overrightarrow{a}\cdot\overrightarrow{a} = \abs{\overrightarrow{a}}^2 \)
+        \item \( (x\overrightarrow{a})\cdot(\overrightarrow{b}) = c\overrightarrow{a}\cdot\overrightarrow{b} \)
+        
+        \(\abs{x\overrightarrow{a}}\abs{\overrightarrow{b}}\cos(x\overrightarrow{a}; \overrightarrow{b}) = \abs{x}\abs{\overrightarrow{a}}\abs{\overrightarrow{b}}\cos(x\overrightarrow{a}; \overrightarrow{b}) = \begin{array}{l}x > 0 - \cos\ \textrm{положительный}\\ x < 0 - \cos\ \textrm{отрицательный}\end{array}\)
+        
+        \item \( \overrightarrow{a}\cdot\overrightarrow{b} = \overrightarrow{b}\cdot\overrightarrow{a} \)
+        \item \((\overrightarrow{a} + \overrightarrow{c})\overrightarrow{b} = \overrightarrow{a}\cdot\overrightarrow{b} + \overrightarrow{c}\cdot\overrightarrow{b}\)
+        
+        \( \uparrow \) 
+        \begin{enumerate}
+            \item ортогональная проекция вектора на вектор
+            
+            %TODO IMG 37:00 
+
+            \(\textrm{пр}_{\overrightarrow{b}}\overrightarrow{a} = \alpha \cdot \overrightarrow{b} = \frac{\abs{\overrightarrow{a}}}{\abs{\overrightarrow{b}}}cos\angle(\overrightarrow{a}, \overrightarrow{b})\overrightarrow{b}\)
+
+            \( \overrightarrow{a}\cdot\overrightarrow{b} = \textrm{пр}_{\overrightarrow{b}}\overrightarrow{a}\cdot\overrightarrow{b} \)
+
+            \item \(\textrm{пр}_{\overrightarrow{b}}(\overrightarrow{a} + \overrightarrow{c}) = \textrm{пр}_{\overrightarrow{b}}\overrightarrow{a} + \textrm{пр}_{\overrightarrow{b}}\overrightarrow{c} \)
+            
+            %TODO IMG 40:00
+            
+            % PUT \cdot in correct places:
+            \item \( (\overrightarrow{a} + \overrightarrow{c})\cdot\overrightarrow{b} = \textrm{пр}_{\overrightarrow{b}}(\overrightarrow{a} + \overrightarrow{c})\cdot\overrightarrow{b} = (\textrm{пр}_{\overrightarrow{b}}\overrightarrow{a} + \textrm{пр}_{\overrightarrow{b}}\overrightarrow{c})\cdot\overrightarrow{b} = (\alpha\overrightarrow{b} + \gamma\overrightarrow{b})\cdot\overrightarrow{b} = ((\alpha + \gamma)\overrightarrow{b})\overrightarrow{b} = (\alpha + \gamma)\cdot\overrightarrow{b}\overrightarrow{b} = \alpha(\overrightarrow{b}\overrightarrow{b}) + \gamma(\overrightarrow{b}\overrightarrow{b}) = (\alpha\overrightarrow{b})\overrightarrow{b} + (\gamma\overrightarrow{b})\overrightarrow{b} = \textrm{пр}_{\overrightarrow{b}}\overrightarrow{a}\cdot\overrightarrow{b} + \textrm{пр}_{\overrightarrow{b}}\overrightarrow{c}\cdot\overrightarrow{b} = \overrightarrow{a}\overrightarrow{b} + \overrightarrow{c}\overrightarrow{b}\ \downarrow\)
+        \end{enumerate}
+    \end{enumerate}
+
+    Если \( \overrightarrow{a}\cdot\overrightarrow{b} \) известно, то 
+
+    \( \angle(\overrightarrow{a}, \overrightarrow{b}) = \frac{\overrightarrow{a}\cdot\overrightarrow{b}}{\abs{\overrightarrow{a}}\cdot\abs{\overrightarrow{b}}} \)
+
+    \subsection{Координаты. Метод координат.}
+
+    Каждой точке сопоставляется набор чисел. 
+
+    \begin{enumerate}
+        \item \(O(0; 0; 0)\) --- начало координат.
+        \item Оси координат (базисные векторы). 
+        
+        \begin{enumerate}
+            \item \(1D\). Один вектор. \(e_1\)
+            \item \(2D\). Два неколлинеарных вектора.
+            \item \(3D\). Три неколлинеарных вектора.
+            \item \(nD\). \(n\) линейно независимых векторов.
+        \end{enumerate}
+
+        \item ``Единичные'' векторы. \(1D - e_1; 2D - e_1,e_2; 3D - e_1,e_2,e_3\)
+        \item Каждой точке ставим в соответствие радиус-вектор \(OA\).
+        \item 
+        
+        \begin{enumerate}
+            \item \(1D\). \(\overrightarrow{OA} = x\overrightarrow{e_1}\)
+            \item \(2D\). \(\overrightarrow{OA} = x\overrightarrow{e_1} + y\overrightarrow{e_2}\)
+            \item \(3D\). \(\overrightarrow{OA} = x\overrightarrow{e_1} + y\overrightarrow{e_2} + z\overrightarrow{e_3}\)
+        \end{enumerate}
+
+        \(\exists!\) \( \overrightarrow{OA} \longleftrightarrow (x, y, z) \)
+    \end{enumerate}
+
+\end{document}
