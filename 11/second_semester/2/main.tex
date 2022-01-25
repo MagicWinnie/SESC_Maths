@@ -1,0 +1,314 @@
+
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+    \begin{enumerate}
+        \item \( \overrightarrow{AB}:\ A(x_A, y_A, z_A);\ B(x_B, y_B, z_B) \)
+        %TODO IMG ~6:00
+
+        \( \overrightarrow{OA} = x_A\overrightarrow{e_1} + y_A\overrightarrow{e_2} + z_A\overrightarrow{e_3} \)
+        
+        \( \overrightarrow{OB} = x_B\overrightarrow{e_1} + y_B\overrightarrow{e_2} + z_B\overrightarrow{e_3} \)
+
+        \( \overrightarrow{AB} = -\overrightarrow{OA} + \overrightarrow{OB} =  -x_A\overrightarrow{e_1} - y_A\overrightarrow{e_2} - z_A\overrightarrow{e_3} + x_B\overrightarrow{e_1} + y_B\overrightarrow{e_2} + z_B\overrightarrow{e_3} = (x_B - x_A)\overrightarrow{e_1} + (y_B - y_A)\overrightarrow{e_2} + (z_B - z_A)\overrightarrow{e_3} \)
+
+        \(\overrightarrow{AB} = (x_B - x_A, y_B - y_a, z_B - z_A)\)
+        
+        \item 
+        
+        \( \overrightarrow{a} = (x_a, y_a, z_a) \)
+        
+        \( \overrightarrow{b} = (x_b, y_b, z_b) \) 
+
+        \( \overrightarrow{a} \pm \overrightarrow{b} = x_a\overrightarrow{e_1} + y_a\overrightarrow{e_2} + z_a\overrightarrow{e_3} \pm (x_b\overrightarrow{e_1} + y_b\overrightarrow{e_2} + z_b\overrightarrow{e_3})=(x_a \pm x_b)\overrightarrow{e_1} + (y_a \pm y_b)\overrightarrow{e_2} + (z_a \pm z_b)\overrightarrow{e_3} \)
+        
+        \(\overrightarrow{a}\pm\overrightarrow{b}=(x_a \pm x_b, y_a \pm y_b, z_a \pm z_b)\)
+    
+        \item \( \lambda\overrightarrow{a} \)
+        
+        \( \overrightarrow{a} = (x_a, y_a, z_a) \) 
+
+        \( \lambda\overrightarrow{a} = (\lambda x_a, \lambda y_a, \lambda z_a) \)        
+
+        \item \( \overrightarrow{a} = (x_a, y_a, z_a)\ ||\ \overrightarrow{b} = (x_b, y_b, z_b) \Rightarrow \overrightarrow{a}\) коллинеарен \(\overrightarrow{b} \Rightarrow\ \exists k \in \mathbb{R} : \overrightarrow{a} = k\overrightarrow{b}\)
+    
+        \( \overrightarrow{a} = x_a\overrightarrow{e_1} + y_a\overrightarrow{e_2} + z_a\overrightarrow{e_3} = kx_b\overrightarrow{e_1} + ky_b\overrightarrow{e_2} + kz_b\overrightarrow{e_3} \)
+
+        \( (x_a - kx_b)\overrightarrow{e_1} + (y_a - ky_b)\overrightarrow{e_2} + (z_a - kz_b)\overrightarrow{e_3} = 0 \Leftrightarrow \begin{cases}x_a = kx_b\\ y_a = ky_b\\ z_a = kz_b\end{cases} \Rightarrow \frac{x_a}{x_b} = \frac{y_a}{y_b} = \frac{z_a}{z_b} = k \)
+
+        \item Ортонормированная система координат
+        
+        \( \overrightarrow{e_1}, \overrightarrow{e_2}, \overrightarrow{e_3} \)
+
+        \( \overrightarrow{e_i} \cdot \overrightarrow{e_j} = \begin{cases} 0,\ i \neq j\\ 1,\ i = j\end{cases} \)
+
+        \( \overrightarrow{a} = (x_a, y_a, z_a) \)
+
+        \(\overrightarrow{b} = (x_b; y_b; z_b)\)
+
+        \( \overrightarrow{a} \cdot \overrightarrow{b} = (x_a\overrightarrow{e_1}+y_a\overrightarrow{e_2} + z_2\overrightarrow{e_3})\cdot(x_b\overrightarrow{e_1} + y_b\overrightarrow{e_2} + z_b\overrightarrow{3}) = (x_ax_b + 0 + 0) + (0 + y_ay_b + 0) + (0 + 0 + z_az_b) = x_ax_b + y_ay_b + z_az_b\)
+
+        Такое соотношение выполняется только в ортонормированной системе координат!
+        
+
+        \item
+
+        \( \abs{\overrightarrow{a}} = \sqrt{(\overrightarrow{a}, \overrightarrow{a})} = \sqrt{x_a^2 + y_a^2 + z_a^2} \)
+
+        \item 
+        
+        \( A(x_A, y_A, z_A) \)
+
+        \( B(x_B, y_B, z_B) \)
+        
+        \( \abs{\overrightarrow{AB}} = \sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}\)
+        
+        \item \( cos(\angle(a, b)) = \frac{x_ax_b + y_ay_b + z_az_b}{\sqrt{x_a^2 + y_a^2 + z_a^2}\sqrt{x_b^2 + y_b^2 + z_b^2}} \)
+    \end{enumerate}
+
+    \subsection{Уравнение плоскости.}
+
+    Отныне рассматривать будем ортогональную систему координат.
+
+    \textbf{Определение.} Уравнение, связывающее координаты \(x, y, z\) точки в пространстве называется уравнением некоторой поверхности \(S\), если выполнены следующие свойства:
+    
+    \begin{enumerate}
+        \item \(\forall M \in S\) уравнение выполняется
+        \item \(\forall N \not \in S\) уравнение не выполняется
+    \end{enumerate}
+
+    \textbf{Задача.} \( M_0(x_0, y_0, z_0) \in \alpha \) (плоскость)
+
+    \( \overrightarrow{n}(a, b, c) \perp \alpha \)
+
+    Уравнение плоскости --- ?
+    
+    % TODO IMG 34:00
+
+    \( M(x, y, z) \in \alpha \)
+
+    \( \overrightarrow{M_0M} \in \alpha \)
+
+    \( \overrightarrow{M_0M} = (x-x_0, y-y_0, z-z_0) \)
+
+    \( \overrightarrow{n} \perp \overrightarrow{M_0M} \)    
+
+    \( a(x - x_0) + b(y - y_0) + c(z - z_0) = 0 \)
+
+    \( ax + by + cz + (-ax_0 - by_0 - cz_0) = 0 \)
+
+    Пусть \( (-ax_0 - by_0 - cz_0) = d \).
+
+    \begin{equation}
+        ax + by + cz + d = 0
+    \end{equation}
+
+    Если \(M \in \alpha\), то координаты \(M\) удовлетворяют (1).
+
+    Если \( N \not\in \alpha \), то ее координаты не удовлетворяют (1).
+
+    \textbf{Теорема.} Пусть задано уравнение \( ax + by + cz + d = 0 (\star) \), где \( a^2 + b^2 + c^2 \neq 0 \), тогда \((\star)\) --- это уравнение плоскости. 
+
+    \( \uparrow \) Пусть \( c \neq 0 \), тогда рассмотрим \( M_0(0, 0, -\frac{d}{c}) \)
+
+    Построим уравнение плоскости, проходящее через \( M_0 \perp \overrightarrow{n}(a, b, c) \)
+
+    \( \overrightarrow{M_0M} = (x - 0, y - 0, z + \frac{d}{c}) \)
+
+    \( ax + by + c(z + \frac{d}{c}) = 0 \)
+
+    \( ax + by + cz + d = 0 \) получили \((\star) \downarrow \)
+
+    \textbf{Примеры:} 
+    
+    \begin{enumerate}
+        
+    \item 
+    
+        \( K(0, 0, 4) \)
+
+        \( \vec{n_\alpha}(5, 3, -2) \)
+        
+        \( 5(x - 0) + 3(y - 0) - 2(z - 4) = 0 \)
+        
+        \( 5x + 3y - 2z + 8 = 0 \)
+ 
+        (\( 5kx + 3ky - 2kz + 8k = 0, k \in \mathbb{R} \) --- уравнения одной и той же плоскости)
+
+    \item 
+    
+        \( K(1, 2, 1) \)
+
+        \( \vec{n_\alpha}(1, 1, 0) \)
+
+        \( \alpha:\ (x - 1) + (y - 2) = 0 \)
+
+        \( x + y - 3 = 0 \)
+
+        В \(OXY:\ y = -x + 3\) 
+
+        \textbf{Если в уравнении отсутствует какая-то переменная, то плоскость параллельна этой оси.}
+    \end{enumerate}
+
+    \textbf{Замечание.} \( ax + by + cz + d = 0 \) --- уравнение \( \alpha \) 
+
+    Легко найти точки пересечения с осями. 
+
+    \( ax + d = 0 \xRightarrow[]{a \neq 0} x = -\frac{d}{a} \)
+
+    \subsubsection{Особые случаи расположения плоскости относительно системы координат}
+
+    \( ax + by + cz + d = 0 \)
+
+    \begin{enumerate}
+        \item \( d = 0 \Rightarrow ax + by + cz = 0 \Rightarrow O(0, 0, 0) \in \alpha \) 
+        \item 
+        
+        \( a = 0 \Rightarrow by + cz + d = 0 \Rightarrow \alpha\ ||\ OX \)
+        
+        \( b = 0 \Rightarrow \alpha\ ||\ OY \)
+        
+        \( c = 0 \Rightarrow \alpha\ ||\ OZ\)
+
+        \item
+        
+        \(a = b = 0,\ c \neq 0 \Rightarrow z = \frac{-d}{c} \Rightarrow \alpha\ ||\ OXY\)
+        
+        \( (Z = 0) = (OXY) \)
+
+        \(b = c = 0,\ a \neq 0 \alpha\ ||\ OYZ\)
+        
+        \(a = c = 0,\ b \neq 0 \alpha\ ||\ OXZ\)
+    \end{enumerate}
+
+    \subsubsection{Построение уравнения плоскости на практике}
+
+    \(ax + by + cz + d = 0;\ a^2 + b^2 + c^2 \neq 0\)
+
+    \(a \neq 0\ x + \frac{b}{a}y + \frac{c}{a}z + \frac{d}{a} = 0\)
+
+    Неизвестных 3 \(\Rightarrow\) 3 условия.
+
+    \begin{enumerate}
+        \item 3 точки \(A(x_A, y_A, z_A), B(x_B, y_B, z_B), C(x_C, y_C, z_C)\).
+        
+        \(\begin{cases}
+            x_Aa + y_Ab + z_Ac + d = 0\\
+            x_Ba + y_Bb + z_Bc + d = 0\\
+            x_Ca + y_Cb + z_Cc + d = 0
+        \end{cases}\)
+
+        \( a, b, c\ || \) через \(d\) 
+
+        \( a\ ||\ d, b\ ||\ d, c\ ||\ d \)
+        
+        \item 2 точки и \(||\ \tau(\tau_1, \tau_2, \tau_3)\).
+        
+        \(\begin{cases}
+            x_Aa + y_Ab + z_Ac + d = 0\\
+            x_Ba + y_Bb + z_Bc + d = 0\\
+            \vec{n_\alpha} \perp \tau \Rightarrow \tau_1a + \tau_2b + \tau_3c = 0
+        \end{cases}\)
+
+        \item 1 точка и \(||\ \begin{array}{l}\tau(\tau_1, \tau_2, \tau_3)\\ \nu(\nu_1, \nu_2, \nu_3)\end{array}\).
+        
+        \( 
+            \begin{cases}
+                x_Aa + y_Ab + z_Ac + d = 0\\
+                \tau_1a + \tau_2b + \tau_3c = 0\\      
+                \nu_1a + \nu_2b + \nu_3c = 0
+            \end{cases}
+        \)
+    \end{enumerate}
+
+    \subsubsection{О разрешимости систем 3-х линейных уравнений на 3 неизвестные}
+
+    \( 
+        \begin{cases} 
+            a_{11}x + a_{12}y + a_{13}z = d_1\\
+            a_{21}x + a_{22}y + a_{23}z = d_2\\
+            a_{31}x + a_{32}y + a_{33}z = d_3
+        \end{cases}
+    \)
+
+    Неизвестные \( x, y, z \). Может оказаться \(\exists!/ \nexists/ \infty\) решений.
+
+    \( A =
+        \begin{pmatrix}
+            a_{11} & a_{12} & a_{13}\\
+            a_{21} & a_{22} & a_{23}\\
+            a_{31} & a_{32} & a_{33}
+        \end{pmatrix}
+    \)
+
+    \begin{enumerate}
+        \item \( A \pm B \) поэлементно.
+        \item \( 0 \) --- состоит из 0; \( E(I) = \begin{pmatrix}
+            1 & 0 & 0 & ... & 0\\
+            0 & 1 & 0 & ... & 0\\
+            0 & 0 & 1 & ... & 0\\
+            ... & ... & ... & ... & ...\\
+            0 & 0 & 0 & ... & 1
+        \end{pmatrix} \) --- единичная матрица
+        \item \(A\cdot B = \begin{pmatrix}
+            ... & ... & ...\\
+            ... & a_{ij} & ...\\
+            ... & ... & ...
+        \end{pmatrix}_{m \times n}
+        \cdot \begin{pmatrix}
+            ... & ... & ...\\
+            ... & b_{ij} & ...\\
+            ... & ... & ...
+        \end{pmatrix}_{n \times k} = 
+        \begin{pmatrix}
+            ... & ... & ...\\
+            ... & c_{ij} & ...\\
+            ... & ... & ...
+        \end{pmatrix}_{m \times k}\)
+
+        \(c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + ... + a_{in}b_{nj}\)
+
+        \textbf{Пример.}
+
+        \( \begin{pmatrix}
+            1 & 2 & 0\\
+            1 & 0 & 0\\
+            1 & 1 & 0
+        \end{pmatrix} \cdot \begin{pmatrix}
+            1 & 1 & 1\\
+            1 & 1 & 1\\
+            1 & 1 & 1
+        \end{pmatrix} = \begin{pmatrix}
+            3 & 3 & 3\\
+            2 & 2 & 2\\
+            2 & 2 & 2
+        \end{pmatrix} \)
+        \item \(A \cdot B \neq B \cdot A\)
+    \end{enumerate}
+
+\end{document}
