@@ -1,0 +1,321 @@
+
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+    \( \begin{pmatrix}
+        x\\
+        y\\
+        z
+    \end{pmatrix} = \overrightarrow{X} \)
+
+    \( \begin{pmatrix}
+        d_1\\
+        d_2\\
+        d_3
+    \end{pmatrix} = \overrightarrow{D} \)
+
+    \( A \cdot X = D (\star\star) \)
+
+    \( A^{-1} \cdot A = E \)
+
+    \( X = A^{-1}AX = A^{-1}D \)
+
+    \textbf{Определение.} Определитель \(\det A = \abs{A}\).
+    
+    \(\begin{vmatrix}
+        a_{11} & a_{12} & a_{13}\\
+        a_{21} & a_{22} & a_{23}\\
+        a_{31} & a_{32} & a_{33}
+    \end{vmatrix} = 
+    a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{21}a_{13}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{23}a_{32}a_{11} = a_{11} \begin{vmatrix}
+        a_{22} & a_{23}\\
+        a_{32} & a_{33}
+    \end{vmatrix} - a_{12} \begin{vmatrix}
+        a_{21} & a_{23}\\
+        a_{31} & a_{33}
+    \end{vmatrix} + a_{13} \begin{vmatrix}
+        a_{21} & a_{22}\\
+        a_{31} & a_{32}
+    \end{vmatrix}\)
+
+    \(\begin{vmatrix}
+        a_{11} & a_{12}\\
+        a_{21} & a_{22}
+    \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21} \star\star\)
+
+    \textbf{Теорема.} Если \( \det A \neq 0 \), то система имеет единственное решение.
+
+    \( \det A = 0 \Rightarrow \)
+    \begin{enumerate}
+        \item \( \exists \infty \)
+        \item \( \emptyset \)
+    \end{enumerate}
+
+    \( \begin{cases}
+        a_{11}x + a_{12}y = d_1\\
+        a_{21}x + a_{22}y = d_2
+    \end{cases} \)
+    
+    \( \frac{a_{11}}{a_{21}} \neq \frac{a_{12}}{a_{22}} \exists! \)
+
+    \subsubsection{Расстояние от точки до плоскости}
+
+    \textbf{Дано:} 
+    
+    \( \alpha: ax + by + cz + d = 0 \)
+    
+    \( \rho (M_0, \alpha) = ?\)
+
+    % TODO IMG 22:10
+    \(M_0(x_0, y_0, z_0),\ n_\alpha(a, b, c)\)
+
+    \( M_1 (x_1, y_1, z_1) \), где \( x_1 - ?, y_1 - ?, z_1 - ? \)
+    
+    \( \overrightarrow{M_0M_1} = (x_1 - x_0, y_1 - y_0, z_1 - z_0) \)
+
+    \( \overrightarrow{M_0M_1} = \lambda\overrightarrow{n_\alpha} \Rightarrow \frac{x_1 - x_0}{a} = \frac{y_1 - y_0}{b} = \frac{z_1 - z_0}{c} = \lambda \)
+    
+    \[\Downarrow\]
+    
+    \begin{equation}\label{eq:*}
+        \begin{cases}
+            x_1 - x_0 = \lambda a\\
+            y_1 - y_0 = \lambda b\\
+            z_1 - z_0 = \lambda c\\
+        \end{cases}
+    \end{equation}
+
+    \( M_1 \in \alpha \Rightarrow a(x_0 \lambda a) + b(y_0 \lambda b) + c(z_0 \lambda c) + d = 0 \)
+
+    \( \lambda (a^2 + b^2 + c^2) = -(ax_0 + by_0 + cz_0 + d) \)
+    
+    \(\lambda = -\frac{ax_0 + by_0 + cz_0}{a^2 + b^2 + c^2}\)
+
+    \( \rho(M_0; \alpha) = \abs{\overrightarrow{M_0M_1}} = \sqrt{(x_1 - x_0)^2 + (y_1 - y_0)^2 + (z_1 - z_0)^2} \stackrel{\ref{eq:*}}{=} \sqrt{\lambda^2a^2 + \lambda^2b^2 + \lambda^2c^2} = \abs{\lambda}\sqrt{a^2+b^2+c^2} = \frac{\abs{ax_0 + by_0 + cz_0}}{\sqrt{a^2 + b^2 + c^2}} \downarrow\)
+
+    \( M_0(x_0, y_0) \)
+    % TODO IMG 32:51
+
+    \( ax + by + d = 0 \)
+
+    \( \rho(M_0, l) = \frac{\abs{ax_0 + by_0 + d}}{\sqrt{a^2 + b^2}} \)
+
+    \subsubsection{Две плоскости}
+
+    \( \alpha: a_1x + b_1y + c_1z + d_1 = 0 \)
+    \( \beta: a_2x + b_2y + c_2z + d_2 = 0 \)
+
+    \begin{enumerate}
+        \item \( \alpha || \beta \Rightarrow n_\alpha || n_\beta \Rightarrow \frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2} = k \)
+        
+        \( \begin{cases}
+            a_1 = ka_2\\
+            b_1 = kb_2\\
+            c_1 = kc_2
+        \end{cases}\)
+
+        \item \( \alpha \perp \beta \Rightarrow n_\alpha \perp n_\beta \Rightarrow a_1a_2 + b_1b_2 + c_1c_2 = 0 \)
+        
+        % TODO IMG 38:40
+
+        \item \( \angle(\alpha; \beta) = \angle(n_\alpha; n_\beta) = \angle \phi \leq 90^\circ  \)
+
+        \(\cos(\alpha; \beta) = \begin{cases}
+            \cos\angle(n_\alpha; n_\beta),\ \cos \phi \geq 0\\
+            -\cos\angle(n_\alpha; n_\beta),\ \cos \angle(n_\alpha; n_\beta) < 0
+        \end{cases} = \abs{\cos\angle(n_\alpha; n_\beta)} = \frac{\abs{a_1a_2 + b_1b_2 + c_1c_2}}{\sqrt{a_1^2 + b_1^2 + c_1^2}\sqrt{a_2^2 + b_2^2 + c_2^2}} \)
+    \end{enumerate}
+
+    \subsubsection{Прямая в пространстве. Способы задания.} 
+
+    \paragraph*{Первый способ. Две точки.}\mbox{}\\
+    
+    \( A_1(x_1, y_1, z_1) \)
+
+    \( A_2(x_2, y_2, z_2) \)
+
+    Уравнение прямой?
+
+    \( \overrightarrow{A_1A_2} = (x_2 - x_1, y_2 - y_1, z_2 - z_1) \)
+
+    % TODO IMG 09:50
+
+    \( B(x; y; z) \)
+
+    \( \overrightarrow{OB} = (x; y; z) = \overrightarrow{OA_1} + \overrightarrow{A_1B} = \overrightarrow{OA_1} + t\overrightarrow{A_1A_2}\)
+
+    \( \overrightarrow{OB} = \overrightarrow{OA_1} + t\overrightarrow{A_1A_2} \)
+
+    \( \overrightarrow{r} = \overrightarrow{r_{A1}} + t\overrightarrow{A_1A_2} \)
+
+    \( \overrightarrow{A_1B} = t\overrightarrow{A_1A_2} \)
+
+    \(\overrightarrow{A_1A_2}\) --- направляющий вектор.
+
+    \( \begin{cases}
+        x - x_1 = t(x_2 - x_1)\\ 
+        y - y_1 = t(y_2 - y_1)\\
+        z - z_1 = t(z_2 - z_1)
+    \end{cases} \)
+
+    \( \begin{cases}
+        x = x_1 + t(x_2 - x_1)\\ 
+        y = y_1 + t(y_2 - y_1)\ t \in \mathbb{R}\\
+        z = z_1 + t(z_2 - z_1)
+    \end{cases} \)
+
+    Это параметрическое задание прямой.
+
+    \(\begin{cases}
+        x = x_1 + t\tau_1\\
+        y = y_1 + t\tau_2\ t \in \mathbb{R}\\
+        z = z_1 + t\tau_3
+    \end{cases}\)
+
+    Каноническое уравнение прямой: 
+    
+    \(\frac{x-x_1}{\tau_1} = \frac{y-y_1}{\tau_2} = \frac{z-z_1}{\tau_3} = t\)
+
+    \paragraph*{Второй способ. Пересечение двух плоскостей.}\mbox{}\\
+    
+    \( \begin{cases}
+        a_1x + b_1y + c_1z + d_1 = 0\\
+        a_2x + b_2y + c_2z + d_2 = 0
+    \end{cases} \)
+
+    \textbf{Пример.} 
+
+    \( \begin{cases}
+        a_1x + b_1y + c_1z + d_1 = 0\\
+        z = 0
+    \end{cases} \)
+
+    % TODO IMG 22:35
+
+    \(\begin{cases}
+        x = t\ t \in \mathbb{R}\\
+        b_1y + c_1z = -d_1 - a_1t\\
+        b_2y + c_2z = -d_2 - a_2t
+    \end{cases}\\
+    \begin{cases}
+        x = t\\
+        y = \varphi(t)\\
+        z = \psi(t)
+    \end{cases}\)
+
+    \paragraph{Угол между прямыми}\mbox{}\\
+
+    \( \begin{array}{l}
+        l_1 \Rightarrow (\tau_1, \tau_2, \tau_3) = \tau\\
+        l_2 \Rightarrow (\nu_1, \nu_2, \nu_3) = \nu 
+    \end{array} \) направляющие
+
+    \(\angle(l_1, l_2) = \begin{cases}
+        \angle(\overrightarrow{\tau}; \overrightarrow{\nu});\ \angle(\overrightarrow{\tau}; \overrightarrow{\nu}) \leq 90^\circ\\
+        180^\circ - \angle(\overrightarrow{\tau}; \overrightarrow{\nu});\ \angle(\overrightarrow{\tau}; \overrightarrow{\nu}) > 90^\circ
+    \end{cases}\)
+
+    \( \cos\angle(l_1, l_2) = \abs{\cos\angle(\overrightarrow{\tau}; \overrightarrow{\nu})} = \frac{\abs{\tau_1\nu_1 + \tau_2\nu_2 + \tau_3\nu_3}}{\sqrt{\tau_1^2 + \tau_2^2 + \tau_3^2}\sqrt{\nu_1^2 + \nu_2^2 + \nu_3^2}} \)
+
+    \paragraph{Угол между прямой и плоскостью.}\mbox{}\\
+
+    \( l: \Rightarrow \overrightarrow{\tau} = (\tau_1; \tau_2; \tau_3) \)
+    \( \alpha: \Rightarrow \overrightarrow{n_\alpha} = (a; b; c) \)
+
+    % TODO IMG 33:18
+
+    \( \angle\psi = \angle(\alpha; l) = \begin{cases}
+        \frac{\pi}{2} - \angle(\overrightarrow{n_\alpha}, \overrightarrow{\tau}) = \frac{\pi}{2} - \varphi;\ \varphi \leq \frac{\pi}{2}\\
+        \angle(\overrightarrow{n_\alpha}, \overrightarrow{\tau}) - \frac{\pi}{2} = \varphi - \frac{\pi}{2};\ \varphi > \frac{\pi}{2}
+    \end{cases}\)
+
+    \( \sin \psi = \begin{cases}
+        \cos \phi,\ \cos \phi \geq 0\\
+        -\cos \phi,\ \cos \phi < 0
+    \end{cases} = \abs{\cos \phi} \Rightarrow\\ \Rightarrow \sin\angle(l; \alpha) = \frac{\abs{a\tau_1 + b\tau_2 + c\tau_3}}{\sqrt{a^2 + b^2 + c^2}\sqrt{\tau_1^2 + \tau_2^2 + \tau_3^2}} \)
+
+    \section{Комплексные числа} 
+
+    (Лекция по Яковлеву)
+
+    Рассмотрим упорядоченные пары:
+
+    \( (a, b); a, b \in \mathbb{R}  \)
+
+    \( (1, 0), (1, \sqrt{2}) ... \)
+
+    \( (a, b) \neq (b, a) \)
+
+    \( (a_1, b_1) = (a_2, b_2) \Leftrightarrow \begin{cases}
+        a_1 = a_2\\
+        b_1 = b_2
+    \end{cases} \)
+
+    \subsection{Операции над парами}
+    
+    \subsubsection{Сложение}
+
+    \( (a_1, b_1) + (a_2, b_2) \stackrel{df}{=} (a_1 + a_2, b_1 + b_2) \)
+
+    \subsubsection{Умножение}
+
+    \( (a_1, b_1) \cdot (a_2, b_2) = (a_1a_2-b_1b_2; a_1b_2 + b_1a_2)\)
+
+    \textbf{Определение.} Множество упорядоченных пар, с введенными операциями сложения и умножения, назовём множеством комплексных чисел.
+
+    Комплексные числа обозначаются \( z, w \) и другими маленькими буквами латинского алфавита.
+
+    \subsection{Свойства сложения и умножения}
+
+    \begin{enumerate}
+        \item \( z_1 + z_2 = z_2 + z_1 \)
+        \item \( (z_1 + z_2) + z_3 = z_1 + (z_2 + z_3) \)
+        \item \(z\) --- разность \(z_2\) и \(z_1\), если \(z+z_1 = z_2\)
+        
+        \(z = (a, b);\ z_1 = (a_1, b_1);\ z_2 = (a_2, b_2)\)
+
+        \(z + z_1 = (a+a_1, b + b_1) = (a_2, b_2)\)
+
+        \( \Updownarrow \)
+
+        \( \begin{cases}
+            a + a_1 = a_2\\
+            b + b_1 = b_2
+        \end{cases} \Leftrightarrow \begin{cases}
+            a = a_2 - a_1\\
+            b = b_2 - b_1
+        \end{cases} \)
+        
+        \(z = z_2 - z_1 = (a_2 - a_1, b_2 - b_1)\)
+
+        \item \( 0 = (0, 0) \)
+        \item \(z_1z_2 = z_2z_1\)
+        \item \((z_1z_2)z_3 = z_1(z_2z_3)\)
+    \end{enumerate}
+
+\end{document}
