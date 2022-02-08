@@ -1,0 +1,240 @@
+
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+    \subsection{Действительные и мнимые числа}
+
+    Рассмотрим числа \( (a, 0) \).
+
+    \begin{enumerate}
+        \item \( z_1 \pm  z_2 = (a_1, 0) \pm (a_2, 0) = (a_1 \pm a_2, 0) \)
+        \item \(z_1z_2 = (a_1, 0)\cdot(a_2, 0) = (a)\)
+        \item \(z = \frac{z_2}{z_1} = (\frac{a_1a_2}{a_1^2}, 0) = (\frac{a_2}{a_1}, 0) \)
+    \end{enumerate}
+
+    Они обладают свойствами действительных чисел.
+
+    Их мы будем обозначать как действительные числа: 
+
+    \( (a, 0) = a \in \mathbb{R} \Rightarrow \mathbb{R} \in \mathbb{C} \)
+
+    Рассмотрим числа вида \((0, b)\).
+
+    \((0, 1) \stackrel{df}{=} i\) --- мнимая единица
+
+    \(i^2 = i\cdot i = (0,1)\cdot(0, 1) = (-1, 0) = -1 \Rightarrow i^2 = -1\)
+
+    \( (0, b) = b \cdot i \)
+
+    \( (b, 0) \cdot (0, 1) = (0 - 0, b) \)
+
+    \( (a, b) = (a, 0) \pm (0, b) = a + b \cdot i \) --- \textbf{алгебраическая форма записи комплексных чисел}.
+
+    \subsection{Алгебраическая форма записи комплексных чисел. Правила действия}
+
+    \(z = (a, b) = a + b \cdot i \), где \( i = (0, 1), i^2 = -1 \)
+
+    \subsubsection{Свойства}
+    
+    \begin{enumerate}    
+        \item \(z_1 = z_2\)
+        
+        \( z_1 = a_1 + b_{1}i \)
+        
+        \( z_2 = a_2 + b_{2}i \)
+
+        \( z_1 = z_2 \Leftrightarrow \begin{cases}
+            a_1 = a_2\\
+            b_1 = b_2
+        \end{cases} \)
+            
+        \item Неравенство \(z > 0\) смысла не имеет(аналогично для остальных знаков сравнения).
+        \item \( z_1 \pm z_2 = (a_1 + b_1i) \pm (a_2 + b_2i) \stackrel{\textrm{Опер. над парами}}{=} (a_1 \pm a_2) + (b_1 \pm b_2)i \)
+        \item \(z_1z_2 = (a_1+b_1i)(a_2+b_2i) = a_1a_2+a_1b_2i + b_1a_2i + b_1b_2i^2 = a_1a_2-b_1b_2+(a_1b_2+b_1a_2)i\)
+        \item 
+        
+        \( z = a+bi\)
+        
+        \( \overline{z} = a - bi\)
+
+        \(z\cdot \overline{z} = (a+bi)(a-bi) = a^2 - b^2i^2= a^2+b^2 \geq 0\) (т.к. \(a^2 + b^2 \in \mathbb{R}\))
+        
+        \item \(z = \frac{z_2}{z_1} = \frac{a_2+b_2i}{a_1+b_1i} = \frac{a_1a_2+b_1b_2}{a_1^2+b_1^2} + \frac{a_1b_2-b_1a_2}{a_1^2+b_1^2}\)
+        
+        \(z = \frac{z_2}{z_1} = \frac{z_2\cdot \overline{z_1}}{z_1\cdot \overline{z_1}} = \frac{(a_2+b_2i)(a_1-b_1i)}{a_1^2+b_1^2} = \frac{a_1a_2 + b_1b_2 + (a_1b_2 - b_1a_2)i}{a_1^2 + b_1^2}\)
+    \end{enumerate}
+
+    \subsection{Геометрическая интерпретация комплексных чисел и операций над ними. Модуль и аргумент комплексного числа}
+
+    \( z = a + bi \Leftrightarrow z = (a, b) \Leftrightarrow \overrightarrow{OM} \textrm{ или } M(a, b) \)
+
+    %TODO IMG 37:30
+    
+    \( z_1 + z_2 \) --- сумма векторов
+
+    %TODO IMG 39:39
+
+    \subsubsection{Модуль комплексного числа}
+
+    \textbf{Определение.} Модулем комплексного числа называется длина соответствующего этому числу радиус-вектора на комплексной плоскости. \(\abs{z} = \sqrt{a^2+b^2} \in \mathbb{R}\)
+
+    \(\abs{z} = 0 \Leftrightarrow z = (0, 0)\)
+
+    Если \( \abs{z} = const \neq 0 \), то таких таких чисел \(\infty\)
+
+    %TODO IMG 0:04
+    
+    \subsubsection{Аргумент комплексного числа}
+
+    %TODO IMG 3:30
+
+    \textbf{Определение.} Аргументом(\(arg z\)) комплексного числа называется угол между положительным направлением действительной оси и радиус-вектором соответствующего числа \(z\).
+
+    \(arg z\) определяется неоднозначно
+
+    \(z = 1 + i\)
+
+    \(arg z = \frac{\pi}{4} + 2\pi k = \varphi + 2\pi k,\ k \in \mathbb{Z}\)
+
+    \(Arg z\) --- главный аргумент.
+
+    %TODO IMG 11:00
+    \(Arg z = \varphi,\ -\pi < \varphi \leq \pi\)
+
+    \(\abs{z} = \sqrt{a^2+b^2} = r (\textrm{или } \rho)\)
+
+    \[\begin{cases}a = r \cdot \cos \varphi\\ b = r \cdot \sin \varphi\end{cases}\]
+    
+    \[\Updownarrow\]
+    
+    \begin{equation}\label{eq:1}
+        \begin{cases}
+            \cos \varphi = \frac{a}{r}\\
+            \sin \varphi = \frac{b}{r}
+        \end{cases}
+    \end{equation}
+
+    Иногда используют уравнение \(tg \varphi = \frac{b}{a}\), однако эта запись не является эквивалентной \ref{eq:1}.
+
+    \textbf{Пример.}
+    
+    \( z = -\sqrt{3} + 1 \cdot i \)
+
+    \( \abs{z} = r = \sqrt{3 + 1} = 2 \)
+
+    %TODO IMG 15:36
+
+    \( \tg\varphi_1 = -\frac{1}{\sqrt{3}} \)    
+
+    \( \varphi_1 = -\frac{\pi}{6} + \pi k \)
+
+    \( \varphi = argz = \frac{5\pi}{6} + 2\pi k \)
+
+    \( Argz = \frac{5\pi}{6} \)
+
+    \subsubsection{Геометрическая интерпретация модуля разности}
+
+    \( \abs{z_2 - z_1} - ? \) 
+
+    %TODO IMG 19:05
+
+    \( \abs{z_2 - z_1} = \abs{M_1M_2} \)
+
+    \textbf{Примеры (изобразить на комплексной плоскости):}
+
+    Комплексная плоскость --- \(\mathbb{C}\)
+
+    \begin{enumerate}
+        \item \( ReZ \geq 5 \) %TODO IMG 22:00
+        \item \( \abs{z - 1} = 2 \) %TODO IMG 23:08
+        \item \( \abs{z - 1 - i} < 2 \) %TODO IMG 24:43 (круг без границы)
+        \item \( \abs{z + i} = \abs{z - 1} \) %TODO IMG 27:00 (серединный перпендикуляр)
+    \end{enumerate}
+        
+    \subsection{Тригонометрическая форма записи комплексного числа. Умножение и деление чисел в тригонометрической форме}
+
+    \( \begin{cases}
+        a = r\cdot \cos\varphi\\
+        b = r\cdot \sin\varphi
+    \end{cases}\)
+    
+    \(z = a + bi = r \cdot \cos \varphi + r \cdot \sin \varphi \cdot i = r(\cos \varphi + i \cdot \sin \varphi)\)
+    
+    \( z = r(\cos\varphi + i\cdot \sin\varphi) \) --- тригонометрическая форма записи.
+
+    \textbf{Примеры.} %TODO IMG 31:20
+
+    \( z_1 = -1 - i = \sqrt{2}(\cos(-\frac{3\pi}{4}) + i\cdot \sin(-\frac{3\pi}{4})) \) 
+
+    \( z_2 = -2 = 2(\cos(\pi) + i\cdot \sin(\pi)) \)
+
+    \( z_3 = -\cos(\frac{\pi}{12}) + i\cdot \sin(\frac{\pi}{12}) \) (записать в тригонометрической форме)
+
+    \( -\cos(\frac{\pi}{12}) = a \)
+
+    \( \sin(\frac{\pi}{12}) = b \)
+
+    \( \abs{z_3} = \sqrt{a^2 + b^2} = 1  \)
+
+    \( \begin{cases}
+        \cos\varphi = -\cos(\frac{\pi}{12})\\
+        \sin\varphi = \sin(\frac{\pi}{12})
+    \end{cases} \Rightarrow \left[ \begin{array}{l} \varphi = \frac{\pi}{12} + 2\pi k\\ \varphi = \pi - \frac{\pi}{12} + 2\pi k, k \in \mathbb{Z}  \end{array} \right. \)
+
+    \(\varphi = \frac{11\pi}{12} + 2\pi k\)
+
+    \(\cos(\frac{11\pi}{12} + 2\pi k) = \cos(\pi - \frac{\pi}{12}) = -\cos\frac{\pi}{12}\)
+
+    \(z_3 = \cos\frac{11\pi}{12} + i\sin\frac{11\pi}{12}\)
+
+    \subsubsection{Уможение в тригонометрической форме записи комплексного числа}
+
+    \(z_1 = r_1(\cos \varphi_1 + i\sin \varphi_1)\)
+
+    \(z_2 = r_2(\cos \varphi_2 + i\sin \varphi_2)\)
+
+    \(z_1 \cdot z_2 = r_1 r_2 (\cos\varphi_1 + i\sin\varphi_1)(\cos\varphi_2 + i\sin\varphi_2) = r_1r_2[\cos\varphi_1\cos\varphi_2 - \sin\varphi_1\sin\varphi_2 + i(\sin\varphi_1\cos\varphi_2) + \)
+
+    \( + \cos\varphi_1\sin\varphi_2] = r_1r_2[\cos(\varphi_1+\varphi_2)+i\sin(\varphi_1 + \varphi_2)]\)
+
+    %TODO IMG 43:35
+
+    \textbf{Пример.}
+
+    \( z_1 = \sqrt{2}(cos(\frac{11\pi}{4}) + i\cdot sin(\frac{11\pi}{4})) \)
+
+    \( z_2 = \sqrt{8}(cos(\frac{3\pi}{8}) + i\cdot sin(\frac{3\pi}{8})) \)
+
+    \( z_1z_2 = 4(cos(\frac{25\pi}{8}) + i\cdot sin(\frac{25\pi}{8})) = 4(cos(\frac{9\pi}{8}) + i\cdot sin(\frac{9\pi}{9}) = 4(cos(-\frac{7\pi}{8}) + i\cdot sin(-\frac{7\pi}{8})) \)
+    
+    \subsubsection{Деление в тригонометрической форме записи комплексного числа}
+
+    \(\frac{z_2}{z_1 \neq 0} = \frac{z_2\overline{z_1}}{z_1\overline{z_1}} = \frac{r_1r_2(\cos\varphi_2+i\sin\varphi_2)(\cos\varphi_1-i\sin\varphi_1)}{r_1^2} = \frac{r_2}{r_1}[\cos\varphi_1\cos\varphi_2 + \sin\varphi_1\sin\varphi_2 + i(-\cos\varphi_2\sin\varphi_1 + \sin\varphi_2\cos\varphi_1)] =\)
+    
+    \( = \frac{r_2}{r_1}[ \cos(\varphi_2 - \varphi_1) + i\cdot \sin(\varphi_2 - \varphi_1 ]\)
+\end{document}
