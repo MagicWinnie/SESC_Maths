@@ -1,0 +1,278 @@
+
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+    \subsection{Возведение в степень и извлечение корня в комплексной плоскости}
+
+    \( z_1z_2 = r_1r_2(cos(\varphi_1 + \varphi_2) + i \cdot sin(\varphi_1 + \varphi_2)) \) 
+
+    Т.е. \( z_1z_2 = r_1r_2 \)
+
+    \( arg(z_1z_2) = \varphi_1 + \varphi_2 + 2\pi k, k \in \mathbb{Z} \) 
+
+    \( \frac{z_2}{z_1} = \frac{r_2}{r_1}(cos(\varphi_2 - \varphi_1) + i\cdot sin(\varphi_2 - \varphi_1)) \)
+
+    \( \abs{\frac{z_2}{z_1}} = \frac{r_2}{r_1} \)
+
+    \( arg(\frac{z_2}{z_1}) = \varphi_2 - \varphi_1 + 2\pi k, k \in \mathbb{Z} \)
+    
+    \(z_1z_2z_3 = [r_1r_2(cos(\varphi_1+\varphi_2)+i\cdot sin(\varphi_1+\varphi_2))]r_3(cos\varphi_3+i\cdot sin\varphi_3) = r_1r_2r_3[cos(\varphi_1+\varphi_2+\varphi_3)+i\cdot sin(\varphi_1+\varphi_2+\varphi_3)]\)
+
+    \( \Downarrow \textrm{ (по индукции)} \)
+
+    \( z^n = [r(cos(\varphi) + i\cdot sin(\varphi))]^n = r^n[cos(n\varphi) + i\cdot sin(n\varphi)] \) --- формула Муавра
+    
+    \textbf{Пример.}
+
+    \( (1 - i)^8 \) в алгебраической форме.
+
+    \( (1 - i)^8 = [\sqrt{2}(cos(-\frac{\pi}{4}) + i\cdot sin(-\frac{\pi}{4}))]^8 = 2^4(cos(-2\pi) + i \cdot sin(-2\pi)) = 16 \)
+
+    \( z = r(cos\varphi + i \cdot sin\varphi) \)
+
+    \( z^3 = r^3(cos(3\varphi) + i \cdot sin(3\varphi)) \)
+
+    \( z^3 = r^3(cos\varphi + i\cdot sin\varphi)^3 = r^3(cos^3\varphi + 3cos^3\varphi\cdot i\cdot sin\varphi + 3cos\varphi\cdot i^2\cdot sin^2\varphi + i^3 sin^3\varphi) \)
+
+    \textbf{Косинус и синус тройного угла}
+
+    Приравнивая действительные и мнимые части, получаем:
+
+    \( cos(3\varphi) = cos^3\varphi - 3cos\varphi sin^2\varphi \)
+
+    \( sin(3\varphi) = 3cos^2\varphi sin\varphi - sin^3\varphi \)
+    
+    \textbf{Определение.} Корнем \(n\)-ой степени из комплексного числа \(w\) называется число \(z = \sqrt[n]{w}\ :\ z^n = w\).
+
+    \( \sqrt[2]{4} \stackrel{\mathbb{R}}{=} 2 \)
+    
+    \( \sqrt[2]{4} \stackrel{\mathbb{C}}{=} \pm 2 \)
+
+    \textbf{Пример.}
+
+    \(\sqrt{21-20i} = (a+ib) = z\)
+
+    \(21-20i = (a+bi)^2 = a^2 + 2abi - b^2,\ a, b \in \mathbb{R}\)
+
+    \(\begin{cases}
+        a^2-b^2 = 21\\
+        2ab = -20
+    \end{cases}\ 
+    \begin{cases}
+        a^2-b^2 = 21\\
+        b = \frac{-10}{a}
+    \end{cases}\)
+
+    \(a^2-\frac{100}{a^2} = 21\)
+
+    \(a^2=t>0\)
+    
+    \(t-\frac{100}{t} = 21\)
+
+    \(t^2-21t-100 = 0\)
+    
+    \(t = \frac{21\pm29}{2} \stackrel{t>0}{\Rightarrow} t = 25\)
+    
+    \(a = \pm 5;\ b = \mp 2\)
+    
+    \( z_1 = 5 - 2i \)
+    
+    \( z_2 = -5 + 2i \)
+
+    2 корня. 
+
+    \textbf{Пример.}
+
+    \( \sqrt{u + vi} \stackrel{?}{=} z = a + bi \)
+
+    \( \begin{cases}
+        a^2 - b^2 = u\\
+        2ab = v
+    \end{cases} \)
+
+    \( v = 0 \Rightarrow \begin{cases} a = 0 \Rightarrow -b^2 = u\\ b = 0\end{cases} \)
+    \begin{enumerate}
+        \item \( a = 0 \Rightarrow b^2 = -u \), если \( \begin{array}{l} u = 0 \Rightarrow b = 0\\ u > 0 \Rightarrow \emptyset\\ u < 0 \Rightarrow b = \pm \sqrt{-u} \end{array} \), 2 решения.
+
+        \item \(b = 0 \Rightarrow a^2 = u\), если \(\begin{array}{l}u = 0 \Rightarrow a = 0\\ u > 0 \Rightarrow a = \pm \sqrt{u}\\ u < 0 \Rightarrow \emptyset\end{array}\), 2 решения.
+
+        \item \(v \neq 0 \Rightarrow b = \frac{v}{2a}\)
+
+        \(a^2 - \frac{v^2}{4a^2} = u;\ t = a^2 > 0\)
+        
+        \(t - \frac{v^2}{4t} = u\) (в \( \mathbb{R} \))
+
+        \(4t^2-4ut-v^2 = 0\)
+
+        \(t = \frac{2u \pm \sqrt{4u^2+4v^2}}{4}=\frac{u\pm\sqrt{u^2+v^2}}{2} \stackrel{t>0}{\Rightarrow} t = \frac{u+\sqrt{u^2+v^2}}{2}\)
+
+        \(a = \pm\sqrt{\frac{u+\sqrt{u^2+v^2}}{2}}\)
+
+        \( z = \sqrt[n]{w} \Leftrightarrow z^n = w \)
+    \end{enumerate}
+
+    Или рассмотрим в тригонометрической форме:
+
+    \( z = r[cos\varphi + i\cdot sin\varphi] \)
+
+    \( w = \rho[cos\psi + i\cdot sin\psi] \)
+
+    \( r^n[cos(n\varphi) + i\cdot sin(n\varphi)] = \rho[cos\psi + i\cdot sin\psi] \)
+
+    \( r^n = \rho\ (\in \mathbb{R})\)
+
+    \( r = \sqrt[n]{\rho} \)
+
+    \( n\varphi = \psi + 2\pi k, k \in \mathbb{Z} \)
+
+    \( \varphi = \frac{\psi}{n} + \frac{2\pi k}{n}, k \in \mathbb{Z} \)
+    
+    \(z_k = \sqrt[n]{\rho}(cos(\frac{\psi}{n}+\frac{2\pi k}{n})+i\cdot sin(\frac{\psi}{n}+\frac{2\pi k}{n})),\ k \in \mathbb{Z}\)
+
+    \( k = 0, 1, 2, ..., n - 1 \) --- ровно \(n\) корней.
+
+    Все числа вида \(z_k\) расположены на окружности и на ``одинаковом расстоянии'' друг от друга, т.е. \(z_k\) --- вершины правильного \(n\)-угольника на комплексной плоскости с центром в начале координат.
+
+    \textbf{Пример.}
+    
+    \(\sqrt[3]{i} = z\)
+
+    \(z^3 = i = cos\frac{\pi}{2} + i\cdot sin\frac{\pi}{2}\)
+
+    \(r^3(cos 3\varphi + i\cdot sin 3\varphi) = cos\frac{\pi}{2} + i\cdot sin\frac{\pi}{2}\)
+
+    \(r^3 \stackrel{\mathbb{R}}{=} 1 = r = 1\)
+
+    \(3\varphi = \frac{\pi}{2} + 2\pi k\)
+
+    \(\varphi = \frac{\pi}{6} + \frac{2\pi k}{3}\)
+
+    \( z_k = 1(cos(\frac{\pi}{6} + \frac{2\pi k}{3}) + i\cdot sin(\frac{\pi}{6} + \frac{2\pi k}{3})), k = 0, 1, 2 \)
+
+    \(z_0 = cos\frac{\pi}{6} + i\cdot sin\frac{\pi}{6} = \frac{\sqrt{3}}{2}+\frac{1}{2}i\)
+
+    \(z_1 = cos\frac{5\pi}{6} + i\cdot sin\frac{5\pi}{6} = -\frac{\sqrt{3}}{2} + \frac{1}{2}i \)
+    
+    \(z_2 = cos\frac{3\pi}{2} + i\cdot sin\frac{3\pi}{2} = -i\)
+    
+    \section{Многочлены}
+
+    \textbf{Определение.} Выражение вида \( p(x) = a_0 + a_1x + a_2x^2 + ... + a_nx^n \) называется многочленом от \(x\).
+    
+    \begin{enumerate}
+        \item \( x \) --- переменная, \( x \in \mathbb{C} \)
+        \item \( a_0, a_1, a_2, ..., a_n \) --- коэффициенты, принадлежащие \( \mathbb{C} \)
+        \item \( n \in \mathbb{N} \cup \{0\}\) --- степень многочлена, если \(a_i \neq 0\) 
+        
+        \( deg\ (p(x)) = n \)
+
+        Если \( p(x) = c = a_0 \), то \(deg\ (p(x)) = 0\) 
+        
+        \item \(a_0, a_1x, a_2x^2, ...\) --- одночлены
+        \item Если \( a_0 = a_1 = a_2 = ... = a_n = 0 \), то \( p(x) = 0 \) нулевой многочлен. Его степень неопределена.
+    \end{enumerate}
+    
+    \textbf{Определение.} Два многочлена \(p(x)\) и \(g(x)\) равны, если равны коэффициенты при соответствующих степенях и \(deg\  p(x) = deg\  g(x)\).
+
+    \subsection{Операции над многочленами}
+
+    \subsubsection{Сложение}
+
+    \textbf{Определение.} Под суммой понимаем многочлен, коэффициенты которого равны сумме коэффициентов складываемых многочленов при соответствующих степенях.
+
+    \(p(x), g(x);\ deg\  p(x) = n, deg\  g(x) = m\)
+
+    \(deg\ (p(x)+g(x)) = deg\  h(x) = \left[ \begin{array}{l} n \neq m \Rightarrow deg\  h(x) = max(n, m)\\ n = m \Rightarrow deg\  h(x) \leq n \end{array} \right.\)
+
+    \textbf{Пример.} 
+
+    \( p(x) = 3x^3 - 3x^2 + 5x + 7 \)
+    
+    \( g(x) = -3x^3 + 3x^2 + x - 1 \)
+
+    \( p(x) + g(x) = h(x) = 6x + 6 \)
+    
+    \( deg\ h(x) = 1 \) 
+
+    \textbf{Свойства}
+    \begin{enumerate}
+        \item \( p(x) + g(x) = g(x) + p(x) \)
+        \item \( (p(x) + g(x)) + h(x) = p(x) + (g(x) + h(x)) \)
+        \item ``$0$'': \( p(x) = 0 \)
+        \item \( p(x): -p(x) = -a_0 - a_1x - a_2x^2 - ... - a_nx^n \)
+    \end{enumerate}
+
+    \subsubsection{Произведение}
+
+    \( p(x) = a_0 + a_1x + a_2x^2 + ... + a_nx^n \)
+
+    \( g(x) = b_0 + b_1x + b_2x^2 + ... + b_mx^m \)
+
+    \( p(x)\cdot g(x) = (a_0 + a_1x + a_2x^2 + ... + a_nx^n)\cdot(b_0 + b_1x + b_2x^2 + ... + b_mx^m) \stackrel{df}{=} c_0 + c_1x + ... + c_{m + n}x^{m + n} \)
+
+    \( deg(p(x)\cdot g(x)) = deg\ p(x) + deg\ g(x) \)
+    
+    \(\begin{cases}
+        c_0 = a_0b_0\\
+        c_1 = a_0b_1+a_1b_0\\
+        c_2 = a_0b_2+a_1b_1+a_2b_0\\
+        ...\\
+        c_{m+n}=a_nb_m
+    \end{cases}\)
+    
+    \( c_i = \sum_{i = k + l} a_kb_l \quad i = 0, 1, ..., n + m  \)
+    
+    \textbf{Свойства}
+
+    \begin{enumerate}
+        \item \( p(x)\cdot g(x) = g(x) \cdot p(x) \)
+        \item \( p(x)(g(x)\cdot h(x)) = (p(x)\cdot g(x))h(x) \)
+        \item \((p(x)+g(x))\cdot h(x) = p(x)\cdot h(x)+g(x)\cdot h(x)\)
+        \item ``$1$'': \(p(x) = 1\) 
+    \end{enumerate}
+
+    \( \exists \) ? \(p(x)\) обратный: \( p^{-1}(x): p(x)\cdot p^{-1}(x) = 1 \)
+
+    \( p^{-1}(x) \neq 0 \)
+
+    \( deg\ p(x) = n;\ deg\ p^{-1}(x) = n_1 \)
+
+    \( deg[p(x)\cdot p^{-1}(x)] = n + n_1 = 0 \)
+
+    Если \( n = 0 \Rightarrow n_1 = 0 \) 
+
+    \( p(x) = a_0 \neq 0 \Rightarrow p^{-1}(x) = \frac{1}{a_0} \)
+
+    Если \( n > 0 \Rightarrow \not\exists p^{-1}(x) \)
+
+    \subsubsection{Деление с остатком}
+
+    \textbf{Определение.} Разделить многочлен \(f(x)\) на \(g(x)\) с остатком, значит найти такие \(q(x), r(x):\ f(x) = q(x) \cdot g(x) + r(x), r(x) \equiv 0\) или \(deg\ r(x) < deg\ g(x)\).
+
+    
+\end{document}
