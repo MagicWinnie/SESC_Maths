@@ -1,0 +1,230 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{docmute}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\newcommand\Mydiv[2]{%
+$\strut#1$\kern.25em\smash{\raise.3ex\hbox{$\big)$}}$\mkern-8mu
+        \overline{\enspace\strut#2}$}
+% https://tex.stackexchange.com/questions/131125/better-way-to-display-long-division
+
+\begin{document}
+    \(f(x)\) на \(g(x)\) с остатком:
+
+    \(\exists q(x)\) и \(r(x):\ f(x) = q(x)\cdot g(x) + r(x)\), где \(r(x) \equiv 0\) или \(deg\ r(x) < deg\ g(x)\)
+
+    \textbf{Теорема.} \(g(x)\) и \(r(x)\ \exists!\)
+    
+    \(\uparrow\)
+    \begin{enumerate}
+        \item \(\exists\)
+            \begin{enumerate}
+                \item \(f(x) \equiv 0 \Rightarrow q(x) \equiv 0,\ r(x) \equiv 0\ f(x) \equiv 0 \cdot g(x) + 0\)
+                \item \(f(x) \not \equiv 0\ f(x) = a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0\)
+                
+                \(g(x) = b_mx^m+b_{m-1}x^{m-1}+...+b_1x+b_0\)
+
+                Если \(n < m \Rightarrow f(x) = 0;\ g(x)+f(x)\), т.е. \(q(x) \equiv 0;\ r(x) = f(x)\).
+
+                Если \(n \geq m\) рассмотрим одночлен \(\frac{a_nx^n}{b_mx^m} = C_{n-m}x^{n-m}\), тогда \(f(x) = C_{n-m}x^{n-m}\cdot g(x)+\underset{r_1(x)}{f(x)-C_{n-m}x^{n-m}g(x)}\)
+
+                \(deg\ r_1(x) \leq n-1\)
+
+                Если \(deg\ r_1(x) \geq m\), то \(r_1(x)=q_2(x)g(x)+r_2(x)\), при этом \(deg\ r_2(x) < deg\ r_1(x)\) и \(f(x) = q_1(x)g(x)+r_1(x)=q_1(x)g(x)+q_2(x)g(x)+r_2(x)=(q_1(x)+q_2(x))g(x)+r_2(x)\) и т.д.
+
+                \(n-1 \geq deg\ r_1(x) > deg\ r_2(x) > ... > deg\ r_k\)
+
+                \(deg\ r_k \leq n-k = m-1\)
+
+                \(k = n-(m-1)\)
+
+                Не более, чем через \(n-(m-1)\) шаг получим \(r_k :\ deg\ r_k < m\).
+
+                И для \(f(x):\)
+
+                \(f(x) = (q_1(x)+q_2(x)+...+q_k)g(x)+r_k(x)\).
+            \end{enumerate}
+        \item \(\exists!\)
+        
+        От противного.
+
+        \(f(x) = q'(x)g(x)+r'(x)\)\\
+        и\\
+        \(f(x) = q''(x)g(x)+r''(x)\)
+
+        \(\Downarrow\)
+
+        \((q'(x)-q''(x))g(x) = r''(x)-r'(x)\)
+
+        Если \(q'(x)-q''(x) \not \equiv 0\)
+
+        \(deg\) л.ч. \(\geq m = m + ?\)
+
+        \(deg\) п.ч. \(< m\)
+
+        невозможно(противоречие) \(\Rightarrow\) \(q'(x) = q''(x) \Rightarrow r'(x) = r''(x).\ \downarrow\)
+    \end{enumerate}
+
+
+    \textbf{Определение.} Будем говорить, что \(f(x) \vdots g(x) \neq 0\) без остатка, если \(f(x) = g(x)\cdot h(x)\).
+
+    \textbf{Свойства.}
+
+    \begin{enumerate}
+        \item \(f(x) \vdots g(x);\ g(x) \vdots h(x) \Rightarrow f(x)\vdots h(x)\)
+        \item \(\begin{array}{l}f(x) \vdots h(x)\\ g(x) \vdots h(x)\end{array} \Rightarrow \begin{array}{l}f(x) \pm g(x)\vdots h(x)\\ f(x) \cdot g(x)\vdots h^2(x)\end{array}\)
+        \item \(f(x)\vdots h(x);\ \forall q(x)\ q(x)\cdot f(x)\vdots h(x)\)
+        \item \(\begin{array}{l}f_1(x)\vdots h(x)\\ f_2(x)\vdots h(x)\\ ...\\ f_k(x)\vdots h(x)\end{array};\ \forall q_i(x)\ i=1k \Rightarrow f_1(x)\cdot q_1(x)+f_2q_2+f_3q_3+...+f_kg_k \vdots h(x)\)
+        \item \(\forall c_{\neq 0} \in \mathbb{C}\ f(x)\vdots c\)
+        %6 свойство:
+        \item \(f(x) \vdots g(x),\ f(x) \not \equiv 0 deg\ f(x) = deg\ g(x)\ \textrm{и}\ \Rightarrow g(x) = f(x) \cdot c\)
+        
+        \(\uparrow\ f(x)\vdots g(x) \Rightarrow f(x) = q(x)\cdot g(x)\)
+
+        \(n = n + deg\ q(x)\)
+
+        \(deg\ q(x) = 0\), т.е. \(f(x) = c_1g(x), c_1 \neq 0\), т.к. \(f(x) \equiv 0 \Rightarrow g(x) = \frac{1}{c_1}f(x)\ \downarrow\)
+        
+        \item \(f(x)\vdots g(x);\ g(x) \vdots f(x) \Rightarrow f(x) = c\cdot g(x)\)
+        \item \(f(x) \vdots h(x) \Rightarrow f(x)\vdots c\cdot h(x)\ \forall c \in \mathbb{C}\)
+        
+    \end{enumerate}
+
+    \subsection{НОД(f, g). Алгоритм Евклида}
+
+    \textbf{Определение.} Множество \(h(x) \not \equiv 0\) называется общим делителем множеств \(f(x)\) и \(g(x)\).
+    
+    \textbf{Определение.} \(f(x)\) и \(g(x)\) взаимно просты, если у них нет общих делителей, отличных от \(const\)(многочлены 0-й степени).
+    
+    \textbf{Определение.} НОД(\(f(x),\ g(x)\)) называется такой множитель, который сам является общим делителем \(f(x)\) и \(g(x)\); и делится на любой другой общий делитель \(f(x)\) и \(g(x)\).
+    
+    \subsubsection{Алгоритм Евклида}
+    
+    \(f(x)\;g(x)\)
+    \(deg\ f(x) \geq deg\ g(x)\)
+
+    \begin{enumerate}
+        \item \(f(x) = q_1(x)g(x) + r_1(x)\)
+        
+        \(r_1(x) \equiv 0,\ deg\ r_1(x) < deg\ g(x)\)
+        \item \(g(x) = q_1(x) * r_1(x) + r_2(x)\)
+        
+        \(deg\ r_2(x) < deg\ r_1(x)\)
+
+        \item \(r_1(x) = q_3(x)r_2(x) + r_2(x);\ deg\ r_3(x) < deg\ r_2(x)\)
+        
+        \(\vdots\)
+        
+        \( deg\ f(x) \geq deg\ (x) > deg\ r_{1}(x) > deg\ r_2 (x) > .... > deg\ r_{k}(x) = 0\)
+    
+        \item[$k$.] \(r_{k-2}(x)=q_k(x)r_{k-1}(x)+r_k(x)\)
+        \item[\(k-1\).] \(r_{k-1}(x) = q_{k+1} * c + 0\) завершился процесс.
+        
+    \end{enumerate}
+
+    Покажем, что последний \(r_{k}(x) \not \equiv 0\) остаток в алгоритме Евклида — это НОД(\(f(х),\ g(х)\)).
+
+    \begin{enumerate}
+        \item \(\underset{\textrm{делитель}\ f(x)\ \textrm{и}\ g(x)}{r_{k}(x)}\) снизу\(\rightarrow\)вверх по алгоритму Евклида.
+        
+        \item сверху\(\rightarrow\)вниз
+        
+        пусть \(f(x) \vdots \varphi(x) \)\
+        \(g(x) \vdots \varphi(x) \)\
+        
+        \begin{enumerate}
+            \item \(r_1(x) \vdots \varphi(x) \)
+            \item \(r_2(x) \vdots \varphi(x) \)
+            
+            \(\vdots\)
+            
+            \item[k.] \(r_2(x) \vdots \varphi(x) \), т.е. \(r_{k}(x) = НОД(f(x),g(x)) \ \downarrow\)
+        \end{enumerate}
+        
+        \textbf{Замечание.}
+
+        \(f(x)\vdots r_k(x) \overset{\forall c \in \mathbb{C}}{\Rightarrow} f(x)\vdots c r_k(x)\)
+        
+        \(g(x)\vdots r_k(x) \Rightarrow g(x) \vdots c r_k(x)\)
+    
+    \end{enumerate}
+
+
+    \textbf{Пример.}
+    
+    \(f(x) = x^4 + 3x^3 - x^2 - 4x -3\\\)
+    \(g(x) = 3x^3 + 10x^2 + 2x - 3\)
+
+    % TODO 28:28 part2
+    % \begin {enumerate}
+    %     \list *delim ugolkom
+    % \end {enumurate}
+    
+
+    \subsection{Значение и корни многочлена. Теорема Безу}
+
+    \(f(x)\) --- многочлен.
+
+    \(x = c \in \mathbb{C}\)
+
+    \(f(c)\) --- значение многочлена в точке \(c\).
+    %а_0 - свободный член
+    \(f(0) = a_0;\ a_0\) --- свободный член.
+
+    \(f(1) = \sum_{i=0}^n a_i\)
+
+    \(f(c) = 0\)
+
+    \(c\) --- корень многочлена. \(f(x) = 0\) --- уравнение.
+    
+    Найти \(c:f(c) = 0\)
+
+    Решить уравнение --- найти все корни или показать, что их нет.
+
+    \subsubsection{Теорема Безу}
+
+    \textbf{Теорема.} Остаток от деления \(f(x)\) на \((x-c)\) равен \(f(c)\)
+
+    \(\uparrow\ f(x) = q(x)(x-c) + r(x)\ deg\ r(x) < 1\)
+
+    \(f(c) = q(x)\cdot 0 + r\), т.е. \(r=f(c)\)
+
+    \(\downarrow\)
+
+    \textbf{Следствие.} \(x = c\) являeтся корнем многочлена \(f(x) \Leftrightarrow f(x) \vdots (x-c)\), т.е. \(f(c) = 0\)
+
+    \(\uparrow\ f(c) = 0 \Rightarrow f(x) \overset{\textrm{т. Безу}}{=} (x-c)q(x) + f(c)\), т.е.
+
+    ``\(\Leftarrow\)'' т.е. \( f(x) = h(x)\cdot(x-c) \Rightarrow f(c) = 0,\) т.е. \(c\) —-- корень. \(\downarrow\)
+    
+    \textbf{Замечание.} 
+        
+    \(f(x)\vdots (ax+b)\), то \(x = -\frac{b}{a}\) --- корень.
+
+    \(f(x) \vdots(ax+b) \Leftrightarrow f(x) \vdots a(x-(-\frac{b}{a})) \)
+    
+    
+    %TODO 49:00 
+    \end{document}
