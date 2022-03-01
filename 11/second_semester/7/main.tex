@@ -1,0 +1,257 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{docmute}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+    \subsection{Схема Горнера}
+    
+    \(f(x)\) на \((x-c)\), \(f(x) = a_nx^n+a_{n-1}x^{n-1}+...+a_2x^2+a_1x+a_0\)
+
+    \(f(x) = (x-c)\cdot \varphi(x) + r = (x-c)(b_{n-1}x^{n-1}+...+b_1x+b_0) + r = b_{n-1}x^n+b_{n-1}x^{n-1}+...+b_1x^2+b_0x\)
+    \(- cb_{n-1}x^{n-1} - cb_{n-2}x^{n-2} - ... - cb_1 x - cb_0 + r\)
+
+    \(\begin{cases}
+        a_n = b_{n-1}\\
+        a_{n-1} = b_{n-2} - cb_{n-1}\\
+        a_{n-2} = b_{n-3} - cb_{n-2}\\
+        \vdots\\
+        a_{1} = b_{0} - cb_{1}\\
+        a_{0} = r - cb_{0}\\
+    \end{cases}\)
+    
+    
+    \(\begin{cases}
+        b_{n-1} = a_n\\
+        b_{n-2} = a_{n-1} + cb_{n-1}\\
+        b_{n-3} = a_{n-2} + cb_{n-2}\\
+        \vdots\\
+        b_{0} = a_{1} + cb_{1}\\
+        r = a_{0} + cb_{0}\\
+    \end{cases}\)
+    
+    \begin{tabular}{c | c | c | c | c | c |}
+        & \(a_n\) & \(a_{n-1}\) & ... & \(a_1\) & \(a_0\)\\
+        \hline
+        & \(+0\) &\(+c\cdot b_{n-1}\) & ... & \(+c\cdot b_1\) & \\
+        \hline
+        \(c\) & \(b_{n-1}\) &\(b_{n-2}\) & ... & \(b_0\) & \(r\)\\
+    \end{tabular}
+
+
+    \textbf{Пример.}
+    \(2x^5 - x^4 - 3x^3 + x - 3 \) на \(x - 3\)
+
+    \begin{tabular}{c | c | c | c | c | c | c |}
+        & \(2\) & \(-1\) & \(-3\) & \(0\) & \(1\) & \(-3\)\\
+        \hline
+        \(3\) & \(2\) &\(5\) & \(12\) & \(36\) & \(109\) & \(324\)\\
+    \end{tabular}
+
+    Итог:
+    \(2x^5 - x^4 - 3x^3 + x - 3 = (2x^4 + 5x^3 + 12x^2 + 36x + 109) \cdot (x - 3) + 324\)
+    
+
+    
+    \subsection{Кратные корни множеств и корни производной от многочелнов.}
+
+    \( x^2 + 2x + 1 = (x+1)^2 \)
+
+    \textbf{Определение.} Корень \(x=c\) многочлена \(f(x)\) называется корнем кратности \(k\), если \(f(x) \vdots (x-c)^k\) и \(f(x) \not \vdots (x-c)^{k+1}\)
+
+    \( f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} +...+ a_{2}x^{2} + a_{1}x + a_{0} \)
+
+    \( a_j; x \in \mathbb{C}\) %%todo
+    
+    \( f'(x) = na_{n}x^{n-1} + (n-1)a_{n-1}x^{n-2} + ... + a_1 \)
+
+    \( f^{n}(x) \not \equiv 0 = a_{n}n!\)
+    \( f^{n + 1}(x) \equiv  0 \)
+    
+
+    \textbf{Теорема.} \(k\)-кратный корень многочлена \(f(x)\) является \(k-1\)-кратным корнем производной \(f'(x)\).
+    
+    \(\uparrow\) Пусть \(x = c\) --- \(k\)-кратный корень \(f(x) \Rightarrow f(x) = (x-c)^k\cdot \varphi(x), \varphi(x)\not \vdots (x-c)\)
+   
+    \(f'(x) = k(x-c)^{k-1}\cdot \varphi(x) + (x-c)^k\varphi'(x) =\)
+    \( (x-c)^{k-1}[k\varphi(x) + (x-c)\varphi'(x)]\)
+    
+    \(\begin{array}{l}
+        k\varphi(x) \not \vdots (x-c)\\
+        (x-c)\varphi'(x) \vdots (x-c)
+    \end{array} \Rightarrow [k\varphi(x) + (x-c)\varphi'(x)] \not \vdots (x-c) \)
+   
+    \(\Rightarrow (x-c)\) --- корень кратности \(k-1\) для \(f'(x)\ \downarrow\)
+    
+    \textbf{Замечание.} Если \(x = c\) --- это корень кратности \(k\), то для производной \(m_{(m \leq k)}\)-го порядка \(x = c\) является корнем кратности \(k-m\), и впервые не будет корнем \(k\)-го порядка от \(f(x)\).
+    
+    
+
+    
+    \subsection{Основная теорема алгербры и её следствия}
+    
+    \textbf{Теорема.} Любой многочлен \(f(x)\) над \(\mathbb{C}\), имеет хотя бы один корень. \\
+
+    В 1799г: в \(\mathbb(R)\)
+    
+    \(n\) --- неч
+
+    \(f(x) a_n > 0\)\\
+    \(\lim_{x \to +\infty} f(x) = +\infty\)\\
+    \(\lim_{x \to -\infty} f(x) = -\infty\)
+
+    \(f(x) a_n < 0\)\\
+    \(\lim_{x \to +\infty} f(x) = -\infty\)\\
+    \(\lim_{x \to -\infty} f(x) = +\infty\)
+
+    \(n\) --- чётн?
+
+    \textbf{Следствие.} В \(\mathbb{C}\) любой многочлен \(f(x)\) можно представить в виде: \( a_{n}x^{n} + a_{n-1}x^{n-1} + ... + a_1x + a_0 = f(x) = a_{n}(x - c_1)(x - c_2)...(x - c_n)\)
+    \(\exists!\) с точностью до перестановки множителей.
+
+    \(\uparrow \exists\) по ОТА для \(f(x)\ \exists\) хотя бы один корень, пусть это \(x = c_1\), тогда по следствию из т. Безу
+    \begin{enumerate}
+        \item \(f(x) = (x-c_1)\cdot \varphi(x)\)
+        \item \(\varphi(x)\) по ОТА \(\exists\) хотя бы один корень, пусть это \(x = c_2 \Rightarrow\)
+        
+        \(\Rightarrow f(x) = (x-c_1)\varphi(x) = (x-c_1)(x-c_2)\psi(x)\) и т.д.
+        \item[\(n\).] \(f(x) = a_n(x-c_1)(x-c_2)...(x-c_n)\)
+    \end{enumerate}
+    
+
+    \(\uparrow \nexists\) пусть два представления
+    \( f(x) = a_n(x-c_1)(x-c_2)...(x-c_n) \)
+    \( f(x) = a_n(x-b_1)(x-b_2)...(x-b_n) \)
+    
+    \underline{без кратности}
+    
+    \(\forall c_i\  \exists\ b_j = b_i = c_i ?\)
+    
+    \( (x-c_1)(x-c_2)...(x-c_n) = (x-b_1)(x-b_2)...(x-b_n) \) (*)
+    
+    \underline{От противного.} Пусть для некоторого \(x = c_i\ \exists\) ни одного \(b_j\ :\ b_j = c_i\), тогда в равенстве (*)
+
+    при \(x = c_i\)
+    
+    \(\begin{array}{l}
+        \textrm{левая часть} = 0\\
+        \textrm{правая часть} \neq 0
+    \end{array}\) невозможно
+
+    \( \Rightarrow \forall c_j\ \exists\ b_j: c_i = b_j\)
+
+    \underline{про кратность:} Пусть \(x = c_i\) --- \(S\) кратный для \(f(x)\) a \(x = b_j = c_i\) --- \(t\) кратный для \( (t \not = S)\) 
+    
+    \textbf{Замечание.} Покажем, что можем сокращать.
+
+    Пусть \[f(x) = \varphi(x)\psi(x) = \varphi(x)g(x) \Rightarrow \psi(x) = g(x)\]
+    \[\Downarrow\]
+    \[ \varphi(x)[\psi(x) - g(x)] \equiv 0 \]
+    \[\Downarrow\]
+    \[\psi(x) \equiv g(x)\]
+    
+    \( (x - c_i)(..S..) = (x - c_i(..t..))\)
+    если \(S < t\) то сокращается на \((x-c_j)^S\)
+
+    \[\Downarrow\]
+
+    (многочлен) \( = (x - c_i)^{t - S}(\)многочлен\()\), при \(t - s \neq 0\)\\
+    (многочлен) \(\not \vdots (x-c_i)\)\\
+    противоречие на \(x = c_i\) с тем, что \(S \neq t\ \downarrow\)
+
+    
+    \textbf{Следствие.} \(c_1, c_2,..., c_n\) --- и только они --- корни.
+    
+    \textbf{Следствие.} \(f(x) = a_n(x-c_1)^{k_1}(x-c_2)^{k_2}...(x-c_m)^{k_m}\)
+    
+    \(k_1 + k_2 + ... + k_m = n\)
+    
+    \textbf{Утверждение.} \(f(x) \equiv g(x) \Leftrightarrow \forall c \in \mathbb{C}\ f(c) = g(c)\)
+    
+    \textbf{Следствие.} \(f(x);\ g(x) \vdots\)
+    
+    \(deg\ f(x) \leq n\)\\
+    \(deg\ g(x) \leq n\)
+    
+    и \( \forall c_i \ i=1, n+1\ f(c_i) = g(c_i) \Rightarrow f(x) \equiv g(x) \)
+    
+    
+    \(\uparrow\ \) Если \(f(x) - g(x) \not \equiv 0\)
+    \(f(x) - g(x) = h(x) \overset{\textrm{по следствию ОТА}}= \tilde{a}(x) (x-c_1)(x-c_2)...(x-c_{n+1})\)
+    
+    \(deg\ (f(x)-g(x)) \leq n\)\\
+    \(deg\ h(x) \geq n+1\)
+
+    невозможно \(\Rightarrow f(x) \equiv g(x)\downarrow\)
+    
+    \textbf{Пример.}
+
+    \(\frac{(x-a)(x-b)}{(c-a)(c-b)}+\frac{(x-c)(x-b)}{(a-c)(a-b)} + \frac{(x-a)(x-c)}{(b-a)(b-c)} = 1\)
+    
+    Имеем квадратное уравнение:
+    
+    \(x = a\) --- корень\\
+    \(x = b\) --- корень\\
+    \(x = c\) --- корень
+    
+    Слева стоит многочлен, \(deg \leq 2\), справа \(deg = 0\), уравнение не обязано быть квадратным.
+    
+    \subsection{На практике}
+        \begin {enumerate}
+            \item[\(0\).] Уменьшить степень
+            \item \(n\) --- нечётный, \(a_i \in \mathbb(R)\) действительные всегда есть!\\
+            целые?
+            
+                \( a_{n}x^{n} + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} +... + a_1x + a_0 = 0\)\\
+                Целые корни --- делители свободного члена.\\
+
+            \(x = x^*\) --- корень
+            
+            \( \underset{\vdots x_*}{\underbrace{a_{n}x^{n}_* + a_{n-1}x^{n-1}_* + ... + a_1x_*}} = -a_0 \Rightarrow\)
+        
+            \item Рациональные корни?
+            
+            \(r = frac{p}{q}\) --- несократимая дробь\\
+            \( a_{n}frac{p^{n}}{q^n} + a_{n-1}frac{p^{n-1}}{q^{n-1}} + ... + a_{1}frac{p}{q} = 0\)
+            
+            домножим на \(q^n\)
+
+            \(a_{n}p^{n} + a_{n-1}p^{n-1}q + ... + a_{1}pq^{n-1} = -a_{0}q^n\)\\
+            м.ч. \(\vdots p \Rightarrow a_0 \vdots p\)
+            
+            \(a_np^n=(-a_{n-1}p^{n-1}q -...-a_0q^n) \vdots q \Rightarrow a_n\vdots q\)
+
+            \item Если  \(z\) --- корень \(f(x)\), то \(\overline{z}\) --- тоже корень, если \(f(x)\) --- многочлен с действительными коэффициентами.
+            
+            \(\overline{z_1+z_2} = \overline{z_1}+\overline{z_2}\)
+
+            \(\overline{z_1z_2}=\overline{z_1}\cdot\overline{z_2}\)
+
+            \(a_n\overline{z}^n + a_{n-1}\overline{z}^{n-1}+...+a_1\overline{z}+a_0=0\)
+        
+            \item Если \(x = a + b^{0.5} \Rightarrow x_2 = a - \sqrt{b}\)тоже корень для \(f(x)\)\\ 
+        \end{enumerate}
+
+\end{document}
