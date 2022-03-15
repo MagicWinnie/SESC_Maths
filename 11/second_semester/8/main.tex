@@ -1,0 +1,187 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{docmute}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+    \section{Неопределённый интеграл}
+
+    \textbf{Определение.} \(F(x)\), определённая на \([a;b]\), называется первообразной для \(f(x)\), определённой на том же \([a;b]\), если \(F'(x) = f(x)\)(т.е. \(dF(x)=f(x)dx\)).
+
+    \textbf{Пример.}
+    \(\\f(x) = m^{m-1} \rightarrow F(x) = x^m \\\)
+    \(f(x) = \frac{1}{x}; x > 0 \rightarrow F(x) = ln(x) + 5 \\\)
+
+    \textbf{Утверждение.} Если \(F(x)\) --- первообразная для \(f(x)\), то \(F(x)+c\) --- тоже первообразная для \(f(x)\).
+
+    \textbf{Теорема.} Если \(F(x)\) --- первообразная для \(f(x)\), то любая другая первообразная для \(f(x)\) имеет вид \(F(x) + c\)\\
+
+    \(\uparrow\) Пусть \(\Phi(x)\) --- какая-то другая первообразная для \(f(x)\), т.е. \(\Phi'(x) = f(x)\) на \([a;b]\).
+
+    \( \Phi(x) - F(x)\) на \([a;b]\).
+    
+    \([\Phi(x) - F(x)]' = f(x) - f(x) = 0\) на \([a;b] \Rightarrow\) 
+    
+    \(\Phi(x) - F(x) = c = const\) на \([a;b] \Rightarrow \Phi(x) = F(x) + c \)
+    
+    \textbf{Определение.} Неопределённым интегралом(\(\int\)) называется \(\int f(x)dx = F(x) + c\).
+    
+    \(c --- const\) интегрирования.
+
+    \(F(x)\) --- первообразная для \(f(x)\).
+
+    \(f(x)dx\) --- подынтегральное выражение.
+    \(f(x)\) --- подынтегральная функция.
+
+    \subsection{Свойства неопределённого интеграла}
+
+    \begin{enumerate}
+        \item \(d \int f(x)dx = d(F(x) + c) = F'(x)dx + 0 = f(x)dx \)
+        \item \(\int dF(x) = \int F'(x)dx = \int f(x)dx \overset{df}{=} F(x) + c\)
+        \item \(\int(f(x)+g(x))dx = \int f(x)dx + \int g(x)dx\)
+        
+        \(\uparrow\) Дано: \(\begin{array}{l}
+            \int f(x)dx = F(x) + c,\ F'(x) = f(x)\\
+            \int g(x)dx = G(x) + c,\ G'(x) = g(x)
+        \end{array}\)
+
+        \( \int (f(x) + g(x))dx = \int [F'(x) + G'(x)]dx = \int d(F(x) + G(x)) \overset{2.}{=} F'(x) + G(x) + c = \int f(x)dx + \int g(x)dx \downarrow\)
+    
+        \item \(\int A f(x)dx = A\int f(x)dx\)
+    
+        \(\uparrow\) \(\int f(x)dx = F(x) + c_1\)
+    
+        \( \int A F'(x)dx = \int dAF(x) \overset{2.}{=} A F(x) + c = A(F(x) + \frac{c}{A} ) = A \int f(x)dx \downarrow\)
+    \end{enumerate}
+    
+    \subsubsection{Таблица интегралов}
+    
+    \begin{enumerate}
+        \item \(\int 0dx = c = const\)
+        \item \(\int x^{n}dx = \frac{x^{n+1}}{n+1},\ n \neq -1\)
+        \item \(\int \frac{1}{x} dx = ln|x| + c \)
+        
+        \(\uparrow\)
+        \begin{enumerate}
+            \item \(x > 0\ \ln \abs{x} = \ln x\)
+            
+            \((\ln x)' = \frac{1}{x}\)
+            \item \( x < 0\ \ln \abs{x} = \ln (-x)\)
+            
+            \((\ln (-x)) = \frac{1}{-x}(-1) = \frac{1}{x}\)
+        \end{enumerate}
+        \(\downarrow\)
+        \item \(\int \sin x dx = -\cos x + c\)
+        \item \(\int \cos x dx = \sin x + c\)
+        \item \(\int \frac{1}{\cos^{2}x}dx = \tg x + c \)
+        \item \(\int \frac{1}{\sin^{2}x}dx = \ctg x + c \)
+        \item \(\int \frac{1}{1 + x^2}dx = \arctg x + c \)
+        \item \(\int \frac{1}{\sqrt{1-x^2}}dx = \arcsin x + c\)
+        \item \(\int e^x dx = e^x + c\)
+        \item \(\int a^x dx = \frac{a^x}{ln a} + c\)
+    \end{enumerate}
+
+    
+    \subsection{Техника интегрирования. Приемы интегрирования}
+
+    \subsubsection{Подстановка. Метод замены переменных}
+
+    \(F'(x) = f(x)\)
+    
+    \(F'(\phi(t)) = F'_{x} \cdot \phi'_{x} = f(\phi(t)) \cdot \phi'_t \)
+    
+    \(\int f(\varphi(t))\varphi'(t)dt = \int f(x) d\varphi(t) = \int f(x)dx = F(x) + c\)
+
+    \textbf{Примеры:}
+    \begin{enumerate}
+        \item \(\int (ax + b)^n dx \overset{1.} = \frac{1}{a}\int (ax + b)^n d(ax+b) = \frac{(ax+b)^{n+1}}{a(n+1)} + c \overset{2.}{=} \begin{cases}
+            ax + b = z\\
+            x = \frac{z-b}{a}\\
+            dx = \frac{1}{a}dz
+        \end{cases} = \int z^n \frac{1}{a} dz = \frac{1}{a}\int z^n dz = \frac{1}{a}\frac{z^{n+1}}{n+1} = \frac{(ax+b)^{n+1}}{a(n+1)} + c\)
+
+        \item \(\int e^{\sin t} \cos tdt = \)
+        \begin{enumerate}
+            \item[1)] \(= \int e^{\sin t} d\sin t = e^{\sin t} + c\)
+            \item[2)] \(= \begin{cases}
+                \sin t = z\\
+                \cos t dt = dz
+            \end{cases} = \int e^z dz = e^z + c = e^{\sin t} + c\)
+        \end{enumerate}
+        \item \(\int \frac{dx}{\sqrt{-4x^2+16x-15}} = \int \frac{dx}{\sqrt{-(4x^2-16x+16)+16-15}} = \int \frac{dx}{\sqrt{1-(2x-4)^2}} = \frac{1}{2}\int \frac{d(2x-4)}{\sqrt{1 - (2x-4)^2}} = \frac{1}{2}\arcsin(2x-4)+c\)
+    \end{enumerate}
+
+    \subsubsection{Разбиение на сумму}
+    
+    \(\int \frac{dx}{x^2 - a^2} \)
+
+    \(\frac{1}{x^2 - a^2} = \frac{1}{(x-a)(x+a)} = \frac{A}{x-a} + \frac{B}{x+a} = \frac{A(x+a) + B(x-a)}{(x-a)(x+a)} = \frac{x(A+B) + Aa - Ba}{(x-a)(x+a)} = \)
+    \(\begin{cases}
+        A + B = 0\\
+        (A - B)a = 1
+    \end{cases}\Rightarrow
+    \begin{cases}
+        B = -A\\
+        2Aa = 1
+    \end{cases} \Rightarrow
+    \begin{cases}
+        A = \frac{1}{2a}\\
+        B = -\frac{1}{a}
+    \end{cases}\)
+
+    Если \(x = a: \ 1 = 2Aa \Rightarrow A = frac{1}{2a} \\ x = -a: \ 1 = -2Ba \Rightarrow B = \frac{1}{2a}\)
+
+    \(\Rightarrow \int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \int \frac{d(x-a)}{x-a} - \frac{1}{2a} \int \frac{d(x+a)}{x+a} = \frac{1}{2a} \ln \abs{x-a} - \frac{1}{2a} \ln \abs{x+a} + c = \frac{1}{2a} \ln \abs{\frac{x-a}{x+a}} + c\)
+
+    \textbf{Пример.}
+    
+    \( \int \frac{1 \cdot dx}{\sin^2x\cos^2x} = \int \frac{(\sin^2x + \cos^2x)dx}{\sin^2x\cos^2x} = \int \frac{dx}{\cos^2x} + \int \frac{dx}{\sin^2x} = \tg x - \ctg x + c\)
+
+    \( \int \frac{1 \cdot dx}{\sin^2x\cos^2x} = \int\frac{4dx}{sin^2 2x} = 2\int\frac{d(2x)}{\sin^2 2x} = -2\ctg 2x + c\)
+
+    \subsubsection{Интегрирование по частям}
+
+    \(d(uv) = u dv + v du\)
+
+    \(uv = \int d(uv) = \int u dv + \int v du\)
+
+    \textbf{Формула интегрирования по частям.} \( \int udv = uv - \int vdu \)
+    
+    \textbf{Пример.}
+    \(\int x^2e^xdx \overset{\textrm{неверный путь}}{=} \cancel{\frac{1}{3} \int e^xdx^3 = \frac{1}{3} [e^xx^3 - \int x^3 de^x]}\)
+    
+    \(\int x^2e^xdx = \int x^2 d e^x = x^2e^x - \int e^xdx^2 = x^2e^x - 2\cdot \int xe^xdx = x^2e^x - 2\cdot [\int xde^x] = x^2e^x - 2\cdot [xe^x - \int e^x dx] = x^2e^x - 2xe^x + 2\cdot\int e^xdx = x^2e^x - 2xe^x + 2e^x + c\)
+    
+    \textbf{Замечание.} 
+    
+    \(\int \frac{\sin x}{x}dx; \int e^{-x^2}dx; \int \frac{dx}{\sqrt{1 - a^2\sin^2 x}}\) --- ``неберущиеся'' интегралы
+
+
+    \section{Определённый интеграл}
+    
+    \subsection{Площадь круга}
+    %"circle.png"
+    
+\end{document}
