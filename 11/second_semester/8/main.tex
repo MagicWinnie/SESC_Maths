@@ -184,4 +184,55 @@
     \subsection{Площадь круга}
     %"circle.png"
     
-\end{document}
+    \(A = \{S\) --- площадь многоугольника \(\subset\) круг \(\}\)
+
+
+    \( B = \{S \) --- площадь многоугольников \(\supset\) круг\(\}\)
+    
+    \( B \) --- правее множества \(A \Rightarrow \exists\) разделяющее число
+
+    Рассмотрим правильные вписанные и описанные \(n\)-угольники
+
+    Если \(\lim_{n \to \infty}(S_n-s_n) = 0\), то разделающее число для \(A\) и \(B \exists !\)
+
+    \textbf{Утверждение.} \(\frac{S_n}{s_n} = \frac{H_n^2}{h_n^2}\).
+    % lec 9 9:00    
+
+    \textbf{Утверждение.} \(\lim_{n \to \infty} a_n = 0\), где \(a_n\) --- длина стороны вписанного \(n\)-угольника.
+
+    \(\uparrow\ \forall \varepsilon > 0\ \exists N : \forall n > N\ \abs{a_n}=a_n < \varepsilon\).
+    % lec 9 12:50ish
+
+    \(\exists N : \forall n > N\ \frac{360^\circ}{n} < \varphi;\ \overset{\smile}{AC} < \overset{\smile}{AB} \Rightarrow a_n < \varepsilon\ \downarrow\)
+    
+    \textbf{Утверждение.} \(\lim_{n \to \infty} h_n = R\)
+
+    \(\uparrow R - \frac{a_n}{2} < h_n < R \)
+    
+    \quad \quad \quad \quad \quad \ \(\downarrow n \to \infty\)
+    
+    \(R \leq \lim_{n \to \infty} h_n \leq R\ \downarrow\)
+    %lec 9 16:42
+
+
+    \textbf{Теорема.} \(\lim_{n \to \infty} (S_n - s_n) = 0 \Rightarrow \exists!\) разделающее число
+    
+    \(\uparrow \lim_{n \to \infty} (S_n - s_n) = \lim_{n \to \infty} (s_n(\frac{S_n}{s_n} - 1)) = \lim_{n \to \infty} (s_n(\frac{H^2_n}{h^2_n} - 1)) =\{S_n\) --- ограничен, например, описанного квадрата \(\} = 0\) 
+    % lec 9 23:00 ish   n->inf    n->inf
+    % h^2_n ------> R ------> 0
+    Т.е. \(\exists ! \) разделяющеся число — это площадь круга.
+ 
+    \textbf{Утверждение.} Рассмотрим два круга с радиусом \(R_1\) и \(R_2\). Покажем, что \(\frac{S_1}{R_1^2} = \frac{S_2}{R_2^2}\), где \(S_1, S_2\) --- площади этих кругов.
+    
+    % lec 9 26:18 "circle1.png" "circle2.png"
+
+    \(\frac{S^1_n}{S^2_n}\) --- отношение площадей правильных $n$-угольников, вписанных в окружности.
+    \(\frac{S^1_n}{S^2_n} = \frac{R^2_1}{R^2_2}\) --- из геометрии
+
+    \(\underset{n \to \infty}{\longrightarrow} \frac{S_1}{S_2} = \frac{R^2_1}{R^2_2} \Leftrightarrow \frac{S_1}{R^2_1} = \frac{S_2}{R^2_2}\)
+
+    % lec 9 31:30 "shapes.png"
+
+
+    
+    \end{document}

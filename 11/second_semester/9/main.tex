@@ -1,0 +1,131 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{docmute}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+    \subsection{Квадрируемые фигуры}
+    
+    % lec 9 32:30 "shapesButOdd.png"
+    
+    \(F.\) Для $F$ рассматриваются:
+    
+    \(A=\) \{множество площадей многоугольников \(\subset\) $F$\}
+    
+    \(B = \)\{множество площадей многоугольников \(\supset\) $F$\}
+
+    \(S(F)\) --- единсвтенное разделяющее число для \(A\) и \(B\), если оно существует.
+    
+    \subsubsection{Свойства квадрируемых фигур}
+    
+    \begin{enumerate}
+        \item \(S(F) \geq 0\)
+        \item \(F_1 = F_2 \Rightarrow S(F_1) = S(F_2)\)
+        \item \(F = F_1 \cup F_2, F_1, F_2\) --- квадрируемые; \(F_1\) и \(F_2\) не имеют общих внутренних точек, то \(S(F) = S(F_1 \cup F_2) = S(F_1) + S(F_2)\)
+        
+        (Док-во: Виленкин, Шварцбурд ``Алгебра и математический анализ'') %https://sheba.spb.ru/shkola/matematika-analiz-1969.htm или https://s.11klasov.net/1406-algebra-i-matematicheskiy-analiz-dlya-11-klassa-vilenkin-nya-ivashev-musatov-os-shvarcburd-si-uchebnoe-posobie-dlya-shkol-i-klassov-s-uglublennym-izucheniem-matematiki.html
+        \item \(S_{\underset 1 \square} = 1\)
+    
+    \end{enumerate}
+
+
+    \subsection{Площадь криволинейной трапеции}
+    
+    Пусть задана функция \(y = f(x)\) --- непрерывная на \([a, b]\), причём \underline{\(f(x) \geq 0\)}
+    % lec 9 43:00 <insert graph here>
+
+    $F$, ограниченная 
+
+    \(\begin{cases}
+        y = f(x)\\
+        x = a\\
+        x = b\\
+        y = 0
+    \end{cases}\) --- криволинейная трапеция
+
+    % lec 9.2 10:00 <insert graph here>
+    \(a = x_0 < x_1 < x_2 < ... < x_{n-1} < x_n = b\)
+
+    \(x = x_k\) --- вертикальные прямые.
+    
+    \(\Delta x_k = x_{k+1} - x_k = d_k\)
+    
+    % lec 9.2 13:00 <insert graph here>
+    \(\forall k\) на \(\Delta x_k f(x)\) принимают наибольшее \(M_k\) и наименьшее \(m_k\) значения, т.к. \(f(x)\) непрерывна на \(\Delta x_k\)
+    
+    \(s_n = \sum_{k=0}^{n-1} m_k\Delta x_k\) --- площадь ступеньчатой фигуры \(\subset\) криволинейной трапеции.
+    
+    \(S_n = \sum_{k=0}^{n-1} M_k\Delta x_k\) --- площадь ступенчатой фигуры \(\supset\) криволинейную трапецию.
+    
+    Для \(\exists\) \(S_{\textrm{кр.тр.}}\) надо \(\lim_{n \to \infty}(S_n - s_n) = 0\)
+    
+    \textbf{Теорема.} Если \(f(x): f(x)\) --- непрерывна на неотрицательном \((f(x) \geq 0)\) на \([a, b];\) то \(\exists\) единсвтенное разделяющее число для множеств \(\{s_n\}\) и $\{S_n\}$, т.е. \(\lim{n \to \infty}(S_n-s_n) = 0(\forall \varepsilon > 0 \exists n : \abs{S_n-s_n} = S_n - s_n < \varepsilon)\)
+
+    
+    \textbf{Лемма.} Если \(f(x)\) --- непрерывна на \([a, b],\) то \(\forall \varepsilon > 0\) \(\exists N: \forall n > N (\exists\) разделение \([a, b]: \forall k: k = 0,1,\cdots,n-1  \  M_k - m_k < \varepsilon_1 (*)\)
+    
+    \(\uparrow\) От противного.
+
+    \([a;b]\) не могу разбить на \(\Delta x_k : \forall x_k\) выполняется \((*)\).
+    
+    \([a;b]/2 \Rightarrow [a_1;b_1]\)
+
+    \([a_1;b_1]/2 \Rightarrow [a_2;b_2]\) и т.д.
+
+    \([a, b] \supset [a_1, b_1] \supset [a_2, b_2] \supset ... \supset [a_m, b_m](**) \supset ...\)
+
+    \( d_m = b_m - a_m = \frac{b-a}{2^m}\)
+    система вложенных промежутков, \(c d_m \to 0 \Rightarrow \exists !\ c\) общая для всех этих промежутков.
+    
+    Рассмотрим \( x = c \in [a,b] \Rightarrow f(x)\) непрерывна в точке \(x = c\), т.е. в \(U_{\delta}(c)\) то \(\forall \varepsilon_1 > 0\). \(\abs{f(x)-f(c)} < \varepsilon_1/2\ \forall x \in U_\delta(c)\).
+    
+    Тогда \(\forall x';x'' \in U_{\delta}(c)\)
+    \(\abs{f(x')-f(x'')} = \abs{f(x') - f(c) + f(c) - f(x'')} \overset{\Delta}{\leq} \frac{\varepsilon_1}{2} + \frac{\varepsilon_1}{2} = \varepsilon_1\).
+    %39:59
+
+    Но в $(**)\ \exists K : \forall k > K\ [a_k;b_k] \subset U_\delta(c)$ для \([a_k;b_k]\ \abs{M_k-m_k} = M_k - m_k < \varepsilon_1\)
+    
+    противоречие с тем, что в системе $(**)$ отрезки для которых нельзя выполнить $(*)$ \(\downarrow\)
+
+    Надо \( S_n - s_n < \varepsilon \)
+    пусть разбиение такое, что \( \forall: 0,1,...,n-1 \ M_k - m_k < \frac{\varepsilon}{b-a} \)
+    
+    Тогда \(S_n-s_n = \sum_{k=0}^{n-1} (M_k-m_k)\Delta x_k\) < \( \frac{\varepsilon}{b-a} \sum_{k=0}^{n-1} \Delta x_k = \frac{\varepsilon}{b-a}(x_1 - x_0 +x_2 - x_1 + x_3 - x_2 + ... + x_n - x_{n-1}) = \frac{\varepsilon}{b-a}(x_n - x_0) = \frac{\varepsilon}{b-a} (b - a) = \varepsilon\)
+    \( \Rightarrow \exists S_{\textrm{кр.тр.}} \)  и \( S_{\textrm{кр.тр.}} = \lim_{n \to \infty}S_n = \lim_{n \to \infty}s_n \).
+    %*\(M_k-m_k < \frac{\varepsilon}{b-a}\)
+
+    \textbf{Замечание.} Доказательство \(\exists\)-ния \(S_\textrm{кр.тр.}\)в случае, если \(f(x) \nearrow\) на \([a;b]\).
+
+    \(S_n = \sum_{k=0}^{n-1} M_k \Delta x_k = \frac{b-a}{n}(f_1 + f_2+...f_n)\).
+
+    Если рассмотрим равномерное разбиение \(\Delta x_k - \frac{b-a}{n}\) \(f(x_k) = f_k\) 
+
+    \( S_n = \sum_{k=0}^{n-1} m_k \Delta x_k = \frac{b-a}{n} (f_0 + f_1 + ... + f_{n-1})\)
+
+    \(S_n-s_n = \frac{b-a}{n}({f_n}_{\overset{n\rightarrow \infty}{\rightarrow} 0}-f_0) \downarrow\)
+\end{document}
+
+
+%451
