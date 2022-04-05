@@ -1,0 +1,193 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{docmute}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[a4paper, left=2.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\graphicspath{ {./images/} }
+\setlength{\droptitle}{-3cm}
+\hypersetup{ colorlinks=true, linktoc=all, linkcolor=blue }
+\pagenumbering{arabic}
+
+\begin{document}
+
+\subsection{Понятие определённого интеграла}
+
+\textbf{Определение.} Для непрерывной \(f(x)\) на промежутке \([a;b]\) при разбиении \(a = x_0 < x_1 < ... < x_n = b\ s = \sum_{k=0}^{n-1}m_k\Delta x_k\), где \(m_k = \min f(x)\) называется нижней интегральной суммой, а \(S = \sum_{k=0}^{n-1}M_k\Delta x_k\), где \(M_k = \max f(x)\), называется верхней интегральной суммой.
+Очевидно что для одного и того же разбиения: \(s \leq S\)
+
+\(A = \{s; \forall \textrm{разбиения}\}\)
+
+\(B = \{S, \forall \textrm{разбиения}\}\)
+
+\(B - \textrm{правее} A ?\)
+
+\textbf{Замечание.} Если \(f(x) \geq 0\)
+
+%lec 10 9:20
+
+\textbf{Лемма.} Пусть есть разбиение для отрезка \([a,b]\)
+\(a = x_0 < x_1 < ... < x_n = b \) добавили \(x = c\), тогда $s$ не уменьшается; а $S$ не увеличивается.
+
+\(\uparrow\ x=c\) попадёт в \(\Delta x_k\) разбиения(*)
+
+Для \(s\).
+
+Изменится в \(s\) только слагаемое \(m_k\Delta x_k \xrightarrow[]{x=c} m_k'(c-x_k)+m_k''(x_{k+1}-c) \geq m_k(c-x_k)+m_k(x_{k+1}-c) = m_k\Delta x_k\), т.е. \(x=c\) в (*) не уменьшает \(s\).
+
+Аналогично, $S$ не увеличивается. \(\downarrow\)
+
+% Вывод: добавление конечного числа точек не уменьшает $s$ и не увеличивает $S$.
+
+Пусть $s_1$ --- нижняя интегральная сумма; соответствует разбиению \(a = x_0 < x_1 < ... < x_n = b\)(*), а $S_2$ --- верхняя интегральная сумма, соответствует разбиению \(a = x_0 < x_1 < ... < x_m = b\)(**).
+
+Рассмотрим третье разбиение: (*)\(\cup\)(**), ему соответствуют \(s\) и \(S\).
+
+\(s_1 \leq s \leq S \leq S_2\), т.е. \(B\) правее \(A\Rightarrow \exists\) хотя бы одно разделяющее число.
+
+\(\forall k\ M_k - m_k < \varepsilon\) для непрерывной \(f(x)\).
+
+\textbf{Теорема.} Если $f(x)$ непрерывна на $[a,b]$; то для $A$ и $B$ $\exists!$ разделающее число $I$:
+\( I = \int_a^b f(x)dx\)
+
+\( \int_a^b f(x)dx = \lim_{n \to \infty} \sum_{k=0}^{n-1}m_k \Delta x_k = \lim_{n\to\infty} \sum_{k=0}^{n-1}M_k\Delta x_k = \)
+\(= \int_a^b f(x)dx = \lim \sum_{k = 0}^{n-1} f(\xi_k)\Delta x_k \ \ \ \xi_k \in \Delta x_k \)
+
+Из п.3 и п.4 \(\Rightarrow S_{\textrm{кр.тр.}} = \int_a^b f(x)dx\)
+
+\textbf{Пример.} \(D(x) = \begin{cases}
+    0, x \in \mathbb{R}/\mathbb{Q}\\
+    1, x \in \mathbb{Q}
+\end{cases}\)
+
+На $[a, b]$ \\
+\(s = 0;\ A = {0} \\ S = b - a;\ B = {b - a}\)
+
+
+\subsection{Свойства определённого интеграла}
+
+\begin{enumerate}
+    \item Если \(c \in [a;b],\ \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\)
+    
+    \(\uparrow\ [a;c] \rightarrow a = x_0 < x_1 < ... < x_m = c\)
+    
+    \([c;b] \rightarrow c = x_m < x_{m+1} < ... < x_n = b\)
+
+    
+    \( \sum_{k=0}^{m-1} m_k \Delta x_k \leq \int_{a}^{c}f(x)dx \leq \sum_{k=0}^{m-1}M_k \Delta x_k \begin{array}{l}m_k = \min_{\Delta x_k} f(x)\\ M_k = \max_{\Delta x_k} f(x)\end{array}\)\\
+    \(+\)\\
+    \( \sum_{k=m}^{n-1} m_k \Delta x_k \leq \int_{c}^{b}f(x)dx \leq \sum_{k=m}^{n-1}M_k \Delta x_k\)
+    
+    \rule{10cm}{0.5pt}
+
+    \( s = \sum_{k = 0}^{n-1}m_k \Delta x_k \leq \int_{a}^{c}f(x)dx + \int_{c}^{b}f(x)dx \leq \sum_{k = 0}^{n - 1}M_k \Delta x_k = S\)
+
+    для $s$ и $S$ \(\exists !\ I = \int_a^b f(x)dx\ \downarrow\)
+
+    \item \(\int_a^b f(x)dx \overset{df} = -\int_a^b f(x)dx\)
+    \item \(\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\)
+    
+    Вне зависимости от того, где лежит \(c\).
+
+    \(\uparrow\ a < b < c\)
+
+    \(\int_a^c f(x)dx \overset{1.}= \int_a^b f(x)dx + \int_b^c f(x)dx \overset{2.}= \int_a^b f(x)dx - \int_c^b f(x)dx\ \downarrow\)
+
+    \item Оценка. Для \(a\neq b:\ m \leq \frac{1}{b-a}\int_a^b f(x)dx \leq M\), где \(m = \min_{[a;b]}f(x), M=\max_{[a;b]} f(x)\)
+    
+    \begin{enumerate}
+        \item \(a < b\)
+        
+        \(m(b-a) \leq \int_a^b f(x)dx \leq M(b-a)\)
+
+        Т.к. \(b-a > 0\), то \(/\) и, ч.т.д.
+
+        \item \(b<a\)
+        
+        \(m \leq \frac{1}{a-b}\int_b^a f(x)dx \leq M\)
+
+        \(m \leq (\frac{1}{b-a})^b(-\int_a^b f(x)dx) \leq M\), ч.т.д.
+    \end{enumerate}
+    
+    \textbf{Пример.}
+    \( \int_{\frac 1 2}^{3} \frac{x^2dx}{(x^2+1)^2} \)
+
+    \( f(x) = \frac{x^2}{(x^2+1)^2} \) на $[\frac{1}{2}; 3]$
+    
+    \(f'(x) = \frac{2x(x^2+1)^2-2(x^2+1)2x\cdot x^2}{(x^2+1)^4} = \frac{2x(1-x)(1+x)}{(x^2 + 1)^3}\)
+
+    \( f(1) = M = \frac{1}{(1+1)^2} = \frac{1}{4} \)\\
+    \( f(\frac 1 2) = \frac{\frac 1 4}{(\frac 1 4 + 1)^2} = \frac{16}{100}\)\\
+    \( f(3) = \frac{9}{100} = m \frac{9}{100} (3 - \frac{1}{2}) \leq I \leq \frac{1}{4}(3 - \frac{1}{2})\)
+    
+\end{enumerate}
+
+\subsection{Определённый интеграл как функция верхнего предела}
+
+%lec 10 24:40 April 5th
+
+\(\int_a^b f(x)dx\)
+
+\( x_0 \in [a;b]\ \int_a^{x_0} f(x)dx \)
+
+\( x \in [a;b] \Rightarrow \int_a^x f(x)dx\)
+
+Если $x \in [a; b]$ то имеет смысл рассмотреть \( \Psi(x) = \int_a^xf(x)dx\)
+
+\textbf{Теорема.} \(\Psi(x)\) --- одна из первоóбразных \(f(x)\).
+
+\(\uparrow\) Надо \(\Psi'(x) \overset ? = f(x)\)
+
+\(\Psi'(x) = \lim_{\Delta x \to 0} \frac{\Psi(x+\Delta x) - \Psi(x)}{\Delta x}\)
+
+\(\Psi(x + \Delta x) - \Psi(x) = \int_{a}^{x + \Delta x}f(x)dx - \int_{a}^{x}f(x)dx = \int_a^{x+\Delta x} f(x)dx + \int_x^a f(x)dx = \int_{x}^{x + \Delta x}f(x)dx\)
+
+\(\lim_{\Delta x \to 0} \frac{\Delta \Psi}{\Delta x} = \lim_{\Delta x \to 0} \frac{\int_{x}^{x + \Delta x}f(x)dx}{\Delta x}\)
+
+\(m_{\Delta x} \leq \frac{1}{\Delta x} \int_x^{x+\Delta x} f(x)dx \leq M_{\Delta x} (\star)\)
+
+\( \lim_{\Delta x \to 0}(M_{\Delta x} - m_{\Delta x}) = 0 \Rightarrow \lim_{\Delta x \to 0} M_{\Delta x} = \lim_{\Delta x \to 0} m_k = f(x)\)
+
+В \((\star)\ \Delta x \to 0\)
+\( f(x) \leq \lim_{\Delta x \to 0} \frac{1}{\Delta x} (\int_{x}^{x + \Delta x} f(x)dx) \leq f(x) \Rightarrow \underline{\Psi'(x) = f(x)}\ \downarrow\)
+
+\subsection{Формула Ньютона-Лейбница}
+\( (\Psi(x))' = (\int_{a}^{x}f(x)dx)' = f(x), \Psi'(x) = f(x) \)
+
+т.е. \( \Psi(x) = F(x) + C\)
+
+При \(x = a\)
+
+\(\Psi(a) = 0 = \int_a^a f(x)dx = F(a)+c \Rightarrow c = -F(a)\)
+
+При \(x = b\)
+
+\(\Psi(b) = \int_a^b f(x)dx = F(b)+c = F(b) - F(a)\)
+
+\underline{Формула Ньютона-Лейбница}:
+
+\[\int_{a}^{b}f(x)dx = F(b) - F(a)\]
+
+Формула замечательна тем, что она связывает определённые с неопределёнными интегралами.
+
+\textbf{Пример.}
+
+\( \int_{0}{\pi} \sin(xdx) = (-\cos(x))\bigg\rvert_0^{\pi} = (-\cos(\pi)) - (-\cos(\psi)) = 1 - (-1) = 2\)
+
+\end{document}
